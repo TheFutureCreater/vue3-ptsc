@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vue3-ptsc
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -33,3 +34,6 @@ pnpm build
 ```sh
 pnpm lint
 ```
+=======
+# vue3-ptsc
+>>>>>>> 9e7eab738d8c6bf122cb31cc3065dd837d6755cd
