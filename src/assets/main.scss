@@ -50,7 +50,7 @@ img {
   max-width: 100%;
   max-height: 100%;
   vertical-align: middle;
-  background: #ebebeb url('@/assets/images/200.png') no-repeat center / contain;
+  background: #ebebeb url('@/assets/imgs/200.png') no-repeat center / contain;
 }
 
 ul {
@@ -64,8 +64,11 @@ ul {
 
 .container {
   width: 1200px;
+  height: 100%;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 // 实现文本溢出处理的效果

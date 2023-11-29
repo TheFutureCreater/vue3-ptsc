@@ -1,9 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import { useUserStore } from '../stores'
 
+import StuLayout from '@/views/Stu/Layout/index.vue'
+import StuHome from '@/views/Stu/Home/index.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [{ path: '/', redirect: '/stu' }, {}],
+  routes: [
+    {
+      path: '/',
+      component: StuLayout,
+      children: [{ path: '', component: StuHome }]
+    },
+    {}
+  ],
   // 路由滚动行为定制
   scrollBehavior() {
     return {
