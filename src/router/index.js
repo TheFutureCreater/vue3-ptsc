@@ -3,10 +3,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    { path: '/', redirect: '/stu' },
-    {}
-  ]
+  routes: [{ path: '/', redirect: '/stu' }, {}],
+  // 路由滚动行为定制
+  scrollBehavior() {
+    return {
+      top: 0
+    }
+  }
 })
 
 // 登录访问拦截
