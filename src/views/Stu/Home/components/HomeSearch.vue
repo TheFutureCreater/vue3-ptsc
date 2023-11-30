@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { Search } from '@element-plus/icons-vue'
+</script>
 
 <template>
   <div class="home-search">

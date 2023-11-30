@@ -3,7 +3,7 @@
 <template>
   <div class="ptsc-page-footer">
     <div class="container">
-      <div style="height: 100%; color: #fff"><br />---------------页脚</div>
+      <div style="height: 100%; color: #fff"><br />---------------页脚-----------------</div>
     </div>
   </div>
 </template>
