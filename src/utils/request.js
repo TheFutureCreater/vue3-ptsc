@@ -16,7 +16,7 @@ request.interceptors.request.use(
     // 1. 从pinia获取token数据
     const userStore = useUserStore()
     // 2. 按照后端的要求拼接token数据
-    const token = userStore.userInfo.token
+    const token = userStore.token[userStore.user.userType]
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
     }
