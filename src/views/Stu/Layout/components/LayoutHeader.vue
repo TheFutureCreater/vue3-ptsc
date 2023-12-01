@@ -56,13 +56,18 @@ const handleCommand = async (key) => {
             </RouterLink>
           </li>
           <li>
+            <RouterLink to="/stu/message">
+              <span class="highlight-font">资讯</span>
+            </RouterLink>
+          </li>
+          <li>
             <RouterLink to="/stu/circle">
               <span class="highlight-font">聘圈</span>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/">
-              <span class="highlight-font">···</span>
+              <span class="highlight-font" style="font-weight: bolder">···</span>
             </RouterLink>
           </li>
         </ul>

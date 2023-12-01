@@ -1,5 +1,6 @@
 lockfileVersion: '6.0'
 
+
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
@@ -8,6 +9,9 @@ dependencies:
   '@element-plus/icons-vue':
     specifier: ^2.3.1
     version: registry.npmmirror.com/@element-plus/icons-vue@2.3.1(vue@3.3.8)
+  '@vueuse/core':
+    specifier: ^10.6.1
+    version: registry.npmmirror.com/@vueuse/core@10.6.1(vue@3.3.8)
   axios:
     specifier: ^1.6.2
     version: registry.npmmirror.com/axios@1.6.2
@@ -51,7 +55,7 @@ devDependencies:
     version: registry.npmmirror.com/sass@1.69.5
   unplugin-auto-import:
     specifier: ^0.17.1
-    version: registry.npmmirror.com/unplugin-auto-import@0.17.1
+    version: registry.npmmirror.com/unplugin-auto-import@0.17.1(@vueuse/core@10.6.1)
   unplugin-vue-components:
     specifier: ^0.25.2
     version: registry.npmmirror.com/unplugin-vue-components@0.25.2(vue@3.3.8)
@@ -560,6 +564,11 @@ packages:
     version: 0.0.16
     dev: false
 
+  registry.npmmirror.com/@types/web-bluetooth@0.0.20:
+    resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/web-bluetooth/-/web-bluetooth-0.0.20.tgz}
+    name: '@types/web-bluetooth'
+    version: 0.0.20
+
   registry.npmmirror.com/@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz}
     name: '@ungap/structured-clone'
@@ -696,6 +705,20 @@ packages:
     name: '@vue/shared'
     version: 3.3.8
 
+  registry.npmmirror.com/@vueuse/core@10.6.1(vue@3.3.8):
+    resolution: {integrity: sha512-Pc26IJbqgC9VG1u6VY/xrXXfxD33hnvxBnKrLlA2LJlyHII+BSrRoTPJgGYq7qZOu61itITFUnm6QbacwZ4H8Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/core/-/core-10.6.1.tgz}
+    id: registry.npmmirror.com/@vueuse/core/10.6.1
+    name: '@vueuse/core'
+    version: 10.6.1
+    dependencies:
+      '@types/web-bluetooth': registry.npmmirror.com/@types/web-bluetooth@0.0.20
+      '@vueuse/metadata': registry.npmmirror.com/@vueuse/metadata@10.6.1
+      '@vueuse/shared': registry.npmmirror.com/@vueuse/shared@10.6.1(vue@3.3.8)
+      vue-demi: registry.npmmirror.com/vue-demi@0.14.6(vue@3.3.8)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
   registry.npmmirror.com/@vueuse/core@9.13.0(vue@3.3.8):
     resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/core/-/core-9.13.0.tgz}
     id: registry.npmmirror.com/@vueuse/core/9.13.0
@@ -711,11 +734,27 @@ packages:
       - vue
     dev: false
 
+  registry.npmmirror.com/@vueuse/metadata@10.6.1:
+    resolution: {integrity: sha512-qhdwPI65Bgcj23e5lpGfQsxcy0bMjCAsUGoXkJ7DsoeDUdasbZ2DBa4dinFCOER3lF4gwUv+UD2AlA11zdzMFw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/metadata/-/metadata-10.6.1.tgz}
+    name: '@vueuse/metadata'
+    version: 10.6.1
+
   registry.npmmirror.com/@vueuse/metadata@9.13.0:
     resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/metadata/-/metadata-9.13.0.tgz}
     name: '@vueuse/metadata'
     version: 9.13.0
     dev: false
+
+  registry.npmmirror.com/@vueuse/shared@10.6.1(vue@3.3.8):
+    resolution: {integrity: sha512-TECVDTIedFlL0NUfHWncf3zF9Gc4VfdxfQc8JFwoVZQmxpONhLxFrlm0eHQeidHj4rdTPL3KXJa0TZCk1wnc5Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/shared/-/shared-10.6.1.tgz}
+    id: registry.npmmirror.com/@vueuse/shared/10.6.1
+    name: '@vueuse/shared'
+    version: 10.6.1
+    dependencies:
+      vue-demi: registry.npmmirror.com/vue-demi@0.14.6(vue@3.3.8)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
 
   registry.npmmirror.com/@vueuse/shared@9.13.0(vue@3.3.8):
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/shared/-/shared-9.13.0.tgz}
@@ -2465,8 +2504,9 @@ packages:
       - rollup
     dev: true
 
-  registry.npmmirror.com/unplugin-auto-import@0.17.1:
+  registry.npmmirror.com/unplugin-auto-import@0.17.1(@vueuse/core@10.6.1):
     resolution: {integrity: sha512-QvdJKtFK0COSuRXzVnwjG3ir870zVhdMg6O8GKG3UO/O5W4fmJm5h71QvzI7Gp8Sx0qfCvC3f+2v0Vm489fnqQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-auto-import/-/unplugin-auto-import-0.17.1.tgz}
+    id: registry.npmmirror.com/unplugin-auto-import/0.17.1
     name: unplugin-auto-import
     version: 0.17.1
     engines: {node: '>=14'}
@@ -2481,6 +2521,7 @@ packages:
     dependencies:
       '@antfu/utils': registry.npmmirror.com/@antfu/utils@0.7.6
       '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.5
+      '@vueuse/core': registry.npmmirror.com/@vueuse/core@10.6.1(vue@3.3.8)
       fast-glob: registry.npmmirror.com/fast-glob@3.3.2
       local-pkg: registry.npmmirror.com/local-pkg@0.5.0
       magic-string: registry.npmmirror.com/magic-string@0.30.5
