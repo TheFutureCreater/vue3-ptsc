@@ -46,74 +46,90 @@ const handleCommand = async (key) => {
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/">
-              <span class="highlight-font">公司</span>
+            <RouterLink to="/stu/merc">
+              <span class="highlight-font">找公司</span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/">
+            <RouterLink to="/stu/search">
               <span class="highlight-font">搜索</span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/">
+            <RouterLink to="/stu/circle">
               <span class="highlight-font">聘圈</span>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/">
-              <span class="highlight-font">...</span>
+              <span class="highlight-font">···</span>
             </RouterLink>
           </li>
         </ul>
       </div>
 
       <div class="header-right">
-        <span style="margin: 0 20px">
-          <span class="highlight-font">切换城市</span>
-        </span>
+        <div class="not-login" v-if="userStore.user.userId === 0">
+          <ul class="app-header-nav">
+            <li>
+              <RouterLink to="/login">
+                <span class="highlight-font">我要招聘</span>
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/login">
+                <span class="highlight-font">我要求职</span>
+              </RouterLink>
+            </li>
+          </ul>
+          <RouterLink to="/login" class="user-personal">
+            <el-button type="primary">登录/注册</el-button>
+          </RouterLink>
+        </div>
+        <div class="have-login" v-else>
+          <span style="margin: 0 20px">
+            <span class="highlight-font">切换城市</span>
+          </span>
 
-        <ul class="app-header-nav">
-          <li>
-            <RouterLink to="/stu/resume">
-              <span class="highlight-font">简历</span>
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/stu/personal/notification">
-              <span class="highlight-font">通知</span>
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/stu/personal/application">
-              <span class="highlight-font">投递反馈</span>
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/stu/favorite">
-              <span class="highlight-font">收藏</span>
-            </RouterLink>
-          </li>
-        </ul>
+          <ul class="app-header-nav">
+            <li>
+              <RouterLink to="/stu/resume">
+                <span class="highlight-font">简历</span>
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/stu/personal/notification">
+                <span class="highlight-font">通知</span>
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/stu/personal/application">
+                <span class="highlight-font">投递反馈</span>
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/stu/favorite">
+                <span class="highlight-font">收藏</span>
+              </RouterLink>
+            </li>
+          </ul>
 
-        <RouterLink v-if="userStore.user.userId === 0" to="/login" class="user-personal">
-          <el-button type="primary">登录/注册</el-button>
-        </RouterLink>
-        <RouterLink v-else to="/stu/personal" class="user-personal">
-          <span class="highlight-font">{{ userStore.user.username || '用户名未知' }}</span>
-          <el-dropdown placement="bottom-end" @command="handleCommand">
-            <span class="el-dropdown__box">
-              <el-avatar :src="userStore.user.avatar || avatar" />
-            </span>
-            <template #dropdown>
-              <el-dropdown-menu>
-                <el-dropdown-item command="personal" :icon="SwitchButton">个人中心</el-dropdown-item>
-                <el-dropdown-item command="account" :icon="SwitchButton"> 账号与安全 </el-dropdown-item>
-                <el-dropdown-item command="logout" :icon="SwitchButton">退出登录</el-dropdown-item>
-              </el-dropdown-menu>
-            </template>
-          </el-dropdown>
-        </RouterLink>
+          <RouterLink to="/stu/personal" class="user-personal">
+            <span class="highlight-font">{{ userStore.user.username || '用户名未知' }}</span>
+            <el-dropdown placement="bottom-end" @command="handleCommand">
+              <span class="el-dropdown__box">
+                <el-avatar :src="userStore.user.avatar || avatar" />
+              </span>
+              <template #dropdown>
+                <el-dropdown-menu>
+                  <el-dropdown-item command="personal" :icon="SwitchButton">个人中心</el-dropdown-item>
+                  <el-dropdown-item command="account" :icon="SwitchButton"> 账号与安全 </el-dropdown-item>
+                  <el-dropdown-item command="logout" :icon="SwitchButton">退出登录</el-dropdown-item>
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
+          </RouterLink>
+        </div>
       </div>
     </div>
   </div>
@@ -145,8 +161,11 @@ const handleCommand = async (key) => {
     }
 
     .header-right {
-      display: flex;
-      align-items: center;
+      .not-login,
+      .have-login {
+        display: flex;
+        align-items: center;
+      }
 
       .el-dropdown__box {
         display: flex;
