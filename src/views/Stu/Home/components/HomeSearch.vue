@@ -5,25 +5,14 @@ import { ref } from 'vue'
 const searchTypeName = ['职位', '公司']
 const searchType = ref(0)
 const searchWord = ref('')
-const selectShow = ref(true)
+const selectShow = ref(false)
+
+const recommendItem = ref(['国企', '管培生', '软件测试工程师', 'Web前端开发', 'Java', 'C++'])
 </script>
 
 <template>
   <div class="home-search">
     <div class="container">
-      <!-- <el-input v-model="searchWord" placeholder="搜索职位、公司" class="input-with-select" size="large">
-        <template #prepend>
-          <el-select v-model="searchSelect" placeholder="Select" style="width: 80px" size="large">
-            <el-option label="职位" value="1" />
-            <el-option label="公司" value="2" />
-          </el-select>
-        </template>
-        <template #append>
-          <el-button :icon="Search" type="primary">
-            <span>搜索</span>
-          </el-button>
-        </template>
-      </el-input> -->
       <div class="input-with-select">
         <div @mouseenter="selectShow = true" @mouseleave="selectShow = false">
           <div class="search-type">
@@ -35,10 +24,20 @@ const selectShow = ref(true)
           </div>
         </div>
         <span class="middle-separate"></span>
+
         <input type="text" placeholder="搜索职位、公司" v-model="searchWord" />
+
         <el-button :icon="Search" type="primary" size="large" round>
           <span>搜索</span>
         </el-button>
+      </div>
+
+      <div class="popular-recommend">
+        <span>热门推荐：</span>
+
+        <span class="recommend-item" v-for="(item, index) in recommendItem" :key="index">
+          {{ item }}
+        </span>
       </div>
     </div>
   </div>
@@ -50,12 +49,13 @@ const selectShow = ref(true)
   background-color: #fff;
 
   .container {
+    flex-direction: column;
     justify-content: center;
 
     .input-with-select {
       display: flex;
       align-items: center;
-      width: 600px;
+      width: 800px;
       height: 50px;
       border: 3px solid #409eff;
       border-radius: 50px;
@@ -88,6 +88,7 @@ const selectShow = ref(true)
           border-radius: 50px;
           padding: 0 10px 0 20px;
           margin-top: 10px;
+          background-color: #fff;
         }
       }
 
@@ -99,7 +100,38 @@ const selectShow = ref(true)
 
       input {
         height: 43px;
-        width: 403px;
+        width: 605px;
+      }
+    }
+
+    .popular-recommend {
+      display: flex;
+      width: 800px;
+      margin: 10px 0 0 0;
+
+      span {
+        font-size: 15px;
+        height: 25px;
+        line-height: 25px;
+      }
+
+      > span {
+        color: #afb3ba;
+        margin-left: 15px;
+      }
+
+      .recommend-item {
+        width: auto;
+        cursor: pointer;
+        padding: 0 10px;
+        color: #898f98;
+        border-radius: 50px;
+        background-color: #f5f6f7;
+      }
+
+      .recommend-item:hover {
+        background-color: #409eff;
+        color: #fff;
       }
     }
   }

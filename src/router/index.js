@@ -3,10 +3,15 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import StuLayout from '@/views/Stu/Layout/index.vue'
 import StuHome from '@/views/Stu/Home/index.vue'
+import LoginPage from '@/views/Login/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/login',
+      component: LoginPage
+    },
     {
       path: '/',
       component: StuLayout,
