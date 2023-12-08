@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import { useUserStore } from '../stores'
 
+import LoginPage from '@/views/Login/index.vue'
 import StuLayout from '@/views/Stu/Layout/index.vue'
 import StuHome from '@/views/Stu/Home/index.vue'
-import LoginPage from '@/views/Login/index.vue'
+import StuJobs from '@/views/Stu/Jobs/index.vue'
+import StuMerc from '@/views/Stu/Merc/index.vue'
+import StuSearch from '@/views/Stu/Search/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,7 +18,24 @@ const router = createRouter({
     {
       path: '/',
       component: StuLayout,
-      children: [{ path: '', component: StuHome }]
+      children: [
+        {
+          path: '',
+          component: StuHome
+        },
+        {
+          path: '/stu/jobs',
+          component: StuJobs
+        },
+        {
+          path: '/stu/merc',
+          component: StuMerc
+        },
+        {
+          path: '/stu/search',
+          component: StuSearch
+        }
+      ]
     },
     {}
   ],

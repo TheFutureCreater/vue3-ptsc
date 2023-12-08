@@ -1,19 +1,19 @@
 <script setup>
-import LayoutHeader from './LayoutHeader.vue'
+import HomeSearch from './HomeSearch.vue'
 import { useScroll } from '@vueuse/core'
 const { y } = useScroll(window)
 </script>
 
 <template>
-  <div class="app-header-sticky" :class="{ show: y > 60 }">
-    <LayoutHeader />
+  <div class="home-search-sticky" :class="{ show: y > 100 }">
+    <HomeSearch />
   </div>
 </template>
 
 <style scoped lang="scss">
-.app-header-sticky {
+.home-search-sticky {
   width: 100%;
-  height: 60px;
+  height: 140px;
   position: fixed;
   left: 0;
   top: 0;
@@ -28,6 +28,7 @@ const { y } = useScroll(window)
   &.show {
     transition: all 0.3s linear;
     transform: none;
+    top: 60px;
     opacity: 1;
   }
 }

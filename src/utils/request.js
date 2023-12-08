@@ -7,7 +7,7 @@ const baseURL = 'https://mock.apifox.cn/m1/3164764-0-default'
 const request = axios.create({
   // TODO 1. 基础地址，超时时间
   baseURL,
-  timeout: 5000
+  timeout: 8000
 })
 
 // 请求拦截器
