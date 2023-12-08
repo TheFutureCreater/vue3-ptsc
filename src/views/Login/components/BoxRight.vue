@@ -53,7 +53,7 @@ const formModel = ref({
 // 校验规则
 const rules = {
   phoneNum: [
-    { required: true, message: '未输入电话号码或邮箱地址', trigger: 'manual' },
+    { required: true, message: '未输入手机号或邮箱地址', trigger: 'manual' },
     { validator: validatePhoneOrEmail, trigger: 'manual' }
   ],
   messageNum: [
@@ -86,7 +86,7 @@ function validatePhoneOrEmail(rule, value, callback) {
     console.log('phoneOrEmail' + phoneOrEmail.value)
     callback()
   } else {
-    callback(new Error('请输入有效的电话号码或邮箱地址'))
+    callback(new Error('请输入有效的手机号或邮箱地址'))
   }
 }
 
@@ -158,7 +158,7 @@ const handleEnter = () => {
         <el-input
           v-model="formModel.phoneNum"
           :prefix-icon="User"
-          placeholder="请输入手机号"
+          placeholder="请输入手机号或邮箱地址"
           size="large"
           @keydown.enter="handleEnter"
         >
