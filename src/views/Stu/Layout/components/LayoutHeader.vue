@@ -149,7 +149,9 @@ router.beforeEach((to, from, next) => {
               <template #dropdown>
                 <el-dropdown-menu>
                   <el-dropdown-item command="personal" :icon="SwitchButton">个人中心</el-dropdown-item>
-                  <el-dropdown-item command="account" :icon="SwitchButton"> 账号与安全 </el-dropdown-item>
+                  <el-dropdown-item command="account" :icon="SwitchButton">
+                    账号与安全
+                  </el-dropdown-item>
                   <el-dropdown-item command="logout" :icon="SwitchButton">退出登录</el-dropdown-item>
                 </el-dropdown-menu>
               </template>
