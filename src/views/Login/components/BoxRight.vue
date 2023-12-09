@@ -13,6 +13,7 @@ const form = ref() // 表单绑定
 const isloading = ref(false) // 加载状态
 const phoneOrEmail = ref(true) // 判断所填写是否为电话号码，否则为邮箱
 const rememberMe = ref(false) // 记住我的状态
+const checkedProtocol = ref(false) // 已阅读用户协议
 
 //  开始倒计时
 const startCountdown = () => {
@@ -215,7 +216,7 @@ const handleEnter = () => {
       </el-form-item>
       <el-form-item v-else>
         <div class="flex">
-          <el-checkbox v-model="rememberMe" :checked="true">记住我</el-checkbox>
+          <el-checkbox v-model="rememberMe" :checked="false">记住我</el-checkbox>
           <el-link
             class="forget-password"
             type="primary"
@@ -242,7 +243,7 @@ const handleEnter = () => {
 
       <el-form-item>
         <div style="width: 100%; text-align: center">
-          <el-checkbox v-model="rememberMe" :checked="true">
+          <el-checkbox v-model="checkedProtocol" :checked="false">
             已阅读并同意成信招聘 《用户协议》《隐私政策》
           </el-checkbox>
         </div>
