@@ -7,6 +7,8 @@ import StuHome from '@/views/Stu/Home/index.vue'
 import StuJobs from '@/views/Stu/Jobs/index.vue'
 import StuMerc from '@/views/Stu/Merc/index.vue'
 import StuSearch from '@/views/Stu/Search/index.vue'
+import StuNews from '@/views/Stu/News/index.vue'
+import StuCircle from '@/views/Stu/Circle/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +36,14 @@ const router = createRouter({
         {
           path: '/stu/search',
           component: StuSearch
+        },
+        {
+          path: '/stu/news',
+          component: StuNews
+        },
+        {
+          path: '/stu/circle',
+          component: StuCircle
         }
       ]
     },

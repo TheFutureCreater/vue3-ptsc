@@ -73,8 +73,8 @@ router.beforeEach((to, from, next) => {
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/stu/message">
-              <span class="highlight-font" :id="routerWord === '/stu/message' ? 'current-menu' : ''">
+            <RouterLink to="/stu/news">
+              <span class="highlight-font" :id="routerWord === '/stu/news' ? 'current-menu' : ''">
                 资讯
               </span>
             </RouterLink>
