@@ -38,7 +38,9 @@ const sendMessage = async () => {
     return
   }
 
-  ElMessage.success(phoneOrEmail.value ? '正在向手机发送验证码，注意接收' : '正在向邮箱发送验证码，注意接收')
+  ElMessage.success(
+    phoneOrEmail.value ? '正在向手机发送验证码，注意接收' : '正在向邮箱发送验证码，注意接收'
+  )
   startCountdown()
 }
 

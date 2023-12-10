@@ -48,7 +48,7 @@ router.beforeEach((to, from, next) => {
         <ul class="app-header-nav">
           <li>
             <RouterLink to="/">
-              <span class="highlight-font" :id="routerWord === '/' ? 'current-menu' : ''"> 首页 </span>
+              <span class="highlight-font" :id="routerWord === '/' ? 'current-menu' : ''"> 首 页 </span>
             </RouterLink>
           </li>
           <li>
@@ -75,14 +75,14 @@ router.beforeEach((to, from, next) => {
           <li>
             <RouterLink to="/stu/news">
               <span class="highlight-font" :id="routerWord === '/stu/news' ? 'current-menu' : ''">
-                资讯
+                资 讯
               </span>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/stu/circle">
               <span class="highlight-font" :id="routerWord === '/stu/circle' ? 'current-menu' : ''">
-                聘圈
+                聘 圈
               </span>
             </RouterLink>
           </li>
@@ -223,7 +223,7 @@ router.beforeEach((to, from, next) => {
 
       li {
         font-size: 16px;
-        margin-right: 20px;
+        margin-right: 30px;
       }
     }
 
@@ -234,8 +234,8 @@ router.beforeEach((to, from, next) => {
 
     #current-menu {
       font-weight: bolder;
-      border-bottom: 4px solid #409eff;
-      border-radius: 0 0 5px 5px;
+      border-bottom: 3px solid #409eff;
+      border-radius: 0 0 3px 3px;
       color: #409eff;
     }
   }

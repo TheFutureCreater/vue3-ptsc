@@ -1,11 +1,10 @@
-<script setup></script>
+<script setup>
+import JobsHeader from './components/JobsHeader.vue'
+</script>
 
 <template>
-  <div class="text001">
-    <div class="container">
-      <div style="background-color: #4997cf; height: 100%"></div>
-    </div>
-  </div>
+  <JobsHeader />
+  <div class="text001"></div>
 </template>
 
 <style lang="scss" scoped>
