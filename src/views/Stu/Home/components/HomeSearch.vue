@@ -1,28 +1,28 @@
 <script setup>
-import { Search, ArrowDown } from '@element-plus/icons-vue'
+import CityBox from '@/components/CityBox/index.vue'
+import { Search, Location } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 
-const searchTypeName = ['职位', '公司']
-const searchType = ref(0)
+// const searchType = ref(0)
 const searchWord = ref('')
 const selectShow = ref(false)
-
+// const cityId = ref(0)
+const cityName = ref('')
 const recommendItem = ref(['国企', '管培生', '软件测试工程师', 'Web前端开发', 'Java', 'C++'])
 </script>
 
 <template>
+  <CityBox :selectShow="selectShow" />
   <div class="home-search">
     <div class="container">
       <div class="input-with-select">
-        <div @mouseenter="selectShow = true" @mouseleave="selectShow = false">
-          <div class="search-type">
-            <span>{{ searchTypeName[searchType] }}</span>
-            <el-icon><ArrowDown /></el-icon>
-          </div>
-          <div class="search-type-fixed" v-if="selectShow" @click="searchType = searchType ? 0 : 1">
-            <span>{{ searchTypeName[searchType ? 0 : 1] }}</span>
+        <div @click="selectShow = !selectShow">
+          <div class="search-locate">
+            <span>{{ cityName || '全国' }}</span>
+            <el-icon><Location /></el-icon>
           </div>
         </div>
+
         <span class="middle-separate"></span>
 
         <input type="text" placeholder="搜索职位、公司" v-model="searchWord" />
@@ -61,10 +61,11 @@ const recommendItem = ref(['国企', '管培生', '软件测试工程师', 'Web�
       border-radius: 50px;
       position: relative;
 
-      .search-type {
+      .search-locate {
         width: 85px;
         height: 46px;
-        line-height: 46px;
+        display: flex;
+        align-items: center;
         cursor: pointer;
 
         span {
@@ -72,25 +73,25 @@ const recommendItem = ref(['国企', '管培生', '软件测试工程师', 'Web�
         }
       }
 
-      .search-type-fixed {
-        width: 80px;
-        height: 46px;
-        line-height: 40px;
-        cursor: pointer;
-        position: absolute;
-        top: 100%;
+      // .search-locate-fixed {
+      //   width: 80px;
+      //   height: 46px;
+      //   line-height: 40px;
+      //   cursor: pointer;
+      //   position: absolute;
+      //   top: 100%;
 
-        span {
-          display: block;
-          width: 100%;
-          height: 100%;
-          border: 3px solid #409eff;
-          border-radius: 50px;
-          padding: 0 10px 0 20px;
-          margin-top: 10px;
-          background-color: #fff;
-        }
-      }
+      //   span {
+      //     display: block;
+      //     width: 100%;
+      //     height: 100%;
+      //     border: 3px solid #409eff;
+      //     border-radius: 50px;
+      //     padding: 0 10px 0 20px;
+      //     margin-top: 10px;
+      //     background-color: #fff;
+      //   }
+      // }
 
       .middle-separate {
         height: 30px;
