@@ -1,5 +1,5 @@
 <script setup>
-import cityBase from '@/assets/json/city.json'
+import cityBase from '@/assets/json/cityChar.json'
 import { ref, watch, computed } from 'vue'
 
 const props = defineProps({
@@ -22,6 +22,7 @@ console.log(cityBase.charA[1])
   <el-dialog v-model="dialogVisible" title="请选择城市" width="800px">
     <div class="city-contianer">
       <span>This is a message</span>
+      <el-cascader-panel :options="options" />
     </div>
 
     <template #footer>
@@ -38,5 +39,6 @@ console.log(cityBase.charA[1])
 .city-contianer {
   border-top: 3px solid #409eff;
   border-bottom: 3px solid #409eff;
+  display: flex;
 }
 </style>
