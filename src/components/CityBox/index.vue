@@ -15,14 +15,19 @@ watch(isShow, () => {
 
 // 获取了本地json城市数据
 console.log(cityBase.charA[1])
+// const currentLocation = {
+//   id: 0,
+//   district: ''
+// }
 </script>
 
 <template>
   <!-- <client-only> -->
   <el-dialog v-model="dialogVisible" title="请选择城市" width="800px">
     <div class="city-contianer">
-      <span>This is a message</span>
-      <el-cascader-panel :options="options" />
+      <div class="char-select">
+        <el-button type="primary" text>Primary</el-button>
+      </div>
     </div>
 
     <template #footer>
@@ -37,8 +42,12 @@ console.log(cityBase.charA[1])
 
 <style lang="scss" scoped>
 .city-contianer {
-  border-top: 3px solid #409eff;
-  border-bottom: 3px solid #409eff;
+  border: 1px solid #409eff;
   display: flex;
+
+  .char-select {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

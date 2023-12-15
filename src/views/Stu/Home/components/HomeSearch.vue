@@ -3,7 +3,6 @@ import SearchBox from './SearchBox.vue'
 import { ref } from 'vue'
 
 // const searchType = ref(0)
-// const cityId = ref(0)
 
 const recommendItem = ref(['国企', '管培生', '软件测试工程师', 'Web前端开发', 'Java', 'C++'])
 </script>

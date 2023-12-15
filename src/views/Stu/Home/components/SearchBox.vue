@@ -3,6 +3,7 @@ import { Search, Location } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 const searchWord = ref('')
 const cityName = ref('')
+// const cityId = ref(0)
 const selectShow = ref(false)
 </script>
 
@@ -16,7 +17,7 @@ const selectShow = ref(false)
       </div>
     </div>
 
-    <span class="middle-separate"></span>
+    <span class="middle-separate" />
 
     <input type="text" placeholder="搜索职位、公司" v-model="searchWord" />
 
