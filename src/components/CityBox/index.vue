@@ -5,23 +5,24 @@ import { ref, watch, computed } from 'vue'
 const props = defineProps({
   selectShow: Boolean
 })
-
 const isShow = computed(() => {
   return props.selectShow
 })
-const dialogVisible = ref(false)
+const dialogVisible = ref(true)
 watch(isShow, () => {
   dialogVisible.value = true
 })
 
 // 获取了本地json城市数据
-console.log(cityBase.city.charA[0])
+console.log(cityBase.charA[1])
 </script>
 
 <template>
   <!-- <client-only> -->
-  <el-dialog v-model="dialogVisible" title="请选择城市" width="50%">
-    <span>This is a message</span>
+  <el-dialog v-model="dialogVisible" title="请选择城市" width="800px">
+    <div class="city-contianer">
+      <span>This is a message</span>
+    </div>
 
     <template #footer>
       <span class="dialog-footer">
@@ -33,4 +34,9 @@ console.log(cityBase.city.charA[0])
   <!-- </client-only> -->
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.city-contianer {
+  border-top: 3px solid #409eff;
+  border-bottom: 3px solid #409eff;
+}
+</style>

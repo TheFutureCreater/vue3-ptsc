@@ -1,5 +1,4 @@
 <script setup>
-import CityBox from '@/components/CityBox/index.vue'
 import { Search, Location } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 
