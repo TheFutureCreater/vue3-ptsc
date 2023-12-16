@@ -2,6 +2,9 @@
 import { Select, CaretRight } from '@element-plus/icons-vue'
 import cityBase from '@/assets/json/cityChar.json'
 import { ref, watch, computed } from 'vue'
+import { useSearchStore } from '@/stores'
+
+const searchStore = useSearchStore()
 
 // 组件显示
 const props = defineProps({
@@ -51,15 +54,10 @@ const clickCity = (id, name) => {
   citySelectedID.value = id
 }
 
-// 返回信息给父级
-const emit = defineEmits(['get-message'])
-const sendToParent = () => {
-  const id = citySelectedID.value
-  const name = citySelectedName.value
-  emit('get-message', id, name)
-}
+// 返回父级
 const backToParent = () => {
-  sendToParent()
+  searchStore.cityId = citySelectedID
+  searchStore.cityName = citySelectedName
   dialogVisible.value = false
 }
 </script>

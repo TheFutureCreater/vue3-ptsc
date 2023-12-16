@@ -1,21 +1,26 @@
 <script setup>
 import { Search, Location } from '@element-plus/icons-vue'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useSearchStore } from '@/stores'
+
+const searchStore = useSearchStore()
 const searchWord = ref('')
-const cityId = ref(0)
-const cityName = ref('全国')
+// const cityId = ref(0)
+// const cityName = ref('全国')
 const selectShow = ref(false)
 
 // 接收城市盒子的信息
-const getMessage = (id, name) => {
-  cityId.value = id
-  cityName.value = name
-  console.log('SearchBox  ' + cityId.value + cityName.value)
-}
+const cityId = computed(() => {
+  return searchStore.cityId
+})
+console.log(cityId.value)
+const cityName = computed(() => {
+  return searchStore.cityName
+})
 </script>
 
 <template>
-  <CityBox :selectShow="selectShow" @get-message="getMessage" />
+  <CityBox :selectShow="selectShow" />
   <div class="input-with-select">
     <div @click="selectShow = !selectShow">
       <div class="search-locate">
