@@ -1,1514 +1,1927 @@
-{
-  "charA": [
-    {
-      "id": 36,
-      "district": "安庆"
-    },
-    {
-      "id": 112,
-      "district": "安顺"
-    },
-    {
-      "id": 152,
-      "district": "安阳"
-    },
-    {
-      "id": 246,
-      "district": "鞍山"
-    },
-    {
-      "id": 259,
-      "district": "阿拉善盟"
-    },
-    {
-      "id": 312,
-      "district": "安康"
-    },
-    {
-      "id": 324,
-      "district": "阿坝"
-    },
-    {
-      "id": 345,
-      "district": "阿里"
-    },
-    {
-      "id": 352,
-      "district": "阿克苏"
-    },
-    {
-      "id": 353,
-      "district": "阿拉尔"
-    },
-    {
-      "id": 396,
-      "district": "澳门"
-    }
-  ],
-  "charB": [
-    {
-      "id": 37,
-      "district": "蚌埠"
-    },
-    {
-      "id": 51,
-      "district": "亳州"
-    },
-    {
-      "id": 52,
-      "district": "北京"
-    },
-    {
-      "id": 63,
-      "district": "白银"
-    },
-    {
-      "id": 99,
-      "district": "百色"
-    },
-    {
-      "id": 100,
-      "district": "北海"
-    },
-    {
-      "id": 113,
-      "district": "毕节"
-    },
-    {
-      "id": 122,
-      "district": "白沙"
-    },
-    {
-      "id": 123,
-      "district": "保亭"
-    },
-    {
-      "id": 139,
-      "district": "保定"
-    },
-    {
-      "id": 213,
-      "district": "白城"
-    },
-    {
-      "id": 214,
-      "district": "白山"
-    },
-    {
-      "id": 247,
-      "district": "本溪"
-    },
-    {
-      "id": 260,
-      "district": "巴彦淖尔盟"
-    },
-    {
-      "id": 261,
-      "district": "包头"
-    },
-    {
-      "id": 285,
-      "district": "滨州"
-    },
-    {
-      "id": 313,
-      "district": "宝鸡"
-    },
-    {
-      "id": 325,
-      "district": "巴中"
-    },
-    {
-      "id": 354,
-      "district": "巴音郭楞"
-    },
-    {
-      "id": 355,
-      "district": "博尔塔拉"
-    },
-    {
-      "id": 371,
-      "district": "保山"
-    }
-  ],
-  "charC": [
-    {
-      "id": 38,
-      "district": "巢湖"
-    },
-    {
-      "id": 39,
-      "district": "池州"
-    },
-    {
-      "id": 40,
-      "district": "滁州"
-    },
-    {
-      "id": 78,
-      "district": "潮州"
-    },
-    {
-      "id": 101,
-      "district": "崇左"
-    },
-    {
-      "id": 124,
-      "district": "昌江"
-    },
-    {
-      "id": 125,
-      "district": "澄迈县"
-    },
-    {
-      "id": 140,
-      "district": "沧州"
-    },
-    {
-      "id": 141,
-      "district": "承德"
-    },
-    {
-      "id": 197,
-      "district": "长沙"
-    },
-    {
-      "id": 199,
-      "district": "常德"
-    },
-    {
-      "id": 200,
-      "district": "郴州"
-    },
-    {
-      "id": 211,
-      "district": "长春"
-    },
-    {
-      "id": 223,
-      "district": "常州"
-    },
-    {
-      "id": 262,
-      "district": "赤峰"
-    },
-    {
-      "id": 322,
-      "district": "成都"
-    },
-    {
-      "id": 346,
-      "district": "昌都"
-    },
-    {
-      "id": 356,
-      "district": "昌吉"
-    },
-    {
-      "id": 372,
-      "district": "楚雄"
-    },
-    {
-      "id": 394,
-      "district": "重庆"
-    }
-  ],
-  "charD": [
-    {
-      "id": 64,
-      "district": "定西"
-    },
-    {
-      "id": 79,
-      "district": "东莞"
-    },
-    {
-      "id": 126,
-      "district": "定安县"
-    },
-    {
-      "id": 127,
-      "district": "东方"
-    },
-    {
-      "id": 137,
-      "district": "儋州"
-    },
-    {
-      "id": 168,
-      "district": "大庆"
-    },
-    {
-      "id": 169,
-      "district": "大兴安岭"
-    },
-    {
-      "id": 245,
-      "district": "大连"
-    },
-    {
-      "id": 249,
-      "district": "丹东"
-    },
-    {
-      "id": 286,
-      "district": "德州"
-    },
-    {
-      "id": 287,
-      "district": "东营"
-    },
-    {
-      "id": 302,
-      "district": "大同"
-    },
-    {
-      "id": 326,
-      "district": "达州"
-    },
-    {
-      "id": 327,
-      "district": "德阳"
-    },
-    {
-      "id": 373,
-      "district": "大理"
-    },
-    {
-      "id": 374,
-      "district": "德宏"
-    },
-    {
-      "id": 375,
-      "district": "迪庆"
-    },
-    {
-      "id": 3430,
-      "district": "东盖村"
-    },
-    {
-      "id": 3427,
-      "district": "第什营乡"
-    }
-  ],
-  "charE": [
-    {
-      "id": 182,
-      "district": "鄂州"
-    },
-    {
-      "id": 196,
-      "district": "恩施"
-    },
-    {
-      "id": 263,
-      "district": "鄂尔多斯"
-    }
-  ],
-  "charF": [
-    {
-      "id": 41,
-      "district": "阜阳"
-    },
-    {
-      "id": 53,
-      "district": "福州"
-    },
-    {
-      "id": 80,
-      "district": "佛山"
-    },
-    {
-      "id": 102,
-      "district": "防城港"
-    },
-    {
-      "id": 234,
-      "district": "抚州"
-    },
-    {
-      "id": 250,
-      "district": "抚顺"
-    },
-    {
-      "id": 251,
-      "district": "阜新"
-    }
-  ],
-  "charG": [
-    {
-      "id": 65,
-      "district": "甘南"
-    },
-    {
-      "id": 76,
-      "district": "广州"
-    },
-    {
-      "id": 98,
-      "district": "桂林"
-    },
-    {
-      "id": 103,
-      "district": "贵港"
-    },
-    {
-      "id": 111,
-      "district": "贵阳"
-    },
-    {
-      "id": 235,
-      "district": "赣州"
-    },
-    {
-      "id": 271,
-      "district": "固原"
-    },
-    {
-      "id": 276,
-      "district": "果洛"
-    },
-    {
-      "id": 328,
-      "district": "甘孜"
-    },
-    {
-      "id": 329,
-      "district": "广安"
-    },
-    {
-      "id": 330,
-      "district": "广元"
-    }
-  ],
-  "charH": [
-    {
-      "id": 42,
-      "district": "淮北"
-    },
-    {
-      "id": 43,
-      "district": "淮南"
-    },
-    {
-      "id": 44,
-      "district": "黄山"
-    },
-    {
-      "id": 81,
-      "district": "河源"
-    },
-    {
-      "id": 82,
-      "district": "惠州"
-    },
-    {
-      "id": 104,
-      "district": "河池"
-    },
-    {
-      "id": 105,
-      "district": "贺州"
-    },
-    {
-      "id": 120,
-      "district": "海口"
-    },
-    {
-      "id": 142,
-      "district": "邯郸"
-    },
-    {
-      "id": 143,
-      "district": "衡水"
-    },
-    {
-      "id": 153,
-      "district": "鹤壁"
-    },
-    {
-      "id": 167,
-      "district": "哈尔滨"
-    },
-    {
-      "id": 170,
-      "district": "鹤岗"
-    },
-    {
-      "id": 171,
-      "district": "黑河"
-    },
-    {
-      "id": 183,
-      "district": "黄冈"
-    },
-    {
-      "id": 184,
-      "district": "黄石"
-    },
-    {
-      "id": 201,
-      "district": "衡阳"
-    },
-    {
-      "id": 202,
-      "district": "怀化"
-    },
-    {
-      "id": 224,
-      "district": "淮安"
-    },
-    {
-      "id": 252,
-      "district": "葫芦岛"
-    },
-    {
-      "id": 258,
-      "district": "呼和浩特"
-    },
-    {
-      "id": 264,
-      "district": "呼伦贝尔"
-    },
-    {
-      "id": 277,
-      "district": "海北"
-    },
-    {
-      "id": 278,
-      "district": "海东"
-    },
-    {
-      "id": 279,
-      "district": "海南"
-    },
-    {
-      "id": 280,
-      "district": "海西"
-    },
-    {
-      "id": 281,
-      "district": "黄南"
-    },
-    {
-      "id": 288,
-      "district": "菏泽"
-    },
-    {
-      "id": 314,
-      "district": "汉中"
-    },
-    {
-      "id": 357,
-      "district": "哈密"
-    },
-    {
-      "id": 358,
-      "district": "和田"
-    },
-    {
-      "id": 376,
-      "district": "红河"
-    },
-    {
-      "id": 383,
-      "district": "杭州"
-    },
-    {
-      "id": 384,
-      "district": "湖州"
-    },
-    {
-      "id": 3401,
-      "district": "合肥"
-    }
-  ],
-  "charJ": [
-    {
-      "id": 66,
-      "district": "嘉峪关"
-    },
-    {
-      "id": 67,
-      "district": "金昌"
-    },
-    {
-      "id": 68,
-      "district": "酒泉"
-    },
-    {
-      "id": 83,
-      "district": "江门"
-    },
-    {
-      "id": 84,
-      "district": "揭阳"
-    },
-    {
-      "id": 154,
-      "district": "济源"
-    },
-    {
-      "id": 155,
-      "district": "焦作"
-    },
-    {
-      "id": 172,
-      "district": "鸡西"
-    },
-    {
-      "id": 173,
-      "district": "佳木斯"
-    },
-    {
-      "id": 185,
-      "district": "荆门"
-    },
-    {
-      "id": 186,
-      "district": "荆州"
-    },
-    {
-      "id": 212,
-      "district": "吉林"
-    },
-    {
-      "id": 236,
-      "district": "吉安"
-    },
-    {
-      "id": 237,
-      "district": "景德镇"
-    },
-    {
-      "id": 238,
-      "district": "九江"
-    },
-    {
-      "id": 253,
-      "district": "锦州"
-    },
-    {
-      "id": 283,
-      "district": "济南"
-    },
-    {
-      "id": 289,
-      "district": "济宁"
-    },
-    {
-      "id": 303,
-      "district": "晋城"
-    },
-    {
-      "id": 304,
-      "district": "晋中"
-    },
-    {
-      "id": 385,
-      "district": "嘉兴"
-    },
-    {
-      "id": 386,
-      "district": "金华"
-    }
-  ],
-  "charK": [
-    {
-      "id": 151,
-      "district": "开封"
-    },
-    {
-      "id": 359,
-      "district": "喀什"
-    },
-    {
-      "id": 360,
-      "district": "克拉玛依"
-    },
-    {
-      "id": 361,
-      "district": "克孜勒苏"
-    },
-    {
-      "id": 367,
-      "district": "昆明"
-    },
-    {
-      "id": 3428,
-      "district": "康家洼村"
-    }
-  ],
-  "charL": [
-    {
-      "id": 45,
-      "district": "六安"
-    },
-    {
-      "id": 54,
-      "district": "龙岩"
-    },
-    {
-      "id": 62,
-      "district": "兰州"
-    },
-    {
-      "id": 69,
-      "district": "临夏"
-    },
-    {
-      "id": 70,
-      "district": "陇南"
-    },
-    {
-      "id": 106,
-      "district": "来宾"
-    },
-    {
-      "id": 107,
-      "district": "柳州"
-    },
-    {
-      "id": 114,
-      "district": "六盘水"
-    },
-    {
-      "id": 128,
-      "district": "乐东"
-    },
-    {
-      "id": 129,
-      "district": "临高县"
-    },
-    {
-      "id": 130,
-      "district": "陵水"
-    },
-    {
-      "id": 144,
-      "district": "廊坊"
-    },
-    {
-      "id": 150,
-      "district": "洛阳"
-    },
-    {
-      "id": 203,
-      "district": "娄底"
-    },
-    {
-      "id": 215,
-      "district": "辽源"
-    },
-    {
-      "id": 225,
-      "district": "连云港"
-    },
-    {
-      "id": 254,
-      "district": "辽阳"
-    },
-    {
-      "id": 290,
-      "district": "莱芜"
-    },
-    {
-      "id": 291,
-      "district": "聊城"
-    },
-    {
-      "id": 292,
-      "district": "临沂"
-    },
-    {
-      "id": 305,
-      "district": "临汾"
-    },
-    {
-      "id": 306,
-      "district": "吕梁"
-    },
-    {
-      "id": 331,
-      "district": "乐山"
-    },
-    {
-      "id": 332,
-      "district": "凉山"
-    },
-    {
-      "id": 342,
-      "district": "泸州"
-    },
-    {
-      "id": 344,
-      "district": "拉萨"
-    },
-    {
-      "id": 347,
-      "district": "林芝"
-    },
-    {
-      "id": 370,
-      "district": "丽江"
-    },
-    {
-      "id": 377,
-      "district": "临沧"
-    },
-    {
-      "id": 387,
-      "district": "丽水"
-    }
-  ],
-  "charM": [
-    {
-      "id": 46,
-      "district": "马鞍山"
-    },
-    {
-      "id": 85,
-      "district": "茂名"
-    },
-    {
-      "id": 86,
-      "district": "梅州"
-    },
-    {
-      "id": 174,
-      "district": "牡丹江"
-    },
-    {
-      "id": 323,
-      "district": "绵阳"
-    },
-    {
-      "id": 333,
-      "district": "眉山"
-    }
-  ],
-  "charN": [
-    {
-      "id": 55,
-      "district": "南平"
-    },
-    {
-      "id": 56,
-      "district": "宁德"
-    },
-    {
-      "id": 97,
-      "district": "南宁"
-    },
-    {
-      "id": 156,
-      "district": "南阳"
-    },
-    {
-      "id": 220,
-      "district": "南京"
-    },
-    {
-      "id": 226,
-      "district": "南通"
-    },
-    {
-      "id": 233,
-      "district": "南昌"
-    },
-    {
-      "id": 334,
-      "district": "南充"
-    },
-    {
-      "id": 335,
-      "district": "内江"
-    },
-    {
-      "id": 348,
-      "district": "那曲"
-    },
-    {
-      "id": 368,
-      "district": "怒江"
-    },
-    {
-      "id": 388,
-      "district": "宁波"
-    }
-  ],
-  "charP": [
-    {
-      "id": 57,
-      "district": "莆田"
-    },
-    {
-      "id": 71,
-      "district": "平凉"
-    },
-    {
-      "id": 157,
-      "district": "平顶山"
-    },
-    {
-      "id": 166,
-      "district": "濮阳"
-    },
-    {
-      "id": 239,
-      "district": "萍乡"
-    },
-    {
-      "id": 255,
-      "district": "盘锦"
-    },
-    {
-      "id": 336,
-      "district": "攀枝花"
-    },
-    {
-      "id": 369,
-      "district": "普洱"
-    }
-  ],
-  "charQ": [
-    {
-      "id": 58,
-      "district": "泉州"
-    },
-    {
-      "id": 72,
-      "district": "庆阳"
-    },
-    {
-      "id": 87,
-      "district": "清远"
-    },
-    {
-      "id": 108,
-      "district": "钦州"
-    },
-    {
-      "id": 115,
-      "district": "黔东南"
-    },
-    {
-      "id": 116,
-      "district": "黔南"
-    },
-    {
-      "id": 117,
-      "district": "黔西南"
-    },
-    {
-      "id": 131,
-      "district": "琼海"
-    },
-    {
-      "id": 132,
-      "district": "琼中"
-    },
-    {
-      "id": 145,
-      "district": "秦皇岛"
-    },
-    {
-      "id": 175,
-      "district": "七台河"
-    },
-    {
-      "id": 176,
-      "district": "齐齐哈尔"
-    },
-    {
-      "id": 187,
-      "district": "潜江"
-    },
-    {
-      "id": 284,
-      "district": "青岛"
-    },
-    {
-      "id": 378,
-      "district": "曲靖"
-    },
-    {
-      "id": 393,
-      "district": "衢州"
-    }
-  ],
-  "charR": [
-    {
-      "id": 293,
-      "district": "日照"
-    },
-    {
-      "id": 349,
-      "district": "日喀则"
-    }
-  ],
-  "charS": [
-    {
-      "id": 47,
-      "district": "宿州"
-    },
-    {
-      "id": 59,
-      "district": "三明"
-    },
-    {
-      "id": 77,
-      "district": "深圳"
-    },
-    {
-      "id": 88,
-      "district": "汕头"
-    },
-    {
-      "id": 89,
-      "district": "汕尾"
-    },
-    {
-      "id": 90,
-      "district": "韶关"
-    },
-    {
-      "id": 121,
-      "district": "三亚"
-    },
-    {
-      "id": 138,
-      "district": "石家庄"
-    },
-    {
-      "id": 158,
-      "district": "三门峡"
-    },
-    {
-      "id": 159,
-      "district": "商丘"
-    },
-    {
-      "id": 177,
-      "district": "双鸭山"
-    },
-    {
-      "id": 178,
-      "district": "绥化"
-    },
-    {
-      "id": 188,
-      "district": "神农架林区"
-    },
-    {
-      "id": 189,
-      "district": "十堰"
-    },
-    {
-      "id": 190,
-      "district": "随州"
-    },
-    {
-      "id": 204,
-      "district": "邵阳"
-    },
-    {
-      "id": 216,
-      "district": "四平"
-    },
-    {
-      "id": 217,
-      "district": "松原"
-    },
-    {
-      "id": 221,
-      "district": "苏州"
-    },
-    {
-      "id": 227,
-      "district": "宿迁"
-    },
-    {
-      "id": 240,
-      "district": "上饶"
-    },
-    {
-      "id": 244,
-      "district": "沈阳"
-    },
-    {
-      "id": 272,
-      "district": "石嘴山"
-    },
-    {
-      "id": 307,
-      "district": "朔州"
-    },
-    {
-      "id": 315,
-      "district": "商洛"
-    },
-    {
-      "id": 321,
-      "district": "上海"
-    },
-    {
-      "id": 337,
-      "district": "遂宁"
-    },
-    {
-      "id": 350,
-      "district": "山南"
-    },
-    {
-      "id": 362,
-      "district": "石河子"
-    },
-    {
-      "id": 389,
-      "district": "绍兴"
-    },
-    {
-      "id": 3431,
-      "district": "圣佛堂村"
-    }
-  ],
-  "charT": [
-    {
-      "id": 48,
-      "district": "铜陵"
-    },
-    {
-      "id": 73,
-      "district": "天水"
-    },
-    {
-      "id": 118,
-      "district": "铜仁"
-    },
-    {
-      "id": 133,
-      "district": "屯昌县"
-    },
-    {
-      "id": 146,
-      "district": "唐山"
-    },
-    {
-      "id": 165,
-      "district": "漯河"
-    },
-    {
-      "id": 191,
-      "district": "天门"
-    },
-    {
-      "id": 218,
-      "district": "通化"
-    },
-    {
-      "id": 228,
-      "district": "泰州"
-    },
-    {
-      "id": 256,
-      "district": "铁岭"
-    },
-    {
-      "id": 265,
-      "district": "通辽"
-    },
-    {
-      "id": 294,
-      "district": "泰安"
-    },
-    {
-      "id": 300,
-      "district": "太原"
-    },
-    {
-      "id": 316,
-      "district": "铜川"
-    },
-    {
-      "id": 343,
-      "district": "天津"
-    },
-    {
-      "id": 363,
-      "district": "图木舒克"
-    },
-    {
-      "id": 364,
-      "district": "吐鲁番"
-    },
-    {
-      "id": 390,
-      "district": "台州"
-    }
-  ],
-  "charW": [
-    {
-      "id": 49,
-      "district": "芜湖"
-    },
-    {
-      "id": 74,
-      "district": "武威"
-    },
-    {
-      "id": 109,
-      "district": "梧州"
-    },
-    {
-      "id": 134,
-      "district": "万宁"
-    },
-    {
-      "id": 135,
-      "district": "文昌"
-    },
-    {
-      "id": 136,
-      "district": "五指山"
-    },
-    {
-      "id": 180,
-      "district": "武汉"
-    },
-    {
-      "id": 222,
-      "district": "无锡"
-    },
-    {
-      "id": 266,
-      "district": "乌海"
-    },
-    {
-      "id": 267,
-      "district": "乌兰察布市"
-    },
-    {
-      "id": 273,
-      "district": "吴忠"
-    },
-    {
-      "id": 295,
-      "district": "威海"
-    },
-    {
-      "id": 296,
-      "district": "潍坊"
-    },
-    {
-      "id": 317,
-      "district": "渭南"
-    },
-    {
-      "id": 351,
-      "district": "乌鲁木齐"
-    },
-    {
-      "id": 365,
-      "district": "五家渠"
-    },
-    {
-      "id": 379,
-      "district": "文山"
-    },
-    {
-      "id": 391,
-      "district": "温州"
-    }
-  ],
-  "charX": [
-    {
-      "id": 50,
-      "district": "宣城"
-    },
-    {
-      "id": 60,
-      "district": "厦门"
-    },
-    {
-      "id": 147,
-      "district": "邢台"
-    },
-    {
-      "id": 160,
-      "district": "新乡"
-    },
-    {
-      "id": 161,
-      "district": "信阳"
-    },
-    {
-      "id": 162,
-      "district": "许昌"
-    },
-    {
-      "id": 181,
-      "district": "仙桃"
-    },
-    {
-      "id": 192,
-      "district": "咸宁"
-    },
-    {
-      "id": 193,
-      "district": "襄樊"
-    },
-    {
-      "id": 194,
-      "district": "孝感"
-    },
-    {
-      "id": 205,
-      "district": "湘潭"
-    },
-    {
-      "id": 206,
-      "district": "湘西"
-    },
-    {
-      "id": 229,
-      "district": "徐州"
-    },
-    {
-      "id": 241,
-      "district": "新余"
-    },
-    {
-      "id": 268,
-      "district": "锡林郭勒盟"
-    },
-    {
-      "id": 269,
-      "district": "兴安盟"
-    },
-    {
-      "id": 275,
-      "district": "西宁"
-    },
-    {
-      "id": 308,
-      "district": "忻州"
-    },
-    {
-      "id": 311,
-      "district": "西安"
-    },
-    {
-      "id": 318,
-      "district": "咸阳"
-    },
-    {
-      "id": 380,
-      "district": "西双版纳"
-    },
-    {
-      "id": 395,
-      "district": "香港"
-    },
-    {
-      "id": 3429,
-      "district": "西盖村"
-    }
-  ],
-  "charY": [
-    {
-      "id": 91,
-      "district": "阳江"
-    },
-    {
-      "id": 92,
-      "district": "云浮"
-    },
-    {
-      "id": 110,
-      "district": "玉林"
-    },
-    {
-      "id": 179,
-      "district": "伊春"
-    },
-    {
-      "id": 195,
-      "district": "宜昌"
-    },
-    {
-      "id": 207,
-      "district": "益阳"
-    },
-    {
-      "id": 208,
-      "district": "永州"
-    },
-    {
-      "id": 209,
-      "district": "岳阳"
-    },
-    {
-      "id": 219,
-      "district": "延边"
-    },
-    {
-      "id": 230,
-      "district": "盐城"
-    },
-    {
-      "id": 231,
-      "district": "扬州"
-    },
-    {
-      "id": 242,
-      "district": "宜春"
-    },
-    {
-      "id": 243,
-      "district": "鹰潭"
-    },
-    {
-      "id": 257,
-      "district": "营口"
-    },
-    {
-      "id": 270,
-      "district": "银川"
-    },
-    {
-      "id": 282,
-      "district": "玉树"
-    },
-    {
-      "id": 297,
-      "district": "烟台"
-    },
-    {
-      "id": 309,
-      "district": "阳泉"
-    },
-    {
-      "id": 310,
-      "district": "运城"
-    },
-    {
-      "id": 319,
-      "district": "延安"
-    },
-    {
-      "id": 320,
-      "district": "榆林"
-    },
-    {
-      "id": 338,
-      "district": "雅安"
-    },
-    {
-      "id": 339,
-      "district": "宜宾"
-    },
-    {
-      "id": 366,
-      "district": "伊犁"
-    },
-    {
-      "id": 381,
-      "district": "玉溪"
-    }
-  ],
-  "charZ": [
-    {
-      "id": 61,
-      "district": "漳州"
-    },
-    {
-      "id": 75,
-      "district": "张掖"
-    },
-    {
-      "id": 93,
-      "district": "湛江"
-    },
-    {
-      "id": 94,
-      "district": "肇庆"
-    },
-    {
-      "id": 95,
-      "district": "中山"
-    },
-    {
-      "id": 96,
-      "district": "珠海"
-    },
-    {
-      "id": 119,
-      "district": "遵义"
-    },
-    {
-      "id": 148,
-      "district": "张家口"
-    },
-    {
-      "id": 149,
-      "district": "郑州"
-    },
-    {
-      "id": 163,
-      "district": "周口"
-    },
-    {
-      "id": 164,
-      "district": "驻马店"
-    },
-    {
-      "id": 198,
-      "district": "张家界"
-    },
-    {
-      "id": 210,
-      "district": "株洲"
-    },
-    {
-      "id": 232,
-      "district": "镇江"
-    },
-    {
-      "id": 248,
-      "district": "朝阳"
-    },
-    {
-      "id": 274,
-      "district": "中卫"
-    },
-    {
-      "id": 298,
-      "district": "枣庄"
-    },
-    {
-      "id": 299,
-      "district": "淄博"
-    },
-    {
-      "id": 301,
-      "district": "长治"
-    },
-    {
-      "id": 340,
-      "district": "资阳"
-    },
-    {
-      "id": 341,
-      "district": "自贡"
-    },
-    {
-      "id": 382,
-      "district": "昭通"
-    },
-    {
-      "id": 392,
-      "district": "舟山"
-    }
-  ]
-}
+[
+  {
+    "sign": "一线/新一线",
+    "city": [
+      {
+        "id": 52,
+        "district": "北京"
+      },
+      {
+        "id": 321,
+        "district": "上海"
+      },
+      {
+        "id": 76,
+        "district": "广州"
+      },
+      {
+        "id": 77,
+        "district": "深圳"
+      },
+      {
+        "id": 322,
+        "district": "成都"
+      },
+      {
+        "id": 394,
+        "district": "重庆"
+      },
+      {
+        "id": 383,
+        "district": "杭州"
+      },
+      {
+        "id": 311,
+        "district": "西安"
+      },
+      {
+        "id": 180,
+        "district": "武汉"
+      },
+      {
+        "id": 221,
+        "district": "苏州"
+      },
+      {
+        "id": 149,
+        "district": "郑州"
+      },
+      {
+        "id": 220,
+        "district": "南京"
+      },
+      {
+        "id": 343,
+        "district": "天津"
+      },
+      {
+        "id": 197,
+        "district": "长沙"
+      },
+      {
+        "id": 79,
+        "district": "东莞"
+      },
+      {
+        "id": 388,
+        "district": "宁波"
+      },
+      {
+        "id": 80,
+        "district": "佛山"
+      },
+      {
+        "id": 3401,
+        "district": "合肥"
+      },
+      {
+        "id": 284,
+        "district": "青岛"
+      }
+    ]
+  },
+  {
+    "sign": "二线城市",
+    "city": [
+      {
+        "id": 367,
+        "district": "昆明"
+      },
+      {
+        "id": 244,
+        "district": "沈阳"
+      },
+      {
+        "id": 283,
+        "district": "济南"
+      },
+      {
+        "id": 222,
+        "district": "无锡"
+      },
+      {
+        "id": 60,
+        "district": "厦门"
+      },
+      {
+        "id": 53,
+        "district": "福州"
+      },
+      {
+        "id": 391,
+        "district": "温州"
+      },
+      {
+        "id": 386,
+        "district": "金华"
+      },
+      {
+        "id": 167,
+        "district": "哈尔滨"
+      },
+      {
+        "id": 245,
+        "district": "大连"
+      },
+      {
+        "id": 111,
+        "district": "贵阳"
+      },
+      {
+        "id": 97,
+        "district": "南宁"
+      },
+      {
+        "id": 58,
+        "district": "泉州"
+      },
+      {
+        "id": 138,
+        "district": "石家庄"
+      },
+      {
+        "id": 211,
+        "district": "长春"
+      },
+      {
+        "id": 233,
+        "district": "南昌"
+      },
+      {
+        "id": 284,
+        "district": "惠州"
+      },
+      {
+        "id": 82,
+        "district": "常州"
+      },
+      {
+        "id": 385,
+        "district": "嘉兴"
+      },
+      {
+        "id": 229,
+        "district": "徐州"
+      },
+      {
+        "id": 226,
+        "district": "南通"
+      },
+      {
+        "id": 300,
+        "district": "太原"
+      },
+      {
+        "id": 139,
+        "district": "保定"
+      },
+      {
+        "id": 96,
+        "district": "珠海"
+      },
+      {
+        "id": 95,
+        "district": "中山"
+      },
+      {
+        "id": 62,
+        "district": "兰州"
+      },
+      {
+        "id": 292,
+        "district": "临沂"
+      },
+      {
+        "id": 296,
+        "district": "潍坊"
+      },
+      {
+        "id": 297,
+        "district": "烟台"
+      },
+      {
+        "id": 389,
+        "district": "绍兴"
+      }
+    ]
+  },
+  {
+    "sign": "A",
+    "city": [
+      {
+        "id": 36,
+        "district": "安庆"
+      },
+      {
+        "id": 112,
+        "district": "安顺"
+      },
+      {
+        "id": 152,
+        "district": "安阳"
+      },
+      {
+        "id": 246,
+        "district": "鞍山"
+      },
+      {
+        "id": 259,
+        "district": "阿拉善盟"
+      },
+      {
+        "id": 312,
+        "district": "安康"
+      },
+      {
+        "id": 324,
+        "district": "阿坝"
+      },
+      {
+        "id": 345,
+        "district": "阿里"
+      },
+      {
+        "id": 352,
+        "district": "阿克苏"
+      },
+      {
+        "id": 353,
+        "district": "阿拉尔"
+      },
+      {
+        "id": 396,
+        "district": "澳门"
+      }
+    ]
+  },
+  {
+    "sign": "B",
+    "city": [
+      {
+        "id": 37,
+        "district": "蚌埠"
+      },
+      {
+        "id": 51,
+        "district": "亳州"
+      },
+      {
+        "id": 52,
+        "district": "北京"
+      },
+      {
+        "id": 63,
+        "district": "白银"
+      },
+      {
+        "id": 99,
+        "district": "百色"
+      },
+      {
+        "id": 100,
+        "district": "北海"
+      },
+      {
+        "id": 113,
+        "district": "毕节"
+      },
+      {
+        "id": 122,
+        "district": "白沙"
+      },
+      {
+        "id": 123,
+        "district": "保亭"
+      },
+      {
+        "id": 139,
+        "district": "保定"
+      },
+      {
+        "id": 213,
+        "district": "白城"
+      },
+      {
+        "id": 214,
+        "district": "白山"
+      },
+      {
+        "id": 247,
+        "district": "本溪"
+      },
+      {
+        "id": 260,
+        "district": "巴彦淖尔盟"
+      },
+      {
+        "id": 261,
+        "district": "包头"
+      },
+      {
+        "id": 285,
+        "district": "滨州"
+      },
+      {
+        "id": 313,
+        "district": "宝鸡"
+      },
+      {
+        "id": 325,
+        "district": "巴中"
+      },
+      {
+        "id": 354,
+        "district": "巴音郭楞"
+      },
+      {
+        "id": 355,
+        "district": "博尔塔拉"
+      },
+      {
+        "id": 371,
+        "district": "保山"
+      }
+    ]
+  },
+  {
+    "sign": "C",
+    "city": [
+      {
+        "id": 38,
+        "district": "巢湖"
+      },
+      {
+        "id": 39,
+        "district": "池州"
+      },
+      {
+        "id": 40,
+        "district": "滁州"
+      },
+      {
+        "id": 78,
+        "district": "潮州"
+      },
+      {
+        "id": 101,
+        "district": "崇左"
+      },
+      {
+        "id": 124,
+        "district": "昌江"
+      },
+      {
+        "id": 125,
+        "district": "澄迈县"
+      },
+      {
+        "id": 140,
+        "district": "沧州"
+      },
+      {
+        "id": 141,
+        "district": "承德"
+      },
+      {
+        "id": 197,
+        "district": "长沙"
+      },
+      {
+        "id": 199,
+        "district": "常德"
+      },
+      {
+        "id": 200,
+        "district": "郴州"
+      },
+      {
+        "id": 211,
+        "district": "长春"
+      },
+      {
+        "id": 223,
+        "district": "常州"
+      },
+      {
+        "id": 262,
+        "district": "赤峰"
+      },
+      {
+        "id": 322,
+        "district": "成都"
+      },
+      {
+        "id": 346,
+        "district": "昌都"
+      },
+      {
+        "id": 356,
+        "district": "昌吉"
+      },
+      {
+        "id": 372,
+        "district": "楚雄"
+      },
+      {
+        "id": 394,
+        "district": "重庆"
+      }
+    ]
+  },
+  {
+    "sign": "D",
+    "city": [
+      {
+        "id": 64,
+        "district": "定西"
+      },
+      {
+        "id": 79,
+        "district": "东莞"
+      },
+      {
+        "id": 126,
+        "district": "定安县"
+      },
+      {
+        "id": 127,
+        "district": "东方"
+      },
+      {
+        "id": 137,
+        "district": "儋州"
+      },
+      {
+        "id": 168,
+        "district": "大庆"
+      },
+      {
+        "id": 169,
+        "district": "大兴安岭"
+      },
+      {
+        "id": 245,
+        "district": "大连"
+      },
+      {
+        "id": 249,
+        "district": "丹东"
+      },
+      {
+        "id": 286,
+        "district": "德州"
+      },
+      {
+        "id": 287,
+        "district": "东营"
+      },
+      {
+        "id": 302,
+        "district": "大同"
+      },
+      {
+        "id": 326,
+        "district": "达州"
+      },
+      {
+        "id": 327,
+        "district": "德阳"
+      },
+      {
+        "id": 373,
+        "district": "大理"
+      },
+      {
+        "id": 374,
+        "district": "德宏"
+      },
+      {
+        "id": 375,
+        "district": "迪庆"
+      },
+      {
+        "id": 3430,
+        "district": "东盖村"
+      },
+      {
+        "id": 3427,
+        "district": "第什营乡"
+      }
+    ]
+  },
+  {
+    "sign": "E",
+    "city": [
+      {
+        "id": 182,
+        "district": "鄂州"
+      },
+      {
+        "id": 196,
+        "district": "恩施"
+      },
+      {
+        "id": 263,
+        "district": "鄂尔多斯"
+      }
+    ]
+  },
+  {
+    "sign": "F",
+    "city": [
+      {
+        "id": 41,
+        "district": "阜阳"
+      },
+      {
+        "id": 53,
+        "district": "福州"
+      },
+      {
+        "id": 80,
+        "district": "佛山"
+      },
+      {
+        "id": 102,
+        "district": "防城港"
+      },
+      {
+        "id": 234,
+        "district": "抚州"
+      },
+      {
+        "id": 250,
+        "district": "抚顺"
+      },
+      {
+        "id": 251,
+        "district": "阜新"
+      }
+    ]
+  },
+  {
+    "sign": "G",
+    "city": [
+      {
+        "id": 65,
+        "district": "甘南"
+      },
+      {
+        "id": 76,
+        "district": "广州"
+      },
+      {
+        "id": 98,
+        "district": "桂林"
+      },
+      {
+        "id": 103,
+        "district": "贵港"
+      },
+      {
+        "id": 111,
+        "district": "贵阳"
+      },
+      {
+        "id": 235,
+        "district": "赣州"
+      },
+      {
+        "id": 271,
+        "district": "固原"
+      },
+      {
+        "id": 276,
+        "district": "果洛"
+      },
+      {
+        "id": 328,
+        "district": "甘孜"
+      },
+      {
+        "id": 329,
+        "district": "广安"
+      },
+      {
+        "id": 330,
+        "district": "广元"
+      }
+    ]
+  },
+  {
+    "sign": "H",
+    "city": [
+      {
+        "id": 42,
+        "district": "淮北"
+      },
+      {
+        "id": 43,
+        "district": "淮南"
+      },
+      {
+        "id": 44,
+        "district": "黄山"
+      },
+      {
+        "id": 81,
+        "district": "河源"
+      },
+      {
+        "id": 82,
+        "district": "惠州"
+      },
+      {
+        "id": 104,
+        "district": "河池"
+      },
+      {
+        "id": 105,
+        "district": "贺州"
+      },
+      {
+        "id": 120,
+        "district": "海口"
+      },
+      {
+        "id": 142,
+        "district": "邯郸"
+      },
+      {
+        "id": 143,
+        "district": "衡水"
+      },
+      {
+        "id": 153,
+        "district": "鹤壁"
+      },
+      {
+        "id": 167,
+        "district": "哈尔滨"
+      },
+      {
+        "id": 170,
+        "district": "鹤岗"
+      },
+      {
+        "id": 171,
+        "district": "黑河"
+      },
+      {
+        "id": 183,
+        "district": "黄冈"
+      },
+      {
+        "id": 184,
+        "district": "黄石"
+      },
+      {
+        "id": 201,
+        "district": "衡阳"
+      },
+      {
+        "id": 202,
+        "district": "怀化"
+      },
+      {
+        "id": 224,
+        "district": "淮安"
+      },
+      {
+        "id": 252,
+        "district": "葫芦岛"
+      },
+      {
+        "id": 258,
+        "district": "呼和浩特"
+      },
+      {
+        "id": 264,
+        "district": "呼伦贝尔"
+      },
+      {
+        "id": 277,
+        "district": "海北"
+      },
+      {
+        "id": 278,
+        "district": "海东"
+      },
+      {
+        "id": 279,
+        "district": "海南"
+      },
+      {
+        "id": 280,
+        "district": "海西"
+      },
+      {
+        "id": 281,
+        "district": "黄南"
+      },
+      {
+        "id": 288,
+        "district": "菏泽"
+      },
+      {
+        "id": 314,
+        "district": "汉中"
+      },
+      {
+        "id": 357,
+        "district": "哈密"
+      },
+      {
+        "id": 358,
+        "district": "和田"
+      },
+      {
+        "id": 376,
+        "district": "红河"
+      },
+      {
+        "id": 383,
+        "district": "杭州"
+      },
+      {
+        "id": 384,
+        "district": "湖州"
+      },
+      {
+        "id": 3401,
+        "district": "合肥"
+      }
+    ]
+  },
+  {
+    "sign": "J",
+    "city": [
+      {
+        "id": 66,
+        "district": "嘉峪关"
+      },
+      {
+        "id": 67,
+        "district": "金昌"
+      },
+      {
+        "id": 68,
+        "district": "酒泉"
+      },
+      {
+        "id": 83,
+        "district": "江门"
+      },
+      {
+        "id": 84,
+        "district": "揭阳"
+      },
+      {
+        "id": 154,
+        "district": "济源"
+      },
+      {
+        "id": 155,
+        "district": "焦作"
+      },
+      {
+        "id": 172,
+        "district": "鸡西"
+      },
+      {
+        "id": 173,
+        "district": "佳木斯"
+      },
+      {
+        "id": 185,
+        "district": "荆门"
+      },
+      {
+        "id": 186,
+        "district": "荆州"
+      },
+      {
+        "id": 212,
+        "district": "吉林"
+      },
+      {
+        "id": 236,
+        "district": "吉安"
+      },
+      {
+        "id": 237,
+        "district": "景德镇"
+      },
+      {
+        "id": 238,
+        "district": "九江"
+      },
+      {
+        "id": 253,
+        "district": "锦州"
+      },
+      {
+        "id": 283,
+        "district": "济南"
+      },
+      {
+        "id": 289,
+        "district": "济宁"
+      },
+      {
+        "id": 303,
+        "district": "晋城"
+      },
+      {
+        "id": 304,
+        "district": "晋中"
+      },
+      {
+        "id": 385,
+        "district": "嘉兴"
+      },
+      {
+        "id": 386,
+        "district": "金华"
+      }
+    ]
+  },
+  {
+    "sign": "K",
+    "city": [
+      {
+        "id": 151,
+        "district": "开封"
+      },
+      {
+        "id": 359,
+        "district": "喀什"
+      },
+      {
+        "id": 360,
+        "district": "克拉玛依"
+      },
+      {
+        "id": 361,
+        "district": "克孜勒苏"
+      },
+      {
+        "id": 367,
+        "district": "昆明"
+      },
+      {
+        "id": 3428,
+        "district": "康家洼村"
+      }
+    ]
+  },
+  {
+    "sign": "L",
+    "city": [
+      {
+        "id": 45,
+        "district": "六安"
+      },
+      {
+        "id": 54,
+        "district": "龙岩"
+      },
+      {
+        "id": 62,
+        "district": "兰州"
+      },
+      {
+        "id": 69,
+        "district": "临夏"
+      },
+      {
+        "id": 70,
+        "district": "陇南"
+      },
+      {
+        "id": 106,
+        "district": "来宾"
+      },
+      {
+        "id": 107,
+        "district": "柳州"
+      },
+      {
+        "id": 114,
+        "district": "六盘水"
+      },
+      {
+        "id": 128,
+        "district": "乐东"
+      },
+      {
+        "id": 129,
+        "district": "临高县"
+      },
+      {
+        "id": 130,
+        "district": "陵水"
+      },
+      {
+        "id": 144,
+        "district": "廊坊"
+      },
+      {
+        "id": 150,
+        "district": "洛阳"
+      },
+      {
+        "id": 203,
+        "district": "娄底"
+      },
+      {
+        "id": 215,
+        "district": "辽源"
+      },
+      {
+        "id": 225,
+        "district": "连云港"
+      },
+      {
+        "id": 254,
+        "district": "辽阳"
+      },
+      {
+        "id": 290,
+        "district": "莱芜"
+      },
+      {
+        "id": 291,
+        "district": "聊城"
+      },
+      {
+        "id": 292,
+        "district": "临沂"
+      },
+      {
+        "id": 305,
+        "district": "临汾"
+      },
+      {
+        "id": 306,
+        "district": "吕梁"
+      },
+      {
+        "id": 331,
+        "district": "乐山"
+      },
+      {
+        "id": 332,
+        "district": "凉山"
+      },
+      {
+        "id": 342,
+        "district": "泸州"
+      },
+      {
+        "id": 344,
+        "district": "拉萨"
+      },
+      {
+        "id": 347,
+        "district": "林芝"
+      },
+      {
+        "id": 370,
+        "district": "丽江"
+      },
+      {
+        "id": 377,
+        "district": "临沧"
+      },
+      {
+        "id": 387,
+        "district": "丽水"
+      }
+    ]
+  },
+  {
+    "sign": "M",
+    "city": [
+      {
+        "id": 46,
+        "district": "马鞍山"
+      },
+      {
+        "id": 85,
+        "district": "茂名"
+      },
+      {
+        "id": 86,
+        "district": "梅州"
+      },
+      {
+        "id": 174,
+        "district": "牡丹江"
+      },
+      {
+        "id": 323,
+        "district": "绵阳"
+      },
+      {
+        "id": 333,
+        "district": "眉山"
+      }
+    ]
+  },
+  {
+    "sign": "N",
+    "city": [
+      {
+        "id": 55,
+        "district": "南平"
+      },
+      {
+        "id": 56,
+        "district": "宁德"
+      },
+      {
+        "id": 97,
+        "district": "南宁"
+      },
+      {
+        "id": 156,
+        "district": "南阳"
+      },
+      {
+        "id": 220,
+        "district": "南京"
+      },
+      {
+        "id": 226,
+        "district": "南通"
+      },
+      {
+        "id": 233,
+        "district": "南昌"
+      },
+      {
+        "id": 334,
+        "district": "南充"
+      },
+      {
+        "id": 335,
+        "district": "内江"
+      },
+      {
+        "id": 348,
+        "district": "那曲"
+      },
+      {
+        "id": 368,
+        "district": "怒江"
+      },
+      {
+        "id": 388,
+        "district": "宁波"
+      }
+    ]
+  },
+  {
+    "sign": "P",
+    "city": [
+      {
+        "id": 57,
+        "district": "莆田"
+      },
+      {
+        "id": 71,
+        "district": "平凉"
+      },
+      {
+        "id": 157,
+        "district": "平顶山"
+      },
+      {
+        "id": 166,
+        "district": "濮阳"
+      },
+      {
+        "id": 239,
+        "district": "萍乡"
+      },
+      {
+        "id": 255,
+        "district": "盘锦"
+      },
+      {
+        "id": 336,
+        "district": "攀枝花"
+      },
+      {
+        "id": 369,
+        "district": "普洱"
+      }
+    ]
+  },
+  {
+    "sign": "Q",
+    "city": [
+      {
+        "id": 58,
+        "district": "泉州"
+      },
+      {
+        "id": 72,
+        "district": "庆阳"
+      },
+      {
+        "id": 87,
+        "district": "清远"
+      },
+      {
+        "id": 108,
+        "district": "钦州"
+      },
+      {
+        "id": 115,
+        "district": "黔东南"
+      },
+      {
+        "id": 116,
+        "district": "黔南"
+      },
+      {
+        "id": 117,
+        "district": "黔西南"
+      },
+      {
+        "id": 131,
+        "district": "琼海"
+      },
+      {
+        "id": 132,
+        "district": "琼中"
+      },
+      {
+        "id": 145,
+        "district": "秦皇岛"
+      },
+      {
+        "id": 175,
+        "district": "七台河"
+      },
+      {
+        "id": 176,
+        "district": "齐齐哈尔"
+      },
+      {
+        "id": 187,
+        "district": "潜江"
+      },
+      {
+        "id": 284,
+        "district": "青岛"
+      },
+      {
+        "id": 378,
+        "district": "曲靖"
+      },
+      {
+        "id": 393,
+        "district": "衢州"
+      }
+    ]
+  },
+  {
+    "sign": "R",
+    "city": [
+      {
+        "id": 293,
+        "district": "日照"
+      },
+      {
+        "id": 349,
+        "district": "日喀则"
+      }
+    ]
+  },
+  {
+    "sign": "S",
+    "city": [
+      {
+        "id": 47,
+        "district": "宿州"
+      },
+      {
+        "id": 59,
+        "district": "三明"
+      },
+      {
+        "id": 77,
+        "district": "深圳"
+      },
+      {
+        "id": 88,
+        "district": "汕头"
+      },
+      {
+        "id": 89,
+        "district": "汕尾"
+      },
+      {
+        "id": 90,
+        "district": "韶关"
+      },
+      {
+        "id": 121,
+        "district": "三亚"
+      },
+      {
+        "id": 138,
+        "district": "石家庄"
+      },
+      {
+        "id": 158,
+        "district": "三门峡"
+      },
+      {
+        "id": 159,
+        "district": "商丘"
+      },
+      {
+        "id": 177,
+        "district": "双鸭山"
+      },
+      {
+        "id": 178,
+        "district": "绥化"
+      },
+      {
+        "id": 188,
+        "district": "神农架林区"
+      },
+      {
+        "id": 189,
+        "district": "十堰"
+      },
+      {
+        "id": 190,
+        "district": "随州"
+      },
+      {
+        "id": 204,
+        "district": "邵阳"
+      },
+      {
+        "id": 216,
+        "district": "四平"
+      },
+      {
+        "id": 217,
+        "district": "松原"
+      },
+      {
+        "id": 221,
+        "district": "苏州"
+      },
+      {
+        "id": 227,
+        "district": "宿迁"
+      },
+      {
+        "id": 240,
+        "district": "上饶"
+      },
+      {
+        "id": 244,
+        "district": "沈阳"
+      },
+      {
+        "id": 272,
+        "district": "石嘴山"
+      },
+      {
+        "id": 307,
+        "district": "朔州"
+      },
+      {
+        "id": 315,
+        "district": "商洛"
+      },
+      {
+        "id": 321,
+        "district": "上海"
+      },
+      {
+        "id": 337,
+        "district": "遂宁"
+      },
+      {
+        "id": 350,
+        "district": "山南"
+      },
+      {
+        "id": 362,
+        "district": "石河子"
+      },
+      {
+        "id": 389,
+        "district": "绍兴"
+      },
+      {
+        "id": 3431,
+        "district": "圣佛堂村"
+      }
+    ]
+  },
+  {
+    "sign": "T",
+    "city": [
+      {
+        "id": 48,
+        "district": "铜陵"
+      },
+      {
+        "id": 73,
+        "district": "天水"
+      },
+      {
+        "id": 118,
+        "district": "铜仁"
+      },
+      {
+        "id": 133,
+        "district": "屯昌县"
+      },
+      {
+        "id": 146,
+        "district": "唐山"
+      },
+      {
+        "id": 165,
+        "district": "漯河"
+      },
+      {
+        "id": 191,
+        "district": "天门"
+      },
+      {
+        "id": 218,
+        "district": "通化"
+      },
+      {
+        "id": 228,
+        "district": "泰州"
+      },
+      {
+        "id": 256,
+        "district": "铁岭"
+      },
+      {
+        "id": 265,
+        "district": "通辽"
+      },
+      {
+        "id": 294,
+        "district": "泰安"
+      },
+      {
+        "id": 300,
+        "district": "太原"
+      },
+      {
+        "id": 316,
+        "district": "铜川"
+      },
+      {
+        "id": 343,
+        "district": "天津"
+      },
+      {
+        "id": 363,
+        "district": "图木舒克"
+      },
+      {
+        "id": 364,
+        "district": "吐鲁番"
+      },
+      {
+        "id": 390,
+        "district": "台州"
+      }
+    ]
+  },
+  {
+    "sign": "W",
+    "city": [
+      {
+        "id": 49,
+        "district": "芜湖"
+      },
+      {
+        "id": 74,
+        "district": "武威"
+      },
+      {
+        "id": 109,
+        "district": "梧州"
+      },
+      {
+        "id": 134,
+        "district": "万宁"
+      },
+      {
+        "id": 135,
+        "district": "文昌"
+      },
+      {
+        "id": 136,
+        "district": "五指山"
+      },
+      {
+        "id": 180,
+        "district": "武汉"
+      },
+      {
+        "id": 222,
+        "district": "无锡"
+      },
+      {
+        "id": 266,
+        "district": "乌海"
+      },
+      {
+        "id": 267,
+        "district": "乌兰察布市"
+      },
+      {
+        "id": 273,
+        "district": "吴忠"
+      },
+      {
+        "id": 295,
+        "district": "威海"
+      },
+      {
+        "id": 296,
+        "district": "潍坊"
+      },
+      {
+        "id": 317,
+        "district": "渭南"
+      },
+      {
+        "id": 351,
+        "district": "乌鲁木齐"
+      },
+      {
+        "id": 365,
+        "district": "五家渠"
+      },
+      {
+        "id": 379,
+        "district": "文山"
+      },
+      {
+        "id": 391,
+        "district": "温州"
+      }
+    ]
+  },
+  {
+    "sign": "X",
+    "city": [
+      {
+        "id": 50,
+        "district": "宣城"
+      },
+      {
+        "id": 60,
+        "district": "厦门"
+      },
+      {
+        "id": 147,
+        "district": "邢台"
+      },
+      {
+        "id": 160,
+        "district": "新乡"
+      },
+      {
+        "id": 161,
+        "district": "信阳"
+      },
+      {
+        "id": 162,
+        "district": "许昌"
+      },
+      {
+        "id": 181,
+        "district": "仙桃"
+      },
+      {
+        "id": 192,
+        "district": "咸宁"
+      },
+      {
+        "id": 193,
+        "district": "襄樊"
+      },
+      {
+        "id": 194,
+        "district": "孝感"
+      },
+      {
+        "id": 205,
+        "district": "湘潭"
+      },
+      {
+        "id": 206,
+        "district": "湘西"
+      },
+      {
+        "id": 229,
+        "district": "徐州"
+      },
+      {
+        "id": 241,
+        "district": "新余"
+      },
+      {
+        "id": 268,
+        "district": "锡林郭勒盟"
+      },
+      {
+        "id": 269,
+        "district": "兴安盟"
+      },
+      {
+        "id": 275,
+        "district": "西宁"
+      },
+      {
+        "id": 308,
+        "district": "忻州"
+      },
+      {
+        "id": 311,
+        "district": "西安"
+      },
+      {
+        "id": 318,
+        "district": "咸阳"
+      },
+      {
+        "id": 380,
+        "district": "西双版纳"
+      },
+      {
+        "id": 395,
+        "district": "香港"
+      },
+      {
+        "id": 3429,
+        "district": "西盖村"
+      }
+    ]
+  },
+  {
+    "sign": "Y",
+    "city": [
+      {
+        "id": 91,
+        "district": "阳江"
+      },
+      {
+        "id": 92,
+        "district": "云浮"
+      },
+      {
+        "id": 110,
+        "district": "玉林"
+      },
+      {
+        "id": 179,
+        "district": "伊春"
+      },
+      {
+        "id": 195,
+        "district": "宜昌"
+      },
+      {
+        "id": 207,
+        "district": "益阳"
+      },
+      {
+        "id": 208,
+        "district": "永州"
+      },
+      {
+        "id": 209,
+        "district": "岳阳"
+      },
+      {
+        "id": 219,
+        "district": "延边"
+      },
+      {
+        "id": 230,
+        "district": "盐城"
+      },
+      {
+        "id": 231,
+        "district": "扬州"
+      },
+      {
+        "id": 242,
+        "district": "宜春"
+      },
+      {
+        "id": 243,
+        "district": "鹰潭"
+      },
+      {
+        "id": 257,
+        "district": "营口"
+      },
+      {
+        "id": 270,
+        "district": "银川"
+      },
+      {
+        "id": 282,
+        "district": "玉树"
+      },
+      {
+        "id": 297,
+        "district": "烟台"
+      },
+      {
+        "id": 309,
+        "district": "阳泉"
+      },
+      {
+        "id": 310,
+        "district": "运城"
+      },
+      {
+        "id": 319,
+        "district": "延安"
+      },
+      {
+        "id": 320,
+        "district": "榆林"
+      },
+      {
+        "id": 338,
+        "district": "雅安"
+      },
+      {
+        "id": 339,
+        "district": "宜宾"
+      },
+      {
+        "id": 366,
+        "district": "伊犁"
+      },
+      {
+        "id": 381,
+        "district": "玉溪"
+      }
+    ]
+  },
+  {
+    "sign": "Z",
+    "city": [
+      {
+        "id": 61,
+        "district": "漳州"
+      },
+      {
+        "id": 75,
+        "district": "张掖"
+      },
+      {
+        "id": 93,
+        "district": "湛江"
+      },
+      {
+        "id": 94,
+        "district": "肇庆"
+      },
+      {
+        "id": 95,
+        "district": "中山"
+      },
+      {
+        "id": 96,
+        "district": "珠海"
+      },
+      {
+        "id": 119,
+        "district": "遵义"
+      },
+      {
+        "id": 148,
+        "district": "张家口"
+      },
+      {
+        "id": 149,
+        "district": "郑州"
+      },
+      {
+        "id": 163,
+        "district": "周口"
+      },
+      {
+        "id": 164,
+        "district": "驻马店"
+      },
+      {
+        "id": 198,
+        "district": "张家界"
+      },
+      {
+        "id": 210,
+        "district": "株洲"
+      },
+      {
+        "id": 232,
+        "district": "镇江"
+      },
+      {
+        "id": 248,
+        "district": "朝阳"
+      },
+      {
+        "id": 274,
+        "district": "中卫"
+      },
+      {
+        "id": 298,
+        "district": "枣庄"
+      },
+      {
+        "id": 299,
+        "district": "淄博"
+      },
+      {
+        "id": 301,
+        "district": "长治"
+      },
+      {
+        "id": 340,
+        "district": "资阳"
+      },
+      {
+        "id": 341,
+        "district": "自贡"
+      },
+      {
+        "id": 382,
+        "district": "昭通"
+      },
+      {
+        "id": 392,
+        "district": "舟山"
+      }
+    ]
+  },
+  {
+    "sign": "全国",
+    "city": [
+      {
+        "id": 0,
+        "district": "全国"
+      },
+      {
+        "id": 2,
+        "district": "北京市"
+      },
+      {
+        "id": 3,
+        "district": "安徽省"
+      },
+      {
+        "id": 4,
+        "district": "福建省"
+      },
+      {
+        "id": 5,
+        "district": "甘肃省"
+      },
+      {
+        "id": 6,
+        "district": "广东省"
+      },
+      {
+        "id": 7,
+        "district": "广西"
+      },
+      {
+        "id": 8,
+        "district": "贵州省"
+      },
+      {
+        "id": 9,
+        "district": "海南省"
+      },
+      {
+        "id": 10,
+        "district": "河北省"
+      },
+      {
+        "id": 11,
+        "district": "河南省"
+      },
+      {
+        "id": 12,
+        "district": "黑龙江省"
+      },
+      {
+        "id": 13,
+        "district": "湖北省"
+      },
+      {
+        "id": 14,
+        "district": "湖南省"
+      },
+      {
+        "id": 15,
+        "district": "吉林省"
+      },
+      {
+        "id": 16,
+        "district": "江苏省"
+      },
+      {
+        "id": 17,
+        "district": "江西省"
+      },
+      {
+        "id": 18,
+        "district": "辽宁省"
+      },
+      {
+        "id": 19,
+        "district": "内蒙古"
+      },
+      {
+        "id": 20,
+        "district": "宁夏"
+      },
+      {
+        "id": 21,
+        "district": "青海省"
+      },
+      {
+        "id": 22,
+        "district": "山东省"
+      },
+      {
+        "id": 23,
+        "district": "山西省"
+      },
+      {
+        "id": 24,
+        "district": "陕西省"
+      },
+      {
+        "id": 25,
+        "district": "上海市"
+      },
+      {
+        "id": 26,
+        "district": "四川省"
+      },
+      {
+        "id": 27,
+        "district": "天津市"
+      },
+      {
+        "id": 28,
+        "district": "西藏"
+      },
+      {
+        "id": 29,
+        "district": "新疆"
+      },
+      {
+        "id": 30,
+        "district": "云南省"
+      },
+      {
+        "id": 31,
+        "district": "浙江省"
+      },
+      {
+        "id": 32,
+        "district": "重庆市"
+      },
+      {
+        "id": 33,
+        "district": "香港"
+      },
+      {
+        "id": 34,
+        "district": "澳门"
+      }
+    ]
+  }
+]
