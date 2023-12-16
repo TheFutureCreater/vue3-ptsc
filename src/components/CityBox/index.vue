@@ -1,5 +1,5 @@
 <script setup>
-import { Select, CaretLeft } from '@element-plus/icons-vue'
+import { Select, CaretRight } from '@element-plus/icons-vue'
 import cityBase from '@/assets/json/cityChar.json'
 import { ref, watch, computed } from 'vue'
 
@@ -10,7 +10,7 @@ const props = defineProps({
 const isShow = computed(() => {
   return props.selectShow
 })
-const dialogVisible = ref(true)
+const dialogVisible = ref(false)
 watch(isShow, () => {
   dialogVisible.value = true
 })
@@ -46,9 +46,21 @@ const citySelectedName = ref('全国')
 
 // 点击相应地区逻辑
 const clickCity = (id, name) => {
-  console.log(id + name)
+  console.log('CityBox  ' + id + name)
   citySelectedName.value = name
   citySelectedID.value = id
+}
+
+// 返回信息给父级
+const emit = defineEmits(['get-message'])
+const sendToParent = () => {
+  const id = citySelectedID.value
+  const name = citySelectedName.value
+  emit('get-message', id, name)
+}
+const backToParent = () => {
+  sendToParent()
+  dialogVisible.value = false
 }
 </script>
 
@@ -64,13 +76,13 @@ const clickCity = (id, name) => {
           @click="slicelocate = index"
           :id="slicelocate === index ? 'current-type' : ''"
         >
-          <span style="display: flex; justify-content: space-between; align-items: center">
+          <span style="display: flex; align-items: center">
+            <el-icon v-if="slicelocate === index" size="26" color="#409eff">
+              <CaretRight />
+            </el-icon>
             <span>
               {{ item }}
             </span>
-            <el-icon v-if="slicelocate === index" size="26" color="#409eff">
-              <CaretLeft />
-            </el-icon>
           </span>
         </div>
       </div>
@@ -107,7 +119,7 @@ const clickCity = (id, name) => {
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="dialogVisible = false"> 确定 </el-button>
+        <el-button type="primary" @click="backToParent"> 确定 </el-button>
       </span>
     </template>
   </el-dialog>
@@ -141,6 +153,12 @@ const clickCity = (id, name) => {
     #current-type {
       color: #409eff;
       font-weight: bolder;
+
+      span {
+        span {
+          margin-left: 5px;
+        }
+      }
     }
   }
 

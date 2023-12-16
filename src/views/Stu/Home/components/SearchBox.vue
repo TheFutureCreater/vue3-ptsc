@@ -2,13 +2,20 @@
 import { Search, Location } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 const searchWord = ref('')
-const cityName = ref('')
-// const cityId = ref(0)
+const cityId = ref(0)
+const cityName = ref('全国')
 const selectShow = ref(false)
+
+// 接收城市盒子的信息
+const getMessage = (id, name) => {
+  cityId.value = id
+  cityName.value = name
+  console.log('SearchBox  ' + cityId.value + cityName.value)
+}
 </script>
 
 <template>
-  <CityBox :selectShow="selectShow" />
+  <CityBox :selectShow="selectShow" @get-message="getMessage" />
   <div class="input-with-select">
     <div @click="selectShow = !selectShow">
       <div class="search-locate">
