@@ -1,11 +1,11 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { User, Lock, Message, CircleCheck } from '@element-plus/icons-vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const userType = ref(1) // 1-学生，2-商家，3-管理员
-const isRegister = ref(false) // 是否为注册
+const isRegister = ref(1) // 1注册, 2登录
 const isMessageLogin = ref(false) // 是否为验证码登录
 const isSending = ref(false) // 等待短信发送状态，一般为 1 分钟
 const countTime = ref(60) // 倒计时
@@ -14,6 +14,23 @@ const isloading = ref(false) // 加载状态
 const phoneOrEmail = ref(true) // 判断所填写是否为电话号码，否则为邮箱
 const rememberMe = ref(false) // 记住我的状态
 const checkedProtocol = ref(false) // 已阅读用户协议
+
+// 获取url请求参数
+onMounted(() => {
+  const urlParams = new URLSearchParams(window.location.search)
+  userType.value = parseInt(urlParams.get('user') || 1)
+  isRegister.value = parseInt(urlParams.get('reg') || 1)
+  urlParams.set('user', userType.value)
+  urlParams.set('reg', isRegister.value)
+  window.history.replaceState(null, '', `?${urlParams}`)
+})
+// 响应更改url参数
+watch([userType, isRegister], ([newType, newReg]) => {
+  const urlParams = new URLSearchParams(window.location.search)
+  urlParams.set('user', newType)
+  urlParams.set('reg', newReg)
+  window.history.replaceState(null, '', `?${urlParams}`)
+})
 
 //  开始倒计时
 const startCountdown = () => {
@@ -110,7 +127,7 @@ watch([isRegister, isMessageLogin, userType], () => {
 
 // 处理登录或注册按钮的点击事件
 const handleLoginOrRegister = async () => {
-  if (isRegister.value) {
+  if (isRegister.value === '1') {
     console.log('进行注册功能: ' + formModel.value.username)
     try {
       await form.value.validate()
@@ -120,7 +137,7 @@ const handleLoginOrRegister = async () => {
     }
     // await userRegisterService(formModel.value)
     ElMessage.success('注册成功')
-    isRegister.value = false
+    isRegister.value = 2
   } else {
     console.log('进行登录功能: ' + formModel.value.username)
     try {
@@ -150,10 +167,10 @@ const handleEnter = () => {
 <template>
   <div class="box-right">
     <span class="title-bold">
-      <h2 class="title" v-if="userType === 1 && !isRegister">大学生登录</h2>
-      <h2 class="title" v-if="userType === 1 && isRegister">大学生注册</h2>
-      <h2 class="title" v-if="userType === 2 && !isRegister">商家登录</h2>
-      <h2 class="title" v-if="userType === 2 && isRegister">商家注册</h2>
+      <h2 class="title" v-if="userType == 1 && isRegister == 2">大学生登录</h2>
+      <h2 class="title" v-if="userType == 1 && isRegister == 1">大学生注册</h2>
+      <h2 class="title" v-if="userType == 2 && isRegister == 2">商家登录</h2>
+      <h2 class="title" v-if="userType == 2 && isRegister == 1">商家注册</h2>
     </span>
 
     <el-form :model="formModel" :rules="rules" ref="form" class="right-form">
@@ -168,7 +185,7 @@ const handleEnter = () => {
         </el-input>
       </el-form-item>
 
-      <el-form-item prop="messageNum" v-if="isMessageLogin || isRegister">
+      <el-form-item prop="messageNum" v-if="isMessageLogin || isRegister == 1">
         <el-input
           v-model="formModel.messageNum"
           :prefix-icon="Message"
@@ -191,7 +208,7 @@ const handleEnter = () => {
         </el-input>
       </el-form-item>
 
-      <el-form-item prop="password" v-if="!isMessageLogin || isRegister">
+      <el-form-item prop="password" v-if="!isMessageLogin || isRegister == 1">
         <el-input
           v-model="formModel.password"
           :prefix-icon="Lock"
@@ -204,7 +221,7 @@ const handleEnter = () => {
         </el-input>
       </el-form-item>
 
-      <el-form-item v-if="isRegister" prop="confirmPassword">
+      <el-form-item v-if="isRegister == 1" prop="confirmPassword">
         <el-input
           v-model="formModel.confirmPassword"
           :prefix-icon="CircleCheck"
@@ -239,7 +256,7 @@ const handleEnter = () => {
           @click="handleLoginOrRegister"
           style="width: 100%; height: 42px; font-size: 20px"
         >
-          {{ isRegister ? '注册' : '登录' }}
+          {{ isRegister == 1 ? '注册' : '登录' }}
         </el-button>
       </el-form-item>
 
@@ -253,17 +270,22 @@ const handleEnter = () => {
     </el-form>
 
     <div class="right-bottem">
-      <el-link type="info" :underline="false" class="switch-form" @click="isRegister = !isRegister">
-        {{ isRegister ? '←登录' : '注册→' }}
+      <el-link
+        type="info"
+        :underline="false"
+        class="switch-form"
+        @click="isRegister = isRegister == 1 ? 2 : 1"
+      >
+        {{ isRegister == 1 ? '←登录' : '注册→' }}
       </el-link>
       <div class="userType">
-        <span v-if="!isRegister" style="margin-right: 10px">
+        <span v-if="isRegister == 2" style="margin-right: 10px">
           <el-button type="primary" v-if="!isMessageLogin" @click="isMessageLogin = true">
             验证码登录
           </el-button>
           <el-button type="primary" v-else @click="isMessageLogin = false"> 密码登录 </el-button>
         </span>
-        <el-button type="primary" v-if="userType === 2" @click="userType = 1"> 我是大学生 </el-button>
+        <el-button type="primary" v-if="userType == 2" @click="userType = 1"> 我是大学生 </el-button>
         <el-button type="primary" v-else @click="userType = 2"> 我是商家 </el-button>
       </div>
     </div>

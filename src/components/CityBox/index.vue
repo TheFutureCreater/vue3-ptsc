@@ -133,7 +133,7 @@ const backToParent = () => {
     flex-direction: column;
     align-items: start;
     width: 20%;
-    border-right: 3px solid #409eff;
+    border-right: 2px solid #c5c5c5;
 
     // background-color: #f5f5f5;
 

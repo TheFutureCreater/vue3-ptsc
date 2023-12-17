@@ -98,12 +98,12 @@ router.beforeEach((to, from, next) => {
         <div class="not-login" v-if="userStore.user.userId === 0">
           <ul class="app-header-nav">
             <li>
-              <RouterLink to="/login">
+              <RouterLink :to="{ path: '/login', query: { user: '2', reg: '2' } }">
                 <span class="highlight-font">我要招聘</span>
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/login">
+              <RouterLink :to="{ path: '/login', query: { user: '1', reg: '2' } }">
                 <span class="highlight-font">我要求职</span>
               </RouterLink>
             </li>
