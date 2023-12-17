@@ -5,8 +5,6 @@ import { useSearchStore } from '@/stores'
 
 const searchStore = useSearchStore()
 const searchWord = ref('')
-// const cityId = ref(0)
-// const cityName = ref('全国')
 const selectShow = ref(false)
 
 // 接收城市盒子的信息
@@ -33,7 +31,7 @@ const cityName = computed(() => {
 
     <input type="text" placeholder="搜索职位、公司" v-model="searchWord" />
 
-    <el-button :icon="Search" type="primary" size="large" round style="margin-right: 3px">
+    <el-button :icon="Search" type="primary" size="large" round style="margin: 0 3px 0 auto">
       <span>搜索</span>
     </el-button>
   </div>
