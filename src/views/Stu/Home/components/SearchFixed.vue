@@ -19,7 +19,7 @@ const { y } = useScroll(window)
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 999;
+  z-index: 998;
   background-color: #fff;
   border-bottom: 1px solid #e4e4e4;
   // 状态一：往上平移自身高度 + 完全透明

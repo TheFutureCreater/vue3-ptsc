@@ -1,6 +1,6 @@
 <script setup>
+// import LayoutHeader from './components/LayoutHeader.vue'
 import LayoutFooter from './components/LayoutFooter.vue'
-import LayoutHeader from './components/LayoutHeader.vue'
 import LayoutFixed from './components/LayoutFixed.vue'
 import LayoutSidebar from './components/LayoutSidebar.vue'
 </script>
@@ -8,7 +8,7 @@ import LayoutSidebar from './components/LayoutSidebar.vue'
 <template>
   <LayoutFixed />
   <LayoutSidebar />
-  <LayoutHeader />
+  <div style="width: 100%; height: 60px" />
   <RouterView />
   <LayoutFooter />
 </template>

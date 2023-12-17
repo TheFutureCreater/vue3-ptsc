@@ -7,9 +7,13 @@ export const useSearchStore = defineStore('ptsc-search-condition', () => {
   const cityName = ref('全国')
   const searchWord = ref('')
 
+  // 重设表单条件
+  const reset = () => {}
+
   return {
     cityId,
     cityName,
-    searchWord
+    searchWord,
+    reset
   }
 })
