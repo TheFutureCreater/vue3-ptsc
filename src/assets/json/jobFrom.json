@@ -1,4 +1,52 @@
 {
+  "jobNature": [
+    {
+      "value": 1,
+      "label": "不限"
+    },
+    {
+      "value": 2,
+      "label": "全职"
+    },
+    {
+      "value": 3,
+      "label": "兼职"
+    },
+    {
+      "value": 4,
+      "label": "实习"
+    }
+  ],
+  "workAge": [
+    {
+      "value": 1,
+      "label": "不限"
+    },
+    {
+      "value": 2,
+      "label": "在校生/应届生"
+    },
+    {
+      "value": 3,
+      "label": "1-3年"
+    },
+    {
+      "value": 4,
+      "label": "3-5年"
+    },
+    {
+      "value": 5,
+      "label": "5-10年"
+    },
+    {
+      "value": 6,
+      "label": "10年以上"
+    },
+    {
+      "value": 7,
+      "label": "无需经验"
+    }
+  ],
   "jobType": [
     {
       "value": 1,
@@ -215,6 +263,104 @@
     {
       "value": 10,
       "label": "其他"
+    }
+  ],
+  "mercScale": [
+    {
+      "value": 1,
+      "label": "不限"
+    },
+    {
+      "value": 2,
+      "label": "少于50人"
+    },
+    {
+      "value": 3,
+      "label": "50-150人"
+    },
+    {
+      "value": 4,
+      "label": "150-500人"
+    },
+    {
+      "value": 5,
+      "label": "500-1000人"
+    },
+    {
+      "value": 6,
+      "label": "1000-5000人"
+    },
+    {
+      "value": 7,
+      "label": "5000-10000人"
+    },
+    {
+      "value": 8,
+      "label": "10000人以上"
+    }
+  ],
+  "degree": [
+    {
+      "value": 1,
+      "label": "不限"
+    },
+    {
+      "value": 2,
+      "label": "大专"
+    },
+    {
+      "value": 3,
+      "label": "本科"
+    },
+    {
+      "value": 4,
+      "label": "硕士"
+    },
+    {
+      "value": 5,
+      "label": "博士"
+    }
+  ],
+  "wageRange": [
+    {
+      "value": 1,
+      "label": "不限"
+    },
+    {
+      "value": 2,
+      "label": "2千以下"
+    },
+    {
+      "value": 3,
+      "label": "2-3千"
+    },
+    {
+      "value": 4,
+      "label": "3-5千"
+    },
+    {
+      "value": 5,
+      "label": "5-6千"
+    },
+    {
+      "value": 6,
+      "label": "6-8千"
+    },
+    {
+      "value": 7,
+      "label": "0.8-1万"
+    },
+    {
+      "value": 8,
+      "label": "1-1.5万"
+    },
+    {
+      "value": 9,
+      "label": "1.5-2万"
+    },
+    {
+      "value": 10,
+      "label": "2万以上"
     }
   ]
 }
