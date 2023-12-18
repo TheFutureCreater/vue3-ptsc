@@ -2,9 +2,11 @@
 import { Search, Location } from '@element-plus/icons-vue'
 import { ref, computed } from 'vue'
 import { useSearchStore } from '@/stores'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const searchStore = useSearchStore()
-const searchWord = ref('')
+
 const selectShow = ref(false)
 
 // 接收城市盒子的信息
@@ -15,6 +17,22 @@ console.log(cityId.value)
 const cityName = computed(() => {
   return searchStore.cityName
 })
+const searchWord = computed(() => {
+  return searchStore.searchWord
+})
+
+// 搜索按钮点击事件
+const clickSearchButton = () => {
+  const url = router.currentRoute.value.path
+  console.log(url)
+  if (url === '/stu/jobs') {
+    console.log('is ' + url)
+    searchStore.setSearchWord(searchWord.value)
+  } else {
+    searchStore.setSearchWord(searchWord.value) // 跳转前获取搜索关键字
+    router.push('/stu/jobs')
+  }
+}
 </script>
 
 <template>
@@ -31,7 +49,14 @@ const cityName = computed(() => {
 
     <input type="text" placeholder="搜索职位、公司" v-model="searchWord" />
 
-    <el-button :icon="Search" type="primary" size="large" round style="margin: 0 3px 0 auto">
+    <el-button
+      @click="clickSearchButton"
+      :icon="Search"
+      type="primary"
+      size="large"
+      round
+      style="margin: 0 3px 0 auto"
+    >
       <span>搜索</span>
     </el-button>
   </div>
