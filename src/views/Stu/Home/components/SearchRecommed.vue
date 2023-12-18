@@ -9,9 +9,7 @@ const recommendItem = ref(['国企', '管培生', '软件测试工程师', 'Web�
 
 const clickItem = (index) => {
   const url = router.currentRoute.value.path
-  console.log(url)
   if (url === '/stu/jobs') {
-    console.log('is ' + url)
     searchStore.setSearchWord(recommendItem.value[index])
   } else {
     searchStore.setSearchWord(recommendItem.value[index]) // 跳转前获取搜索关键字
@@ -54,8 +52,9 @@ const clickItem = (index) => {
 
   .recommend-item {
     width: auto;
+    height: auto;
     cursor: pointer;
-    padding: 0 10px;
+    padding: 2px 10px;
     color: #898f98;
     border-radius: 50px;
     background-color: #f5f6f7;

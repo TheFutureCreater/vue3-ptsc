@@ -1,13 +1,13 @@
 <script setup>
-import { Search, Location } from '@element-plus/icons-vue'
-import { ref, computed } from 'vue'
+import { Search, Location, CloseBold } from '@element-plus/icons-vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useSearchStore } from '@/stores'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const searchStore = useSearchStore()
-
 const selectShow = ref(false)
+const inputMessage = ref('')
 
 // 接收城市盒子的信息
 const cityId = computed(() => {
@@ -17,9 +17,20 @@ console.log(cityId.value)
 const cityName = computed(() => {
   return searchStore.cityName
 })
-const searchWord = computed(() => {
-  return searchStore.searchWord
+
+onMounted(() => {
+  inputMessage.value = searchStore.searchWord
 })
+
+watch(
+  computed(() => {
+    return searchStore.searchWord
+  }),
+  (newValue) => {
+    console.log('watch+computed')
+    inputMessage.value = newValue
+  }
+)
 
 // 搜索按钮点击事件
 const clickSearchButton = () => {
@@ -27,11 +38,16 @@ const clickSearchButton = () => {
   console.log(url)
   if (url === '/stu/jobs') {
     console.log('is ' + url)
-    searchStore.setSearchWord(searchWord.value)
+    searchStore.setSearchWord(inputMessage.value)
   } else {
-    searchStore.setSearchWord(searchWord.value) // 跳转前获取搜索关键字
+    searchStore.setSearchWord(inputMessage.value) // 跳转前获取搜索关键字
     router.push('/stu/jobs')
   }
+}
+
+// 清除输入框事件
+const clearInput = () => {
+  searchStore.setSearchWord('')
 }
 </script>
 
@@ -47,8 +63,10 @@ const clickSearchButton = () => {
 
     <span class="middle-separate" />
 
-    <input type="text" placeholder="搜索职位、公司" v-model="searchWord" />
-
+    <input type="text" placeholder="搜索职位、公司" v-model="inputMessage" />
+    <el-icon size="20" color="#afb3ba" style="margin-right: 10px" @click="clearInput">
+      <CloseBold v-if="inputMessage !== ''" style="cursor: pointer" />
+    </el-icon>
     <el-button
       @click="clickSearchButton"
       :icon="Search"

@@ -1,6 +1,7 @@
 <script setup>
 import SearchBox from '../../Home/components/SearchBox.vue'
 import SearchRecommed from '../../Home/components/SearchRecommed.vue'
+import JobForm from './JobForm.vue'
 </script>
 
 <template>
@@ -10,6 +11,9 @@ import SearchRecommed from '../../Home/components/SearchRecommed.vue'
       <div class="search-box">
         <SearchBox />
         <SearchRecommed />
+      </div>
+      <div class="job-search-form">
+        <JobForm />
       </div>
     </div>
   </div>
@@ -29,6 +33,10 @@ import SearchRecommed from '../../Home/components/SearchRecommed.vue'
     }
 
     .search-box {
+      margin-top: 20px;
+    }
+
+    .job-search-form {
       margin-top: 20px;
     }
   }
