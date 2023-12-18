@@ -36,7 +36,11 @@ onMounted(() => {
         <ArrowDown v-if="!mousePass[index]" />
         <ArrowUp v-else />
       </el-icon>
-      <div class="down-infos-box" v-if="mousePass[index]"></div>
+      <div class="down-infos-box" v-if="mousePass[index]">
+        <div class="down-info-item" v-for="(info, index) in item.info" :key="index">
+          <span>{{ info.label }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -63,18 +67,43 @@ onMounted(() => {
     margin-left: 5px;
     background-color: #f5f6f7;
     position: relative;
+    cursor: pointer;
 
     .down-infos-box {
       position: absolute;
       transform-origin: top left;
-      top: 110%;
+      top: 115%;
+      // left: -50%;
       z-index: 997;
-      height: 300px;
-      width: 200px;
+      max-height: 302px;
       background-color: #fff;
-      border: 1px solid #f5f6f7;
-      border-radius: 5%;
+      border: 1px solid #ebebeb;
+      border-radius: 10px;
       overflow: auto;
+      padding: 10px;
+
+      .down-info-item {
+        min-width: 160px;
+        height: 40px;
+        border-radius: 10px;
+        line-height: 40px;
+        white-space: nowrap; /* 将文本处理为单行 */
+        overflow: hidden; /* 超出部分隐藏 */
+        text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
+
+        span {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      .down-info-item:hover {
+        background-color: #f5f6f7;
+      }
+    }
+
+    .down-infos-box::-webkit-scrollbar {
+      width: 0px; /* 隐藏滚动条的宽度 */
     }
   }
 }
