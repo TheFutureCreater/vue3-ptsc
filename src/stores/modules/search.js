@@ -7,16 +7,16 @@ export const useSearchStore = defineStore('ptsc-search-condition', () => {
   const cityName = ref('全国')
   const searchWord = ref('')
 
-  const jobFrom = ref([])
+  const jobForm = ref([])
 
-  jobFrom.value[0] = 0 // 0学历要求 degree
-  jobFrom.value[1] = [] // 1职位性质 jobNature
-  jobFrom.value[2] = 0 // 2工作年限 workAge
-  jobFrom.value[3] = 0 // 3薪资范围 wageRange
-  jobFrom.value[4] = [] // 4职位类别 jobType
-  jobFrom.value[5] = [] // 5公司行业 business
-  jobFrom.value[6] = [] // 6公司性质 mercNature
-  jobFrom.value[7] = 0 // 7公司规模 mercScale
+  jobForm.value[0] = 0 // 0学历要求 degree
+  jobForm.value[1] = [] // 1职位性质 jobNature
+  jobForm.value[2] = 0 // 2工作年限 workAge
+  jobForm.value[3] = 0 // 3薪资范围 wageRange
+  jobForm.value[4] = [] // 4职位类别 jobType
+  jobForm.value[5] = [] // 5公司行业 business
+  jobForm.value[6] = [] // 6公司性质 mercNature
+  jobForm.value[7] = 0 // 7公司规模 mercScale
 
   const setSearchWord = (obj) => {
     searchWord.value = obj
@@ -24,14 +24,14 @@ export const useSearchStore = defineStore('ptsc-search-condition', () => {
 
   // 重设表单条件
   const reset = () => {
-    jobFrom.value = []
+    jobForm.value = []
   }
 
   return {
     cityId,
     cityName,
     searchWord,
-    jobFrom,
+    jobForm,
     setSearchWord,
     reset
   }

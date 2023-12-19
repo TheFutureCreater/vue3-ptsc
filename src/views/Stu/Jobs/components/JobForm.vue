@@ -1,17 +1,15 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useSearchStore } from '@/stores'
-import jobFrom from '@/assets/json/jobFrom'
+import jobForm from '@/assets/json/jobForm'
 import { ArrowUp, ArrowDown } from '@element-plus/icons-vue'
 
 const searchStore = useSearchStore()
 const form = ref([])
 const mousePass = ref([])
 // 初始化表单数据
-onMounted(() => {
-  // 0学历要求1职位性质2工作年限3薪资范围4职位类别5公司行业6公司性质7公司规模
-  form.value = searchStore.jobFrom
-})
+// 0学历要求 1职位性质 2工作年限 3薪资范围 4职位类别 5公司行业 6公司性质 7公司规模
+form.value = searchStore.jobForm
 
 // 点击筛选项事件
 const clickInfo = (index1, valueNum) => {
@@ -23,6 +21,9 @@ const clickInfo = (index1, valueNum) => {
     }
     if (!form.value[index1].includes(valueNum)) {
       form.value[index1].push(valueNum)
+      if (form.value[index1].length + 1 === jobForm[index1].info.length) {
+        form.value[index1] = []
+      }
     } else {
       form.value[index1] = form.value[index1].filter((item) => item !== valueNum)
     }
@@ -41,7 +42,7 @@ const clickInfo = (index1, valueNum) => {
   <div class="job-form">
     <span class="form-title">其他筛选</span>
     <div
-      v-for="(item, index1) in jobFrom"
+      v-for="(item, index1) in jobForm"
       :key="index1"
       class="form-item"
       @mouseenter="mousePass[index1] = true"
@@ -59,7 +60,15 @@ const clickInfo = (index1, valueNum) => {
               : 'have-been-selected'
         "
       >
-        <span>{{ item.title }}</span>
+        <span>{{
+          Array.isArray(form[index1])
+            ? form[index1].length === 0
+              ? item.title
+              : item.title + '(' + form[index1].length + ')'
+            : form[index1] === 0
+              ? item.title
+              : jobForm[index1].info[form[index1] - 1].label
+        }}</span>
         <el-icon style="margin-left: 5px">
           <ArrowDown v-if="!mousePass[index1]" />
           <ArrowUp v-else />
@@ -92,7 +101,7 @@ const clickInfo = (index1, valueNum) => {
   }
 
   .form-item {
-    width: 120px;
+    width: 130px;
     height: 40px;
     color: #222222;
     margin-left: 5px;
@@ -108,6 +117,14 @@ const clickInfo = (index1, valueNum) => {
       width: 100%;
       border-radius: 20px;
       background-color: #f5f6f7;
+
+      span {
+        text-align: center;
+        width: 80px;
+        white-space: nowrap; /* 将文本处理为单行 */
+        overflow: hidden; /* 超出部分隐藏 */
+        text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
+      }
     }
 
     .down-all-box {
