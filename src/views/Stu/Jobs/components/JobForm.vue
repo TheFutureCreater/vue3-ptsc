@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useSearchStore } from '@/stores'
 import jobForm from '@/assets/json/jobForm'
-import { ArrowUp, ArrowDown } from '@element-plus/icons-vue'
+import { ArrowUp, ArrowDown, Select, CloseBold } from '@element-plus/icons-vue'
 
 const searchStore = useSearchStore()
 const form = ref([])
@@ -20,10 +20,15 @@ const clickInfo = (index1, valueNum) => {
       return
     }
     if (!form.value[index1].includes(valueNum)) {
-      form.value[index1].push(valueNum)
-      if (form.value[index1].length + 1 === jobForm[index1].info.length) {
+      if (index1 === 1 && form.value[index1].length === 2) {
         form.value[index1] = []
+        return
       }
+      if (form.value[index1].length === 3) {
+        ElMessage.error('条件不能超过3个')
+        return
+      }
+      form.value[index1].push(valueNum)
     } else {
       form.value[index1] = form.value[index1].filter((item) => item !== valueNum)
     }
@@ -35,6 +40,12 @@ const clickInfo = (index1, valueNum) => {
     }
   }
   console.log('form.value[' + index1 + ']: ' + form.value[index1])
+}
+
+// 清空所有表单
+const clearAllForm = () => {
+  searchStore.reset()
+  form.value = searchStore.jobForm
 }
 </script>
 
@@ -81,12 +92,47 @@ const clickInfo = (index1, valueNum) => {
             v-for="(info, index2) in item.info"
             :key="index2"
             @click="clickInfo(index1, info.value)"
+            :id="
+              (
+                info.value === 1
+                  ? Array.isArray(form[index1])
+                    ? form[index1].length === 0
+                    : form[index1] === 0
+                  : Array.isArray(form[index1])
+                    ? form[index1].includes(info.value)
+                    : form[index1] === info.value
+              )
+                ? 'info-have-been-selected'
+                : ''
+            "
           >
-            <span>{{ info.label }}</span>
+            <span>
+              {{ info.label }}
+            </span>
+            <el-icon size="20" color="#409eff" style="margin: 0 5px">
+              <Select
+                v-if="
+                  info.value === 1
+                    ? Array.isArray(form[index1])
+                      ? form[index1].length === 0
+                      : form[index1] === 0
+                    : Array.isArray(form[index1])
+                      ? form[index1].includes(info.value)
+                      : form[index1] === info.value
+                "
+              />
+            </el-icon>
           </div>
         </div>
       </div>
     </div>
+    <el-tooltip class="box-item" effect="dark" content="清空选项" placement="bottom-end">
+      <div class="clear-all-form" @click="clearAllForm">
+        <el-icon>
+          <CloseBold />
+        </el-icon>
+      </div>
+    </el-tooltip>
   </div>
 </template>
 
@@ -148,7 +194,9 @@ const clickInfo = (index1, valueNum) => {
           min-width: 160px;
           height: 40px;
           border-radius: 10px;
-          line-height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
           cursor: pointer;
           white-space: nowrap; /* 将文本处理为单行 */
           overflow: hidden; /* 超出部分隐藏 */
@@ -163,6 +211,11 @@ const clickInfo = (index1, valueNum) => {
         .down-info-item:hover {
           background-color: #f5f6f7;
         }
+
+        #info-have-been-selected {
+          color: #409eff;
+          background-color: #f2fbff;
+        }
       }
     }
 
@@ -174,6 +227,20 @@ const clickInfo = (index1, valueNum) => {
   #have-been-selected:not(.down-all-box) {
     color: #409eff;
     background-color: #f2fbff;
+  }
+
+  .clear-all-form {
+    width: 40px;
+    height: 40px;
+    color: #222222;
+    margin-left: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #f5f6f7;
   }
 }
 </style>
