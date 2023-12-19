@@ -21,7 +21,7 @@ import JobForm from './JobForm.vue'
 
 <style lang="scss" scoped>
 .jobs-header {
-  height: 400px;
+  // height: 400px;
   background-color: #fff;
 
   .container {
@@ -37,7 +37,7 @@ import JobForm from './JobForm.vue'
     }
 
     .job-search-form {
-      margin-top: 20px;
+      margin: 20px 0;
     }
   }
 }

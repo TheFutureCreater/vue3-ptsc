@@ -20,12 +20,12 @@ const clickInfo = (index1, valueNum) => {
       return
     }
     if (!form.value[index1].includes(valueNum)) {
-      if (index1 === 1 && form.value[index1].length === 2) {
+      if (form.value[index1].length === jobForm[index1].info.length - 2) {
         form.value[index1] = []
         return
       }
-      if (form.value[index1].length === 3) {
-        ElMessage.error('条件不能超过3个')
+      if (form.value[index1].length === 6) {
+        ElMessage.error('条件不能超过6个')
         return
       }
       form.value[index1].push(valueNum)
@@ -147,7 +147,7 @@ const clearAllForm = () => {
   }
 
   .form-item {
-    width: 130px;
+    width: 120px;
     height: 40px;
     color: #222222;
     margin-left: 5px;
@@ -161,7 +161,7 @@ const clearAllForm = () => {
       justify-content: center;
       height: 100%;
       width: 100%;
-      border-radius: 20px;
+      border-radius: 10px;
       background-color: #f5f6f7;
 
       span {
