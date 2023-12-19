@@ -239,7 +239,7 @@ const clearAllForm = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #f5f6f7;
   }
 }

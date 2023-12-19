@@ -47,6 +47,9 @@ const characterSelect = [
 const citySelectedID = ref(0)
 const citySelectedName = ref('全国')
 
+citySelectedID.value = searchStore.cityId
+citySelectedName.value = searchStore.cityName
+
 // 点击相应地区逻辑
 const clickCity = (id, name) => {
   console.log('CityBox  ' + id + name)
@@ -117,6 +120,7 @@ const backToParent = () => {
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
+        <!-- <el-button type="warning" @click="resetCity">重置</el-button> -->
         <el-button type="primary" @click="backToParent"> 确定 </el-button>
       </span>
     </template>
