@@ -1,5 +1,27 @@
 [
   {
+    "title": "职位性质",
+    "param": "jobNature",
+    "info": [
+      {
+        "value": 1,
+        "label": "不限"
+      },
+      {
+        "value": 2,
+        "label": "全职"
+      },
+      {
+        "value": 3,
+        "label": "兼职"
+      },
+      {
+        "value": 4,
+        "label": "实习"
+      }
+    ]
+  },
+  {
     "title": "学历要求",
     "param": "degree",
     "info": [
@@ -22,28 +44,6 @@
       {
         "value": 5,
         "label": "博士"
-      }
-    ]
-  },
-  {
-    "title": "职位性质",
-    "param": "jobNature",
-    "info": [
-      {
-        "value": 1,
-        "label": "不限"
-      },
-      {
-        "value": 2,
-        "label": "全职"
-      },
-      {
-        "value": 3,
-        "label": "兼职"
-      },
-      {
-        "value": 4,
-        "label": "实习"
       }
     ]
   },

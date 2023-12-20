@@ -15,8 +15,8 @@ export const useSearchStore = defineStore('ptsc-search-condition', () => {
 
   // 重设表单条件
   const reset = () => {
-    jobForm.value[0] = 0 // 0学历要求 degree
-    jobForm.value[1] = [] // 1职位性质 jobNature
+    jobForm.value[0] = 0 // 0职位性质 jobNature
+    jobForm.value[1] = 0 // 1学历要求 degree
     jobForm.value[2] = [] // 2工作年限 workAge
     jobForm.value[3] = [] // 3薪资范围 wageRange
     jobForm.value[4] = [] // 4职位类别 jobType

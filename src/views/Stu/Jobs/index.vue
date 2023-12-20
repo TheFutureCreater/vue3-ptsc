@@ -1,9 +1,11 @@
 <script setup>
 import JobsHeader from './components/JobsHeader.vue'
+import JobBody from './components/JobBody.vue'
 </script>
 
 <template>
   <JobsHeader />
+  <JobBody />
   <div class="text001"></div>
 </template>
 

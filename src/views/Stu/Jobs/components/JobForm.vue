@@ -8,7 +8,7 @@ const searchStore = useSearchStore()
 const form = ref([])
 const mousePass = ref([])
 // 初始化表单数据
-// 0学历要求 1职位性质 2工作年限 3薪资范围 4职位类别 5公司行业 6公司性质 7公司规模
+// 0职位性质 1学历要求 2工作年限 3薪资范围 4职位类别 5公司行业 6公司性质 7公司规模
 form.value = searchStore.jobForm
 
 // 点击筛选项事件
@@ -126,7 +126,7 @@ const clearAllForm = () => {
         </div>
       </div>
     </div>
-    <el-tooltip class="box-item" effect="dark" content="清空选项" placement="bottom-end">
+    <el-tooltip class="box-item" effect="light" content="清空选项" placement="bottom-end">
       <div class="clear-all-form" @click="clearAllForm">
         <el-icon>
           <CloseBold />
