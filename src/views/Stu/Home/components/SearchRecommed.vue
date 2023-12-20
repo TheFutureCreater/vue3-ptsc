@@ -11,6 +11,7 @@ const clickItem = (index) => {
   const url = router.currentRoute.value.path
   if (url === '/stu/jobs') {
     searchStore.setSearchWord(recommendItem.value[index])
+    searchStore.startQuery()
   } else {
     searchStore.setSearchWord(recommendItem.value[index]) // 跳转前获取搜索关键字
     router.push('/stu/jobs')

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useSearchStore } from '@/stores'
 import jobForm from '@/assets/json/jobForm'
 import { ArrowUp, ArrowDown, Select, CloseBold } from '@element-plus/icons-vue'
@@ -47,6 +47,11 @@ const clearAllForm = () => {
   searchStore.reset()
   form.value = searchStore.jobForm
 }
+
+// 表单一经修改就重新请求
+watch(form.value, () => {
+  searchStore.startQuery()
+})
 </script>
 
 <template>

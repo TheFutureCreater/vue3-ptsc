@@ -11,6 +11,6 @@ import JobBody from './components/JobBody.vue'
 
 <style lang="scss" scoped>
 .text001 {
-  height: 1500px;
+  height: 300px;
 }
 </style>

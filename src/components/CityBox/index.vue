@@ -61,6 +61,7 @@ const clickCity = (id, name) => {
 const backToParent = () => {
   searchStore.cityId = citySelectedID
   searchStore.cityName = citySelectedName
+  searchStore.startQuery()
   dialogVisible.value = false
 }
 </script>

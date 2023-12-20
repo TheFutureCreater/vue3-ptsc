@@ -39,6 +39,7 @@ const clickSearchButton = () => {
   if (url === '/stu/jobs') {
     console.log('is ' + url)
     searchStore.setSearchWord(inputMessage.value)
+    searchStore.startQuery()
   } else {
     searchStore.setSearchWord(inputMessage.value) // 跳转前获取搜索关键字
     router.push('/stu/jobs')
