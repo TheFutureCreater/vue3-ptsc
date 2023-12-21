@@ -5,6 +5,7 @@ import LoginPage from '@/views/Login/index.vue'
 import StuLayout from '@/views/Stu/Layout/index.vue'
 import StuHome from '@/views/Stu/Home/index.vue'
 import StuJobs from '@/views/Stu/Jobs/index.vue'
+import StuJobDetails from '@/views/Stu/JobDetails/index.vue'
 import StuMerc from '@/views/Stu/Merc/index.vue'
 import StuSearch from '@/views/Stu/Search/index.vue'
 import StuNews from '@/views/Stu/News/index.vue'
@@ -28,6 +29,10 @@ const router = createRouter({
         {
           path: '/stu/jobs',
           component: StuJobs
+        },
+        {
+          path: '/stu/jobdetails',
+          component: StuJobDetails
         },
         {
           path: '/stu/merc',

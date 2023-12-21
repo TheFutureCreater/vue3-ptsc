@@ -4,7 +4,9 @@ import { getJobListService } from '@/api/jobInfo'
 import { useSearchStore } from '@/stores'
 import jobForm from '@/assets/json/jobForm'
 import { Star, Message } from '@element-plus/icons-vue'
+// import { useRouter } from 'vue-router'
 
+// const router = useRouter()
 const searchStore = useSearchStore()
 const jobList = ref([])
 const jobTotal = ref(0)
@@ -64,7 +66,7 @@ const handleCurrentChange = () => {
 
 //点击相应职位盒子事件
 const clickJobBox = (jobId) => {
-  console.log('clickJobBox' + jobId)
+  window.open(window.location.origin + `/stu/jobdetails?id=${jobId}`)
 }
 
 // 点击收藏职位按钮事件
@@ -143,6 +145,11 @@ const subscribeJob = (jobId) => {
 <style lang="scss" scoped>
 .job-list {
   width: 100%;
+  span {
+    white-space: nowrap; /* 将文本处理为单行 */
+    overflow: hidden; /* 超出部分隐藏 */
+    text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
+  }
 
   .job-list-container {
     display: flex;
@@ -169,6 +176,7 @@ const subscribeJob = (jobId) => {
         .job-title {
           font-weight: bold;
           font-size: 20px;
+          max-width: 600px;
         }
 
         .job-wage {
@@ -209,7 +217,8 @@ const subscribeJob = (jobId) => {
             .merc-name {
               font-weight: bold;
               font-size: 16px;
-              margin: 0 10px;
+              margin: 0 0 0 10px;
+              max-width: 240px;
             }
 
             .merc-label {
