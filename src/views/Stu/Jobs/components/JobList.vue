@@ -2,7 +2,7 @@
 import { ref, watch, computed } from 'vue'
 import { getJobListService } from '@/api/jobInfo'
 import { useSearchStore } from '@/stores'
-import jobForm from '@/assets/json/jobForm'
+import jobForm from '@/assets/json/jobForm.json'
 import { Star, Message } from '@element-plus/icons-vue'
 // import { useRouter } from 'vue-router'
 
@@ -77,7 +77,8 @@ const subscribeJob = (jobId) => {
 
 <template>
   <div class="job-list">
-    <el-container v-loading="isloading" class="job-list-container">
+    <!-- <el-container v-loading="isloading" class="job-list-container"> -->
+    <el-container class="job-list-container">
       <div
         class="job-info-box"
         v-for="(item, index) in jobList"
