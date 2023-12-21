@@ -1,5 +1,5 @@
 <script setup>
-import SearchBox from './SearchBox.vue'
+import JobForm from './JobForm.vue'
 import { useScroll } from '@vueuse/core'
 const { y } = useScroll(window)
 </script>
@@ -7,7 +7,7 @@ const { y } = useScroll(window)
 <template>
   <div class="home-search-sticky" :class="{ show: y > 100 }">
     <div class="container">
-      <SearchBox />
+      <JobForm />
     </div>
   </div>
 </template>
