@@ -77,9 +77,14 @@ const subscribeJob = (jobId) => {
 
 <template>
   <div class="job-list">
-    <!-- <el-container v-loading="isloading" class="job-list-container"> -->
-    <el-container class="job-list-container">
+    <div class="job-list-container">
+      <div v-if="isloading" class="job-info-skeleton">
+        <el-skeleton :rows="5" animated /><br /><br />
+        <el-skeleton :rows="5" animated /><br /><br />
+        <el-skeleton :rows="5" animated />
+      </div>
       <div
+        v-else
         class="job-info-box"
         v-for="(item, index) in jobList"
         :key="index"
@@ -139,7 +144,7 @@ const subscribeJob = (jobId) => {
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
       />
-    </el-container>
+    </div>
   </div>
 </template>
 
@@ -157,6 +162,15 @@ const subscribeJob = (jobId) => {
     flex-direction: column;
     align-items: center;
     min-height: 600px;
+
+    .job-info-skeleton {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease-in-out;
+      padding: 20px 30px;
+    }
 
     .job-info-box {
       width: 100%;
