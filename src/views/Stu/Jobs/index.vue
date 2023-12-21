@@ -1,11 +1,11 @@
 <script setup>
 import JobsHeader from './components/JobsHeader.vue'
 import JobBody from './components/JobBody.vue'
-import FromFixed from './components/FromFixed.vue'
+import FormFixed from './components/FormFixed.vue'
 </script>
 
 <template>
-  <FromFixed />
+  <FormFixed />
   <JobsHeader />
   <JobBody />
   <div class="text001"></div>
