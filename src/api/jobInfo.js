@@ -15,3 +15,10 @@ export const getJobListService = (pageData) => {
     }
   })
 }
+
+// 获取职位详情信息
+export const getJobDetailsService = (jobId) => {
+  return request({
+    url: `/job/${jobId}`
+  })
+}

@@ -1,12 +1,14 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { getJobDetailsService } from '@/api/jobInfo'
 
 const router = useRouter()
 const jobId = ref(0)
+const jobDetail = ref({})
 
-// 获取url请求参数
-onMounted(() => {
+const getJobDetails = async () => {
+  // 获取url请求参数
   const urlParams = new URLSearchParams(window.location.search)
   jobId.value = parseInt(urlParams.get('id') || 0)
   // ======================需增加id不存在的逻辑
@@ -14,7 +16,11 @@ onMounted(() => {
     ElMessage.error('错误请求，请求id不存在')
     router.push('/')
   }
-})
+  const res = await getJobDetailsService(jobId.value)
+  jobDetail.value = res.data.data
+  console.log(jobDetail.value)
+}
+getJobDetails()
 </script>
 
 <template>
