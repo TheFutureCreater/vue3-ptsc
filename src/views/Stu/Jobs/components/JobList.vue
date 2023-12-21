@@ -3,11 +3,13 @@ import { ref, watch, computed } from 'vue'
 import { getJobListService } from '@/api/jobInfo'
 import { useSearchStore } from '@/stores'
 import jobForm from '@/assets/json/jobForm'
+import { Star, Message } from '@element-plus/icons-vue'
 
 const searchStore = useSearchStore()
 const jobList = ref([])
 const jobTotal = ref(0)
 const isloading = ref(false)
+const hoverJobBox = ref(-1)
 
 // 分页查找数据
 const pageData = ref({
@@ -33,8 +35,7 @@ watch(
   computed(() => {
     return searchStore.queryStart
   }),
-  (newValue) => {
-    console.log('queryStart' + newValue)
+  () => {
     getJobList()
   }
 )
@@ -60,12 +61,29 @@ const handleCurrentChange = () => {
   console.log(pageData.value.pageNum)
   getJobList()
 }
+
+//点击相应职位盒子事件
+const clickJobBox = (jobId) => {
+  console.log('clickJobBox' + jobId)
+}
+
+// 点击收藏职位按钮事件
+const subscribeJob = (jobId) => {
+  console.log('subscribeJob' + jobId)
+}
 </script>
 
 <template>
   <div class="job-list">
     <el-container v-loading="isloading" class="job-list-container">
-      <div class="job-info-box" v-for="(item, index) in jobList" :key="index">
+      <div
+        class="job-info-box"
+        v-for="(item, index) in jobList"
+        :key="index"
+        @mouseover="hoverJobBox = index"
+        @mouseleave="hoverJobBox = -1"
+        @click="clickJobBox(item.jobId)"
+      >
         <div class="info-for-job">
           <span class="job-title">{{ item.title }}</span>
 
@@ -75,17 +93,37 @@ const handleCurrentChange = () => {
             (item.maxWages > 10 ? item.maxWages / 10.0 + '万' : item.maxWages + '千')
           }}</span>
         </div>
-        <div class="label-for-job">
-          <span v-if="item.nature !== 1">
-            {{ jobForm[0].info[item.nature].label }}
-          </span>
-          <span>{{ jobForm[4].info[item.category].label }}</span>
-          <span>{{ jobForm[2].info[item.workAge].label }}</span>
-          <span>{{ jobForm[1].info[item.degree].label }}</span>
-          <span>{{ '招聘' + item.recruitNum + '人' }}</span>
-        </div>
-        <div class="merchant-title">
-          <el-avatar shape="square" :size="30" :src="item.userAvatar" />
+        <div class="info-bottom">
+          <div class="info-bottom-left">
+            <div class="label-for-job">
+              <span v-if="item.nature !== 1">
+                {{ jobForm[0].info[item.nature].label }}
+              </span>
+              <span>{{ jobForm[4].info[item.category].label }}</span>
+              <span>{{ jobForm[2].info[item.workAge].label }}</span>
+              <span>{{ jobForm[1].info[item.degree].label }}</span>
+              <span>{{ '招聘' + item.recruitNum + '人' }}</span>
+            </div>
+            <div class="merchant-title">
+              <el-avatar shape="square" :size="32" :src="item.userAvatar" />
+              <span class="merc-name">{{ item.mercName }}</span>
+              <span class="merc-label">{{ jobForm[6].info[item.mercNature].label }}</span>
+              <span style="color: #d5d5d5">|</span>
+              <span class="merc-label">{{ jobForm[5].info[item.mercBusiness].label }}</span>
+              <span style="color: #d5d5d5">|</span>
+              <span class="merc-label">{{ jobForm[7].info[item.mercScale].label }}</span>
+            </div>
+          </div>
+          <div class="info-bottom-right-button" v-if="hoverJobBox === index">
+            <el-button type="primary" :text="true" @click.stop="subscribeJob(item.jobId)">
+              <el-icon size="12"><Star /></el-icon>
+              <span style="margin-left: 5px; font-size: 15px">收藏职位</span>
+            </el-button>
+            <el-button style="margin-top: 8px" type="primary" @click.stop="subscribeJob(item.jobId)">
+              <el-icon size="12"><Message /></el-icon>
+              <span style="margin-left: 5px; font-size: 15px">投递简历</span>
+            </el-button>
+          </div>
         </div>
       </div>
 
@@ -119,13 +157,14 @@ const handleCurrentChange = () => {
       border-radius: 10px;
       margin-bottom: 20px;
       transition: box-shadow 0.3s ease-in-out;
-      padding: 10px 20px;
+      padding: 20px 30px;
       cursor: pointer;
 
       .info-for-job {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        height: 30px;
 
         .job-title {
           font-weight: bold;
@@ -139,24 +178,60 @@ const handleCurrentChange = () => {
         }
       }
 
-      .label-for-job {
-        margin-top: 5px;
+      .info-bottom {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 90px;
 
-        span {
-          display: inline-block;
-          height: 30px;
-          line-height: 30px;
-          padding: 0px 8px;
-          border-radius: 5px;
-          background-color: #f5f6f7;
-          color: #7c8087;
-          font-size: 16px;
-          margin-right: 8px;
+        .info-bottom-left {
+          .label-for-job {
+            margin-top: 5px;
+
+            span {
+              display: inline-block;
+              height: 30px;
+              line-height: 30px;
+              padding: 0px 8px;
+              border-radius: 5px;
+              background-color: #f5f6f7;
+              color: #7c8087;
+              font-size: 16px;
+              margin-right: 8px;
+            }
+          }
+
+          .merchant-title {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            .merc-name {
+              font-weight: bold;
+              font-size: 16px;
+              margin: 0 10px;
+            }
+
+            .merc-label {
+              display: inline-block;
+              height: 30px;
+              line-height: 30px;
+              border-radius: 5px;
+              font-size: 14px;
+              margin: 0 8px;
+            }
+          }
         }
-      }
 
-      .merchant-title {
-        margin-top: 5px;
+        .info-bottom-right-button {
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          justify-content: end;
+          width: 100px;
+          height: 100%;
+          padding-top: 5px;
+        }
       }
     }
 

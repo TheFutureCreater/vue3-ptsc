@@ -6,14 +6,13 @@ import { ArrowUp, ArrowDown, Select, CloseBold } from '@element-plus/icons-vue'
 
 const searchStore = useSearchStore()
 const form = ref([])
-const mousePass = ref([])
+const mousePass = ref(-1)
 // 初始化表单数据
 // 0职位性质 1学历要求 2工作年限 3薪资范围 4职位类别 5公司行业 6公司性质 7公司规模
 form.value = searchStore.jobForm
 
 // 点击筛选项事件
 const clickInfo = (index1, valueNum) => {
-  console.log('index1: ' + index1 + '///valueNum: ' + valueNum)
   if (Array.isArray(form.value[index1])) {
     if (valueNum === 1) {
       form.value[index1] = []
@@ -39,7 +38,6 @@ const clickInfo = (index1, valueNum) => {
       form.value[index1] = valueNum
     }
   }
-  console.log('form.value[' + index1 + ']: ' + form.value[index1])
 }
 
 // 清空所有表单
@@ -52,6 +50,10 @@ const clearAllForm = () => {
 watch(form.value, () => {
   searchStore.startQuery()
 })
+
+// watch(mousePass, () => {
+//   console.log('mousePass' + mousePass.value)
+// })
 </script>
 
 <template>
@@ -61,8 +63,8 @@ watch(form.value, () => {
       v-for="(item, index1) in jobForm"
       :key="index1"
       class="form-item"
-      @mouseenter="mousePass[index1] = true"
-      @mouseleave="mousePass[index1] = false"
+      @mouseenter="mousePass = index1"
+      @mouseleave="mousePass = -1"
     >
       <div
         class="from-item-title"
@@ -86,12 +88,12 @@ watch(form.value, () => {
               : jobForm[index1].info[form[index1] - 1].label
         }}</span>
         <el-icon style="margin-left: 5px">
-          <ArrowDown v-if="!mousePass[index1]" />
+          <ArrowDown v-if="mousePass === index1" />
           <ArrowUp v-else />
         </el-icon>
       </div>
       <div class="down-all-box">
-        <div class="down-infos-box" v-if="mousePass[index1]">
+        <div class="down-infos-box" v-if="mousePass === index1">
           <div
             class="down-info-item"
             v-for="(info, index2) in item.info"
