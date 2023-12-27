@@ -1,5 +1,5 @@
 <script setup>
-import { SwitchButton } from '@element-plus/icons-vue'
+import { SwitchButton, User, SetUp } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores'
 import avatar from '@/assets/imgs/default.png'
 import { useRouter } from 'vue-router'
@@ -59,8 +59,8 @@ router.beforeEach((to, from, next) => {
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/stu/merc">
-              <span class="highlight-font" :id="routerWord === '/stu/merc' ? 'current-menu' : ''">
+            <RouterLink to="/stu/mercs">
+              <span class="highlight-font" :id="routerWord === '/stu/mercs' ? 'current-menu' : ''">
                 找公司
               </span>
             </RouterLink>
@@ -113,45 +113,58 @@ router.beforeEach((to, from, next) => {
           </RouterLink>
         </div>
         <div class="have-login" v-else>
-          <span style="margin: 0 20px">
-            <span class="highlight-font">切换城市</span>
-          </span>
-
           <ul class="app-header-nav">
             <li>
               <RouterLink to="/stu/resume">
-                <span class="highlight-font">简历</span>
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink to="/stu/personal/notification">
-                <span class="highlight-font">通知</span>
+                <span class="highlight-font" :id="routerWord === '/stu/resume' ? 'current-menu' : ''">
+                  简历
+                </span>
               </RouterLink>
             </li>
             <li>
               <RouterLink to="/stu/personal/application">
-                <span class="highlight-font">投递反馈</span>
+                <span
+                  class="highlight-font"
+                  :id="routerWord === '/stu/personal/application' ? 'current-menu' : ''"
+                >
+                  投递反馈
+                </span>
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/stu/favorite">
-                <span class="highlight-font">收藏</span>
+              <RouterLink to="/stu/personal/notification">
+                <span
+                  class="highlight-font"
+                  :id="routerWord === '/stu/personal/notification' ? 'current-menu' : ''"
+                >
+                  通知
+                </span>
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/stu/personal/favorite">
+                <span
+                  class="highlight-font"
+                  :id="routerWord === '/stu/personal/favorite' ? 'current-menu' : ''"
+                >
+                  收藏
+                </span>
               </RouterLink>
             </li>
           </ul>
 
           <RouterLink to="/stu/personal" class="user-personal">
-            <span class="highlight-font">{{ userStore.user.username || '用户名未知' }}</span>
+            <span class="highlight-font" style="font-weight: bold">
+              {{ userStore.user.username || '用户名未知' }}
+            </span>
             <el-dropdown placement="bottom-end" @command="handleCommand">
               <span class="el-dropdown__box">
                 <el-avatar :src="userStore.user.avatar || avatar" />
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item command="personal" :icon="SwitchButton">个人中心</el-dropdown-item>
-                  <el-dropdown-item command="account" :icon="SwitchButton">
-                    账号与安全
-                  </el-dropdown-item>
+                  <el-dropdown-item command="personal" :icon="User">个人中心</el-dropdown-item>
+                  <el-dropdown-item command="account" :icon="SetUp"> 账号与安全 </el-dropdown-item>
                   <el-dropdown-item command="logout" :icon="SwitchButton">退出登录</el-dropdown-item>
                 </el-dropdown-menu>
               </template>
@@ -170,6 +183,7 @@ router.beforeEach((to, from, next) => {
 
   .container {
     justify-content: space-between;
+    white-space: nowrap; /* 将文本处理为单行 */
 
     .header-left {
       display: flex;
@@ -223,7 +237,7 @@ router.beforeEach((to, from, next) => {
 
       li {
         font-size: 16px;
-        margin-right: 30px;
+        margin-right: 26px;
       }
     }
 

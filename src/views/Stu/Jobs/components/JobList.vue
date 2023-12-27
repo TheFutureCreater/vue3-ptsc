@@ -207,7 +207,11 @@ const subscribeJob = (jobId) => {
         height: 90px;
 
         .info-bottom-left {
+          max-width: 640px;
           .label-for-job {
+            white-space: nowrap; /* 将文本处理为单行 */
+            overflow: hidden; /* 超出部分隐藏 */
+            text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
             margin-top: 5px;
 
             span {

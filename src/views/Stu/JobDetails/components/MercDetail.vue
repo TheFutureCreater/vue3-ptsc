@@ -12,6 +12,13 @@ import {
 } from '@element-plus/icons-vue'
 
 const mercDetail = inject('mercDetail')
+
+const clickToMercDetail = () => {
+  // 获取url请求参数
+  const urlParams = new URLSearchParams(window.location.search)
+  const mercId = parseInt(urlParams.get('merc') || 0)
+  console.log('mercId' + mercId)
+}
 </script>
 
 <template>
@@ -50,6 +57,16 @@ const mercDetail = inject('mercDetail')
         <span>{{ mercDetail.mercEmail }}</span>
       </div>
     </span>
+    <div style="text-align: center; margin-top: 20px">
+      <el-button
+        style="font-weight: bold; width: 100%"
+        size="large"
+        type="primary"
+        @click="clickToMercDetail"
+      >
+        查看更多职位
+      </el-button>
+    </div>
   </div>
 </template>
 

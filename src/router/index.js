@@ -10,6 +10,11 @@ import StuMerc from '@/views/Stu/Merc/index.vue'
 import StuSearch from '@/views/Stu/Search/index.vue'
 import StuNews from '@/views/Stu/News/index.vue'
 import StuCircle from '@/views/Stu/Circle/index.vue'
+import StuPersonal from '@/views/Stu/Personal/index.vue'
+import StuApplication from '@/views/Stu/Application/index.vue'
+import StuFavorite from '@/views/Stu/Favorite/index.vue'
+import StuNotification from '@/views/Stu/Notification/index.vue'
+import StuResume from '@/views/Stu/Resume/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,7 +40,7 @@ const router = createRouter({
           component: StuJobDetails
         },
         {
-          path: '/stu/merc',
+          path: '/stu/mercs',
           component: StuMerc
         },
         {
@@ -49,6 +54,33 @@ const router = createRouter({
         {
           path: '/stu/circle',
           component: StuCircle
+        },
+        {
+          path: '/stu/mercdetails',
+          component: StuCircle
+        },
+        {
+          path: '/stu/resume',
+          component: StuResume
+        },
+        {
+          path: '/stu/personal',
+          component: StuPersonal,
+          redirect: '/stu/personal/application',
+          children: [
+            {
+              path: '/stu/personal/application',
+              component: StuApplication
+            },
+            {
+              path: '/stu/personal/favorite',
+              component: StuFavorite
+            },
+            {
+              path: '/stu/personal/notification',
+              component: StuNotification
+            }
+          ]
         }
       ]
     },

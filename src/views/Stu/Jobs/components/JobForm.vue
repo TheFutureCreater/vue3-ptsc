@@ -50,10 +50,6 @@ const clearAllForm = () => {
 watch(form.value, () => {
   searchStore.startQuery()
 })
-
-// watch(mousePass, () => {
-//   console.log('mousePass' + mousePass.value)
-// })
 </script>
 
 <template>
