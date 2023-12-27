@@ -1,11 +1,13 @@
 <script setup>
 import DetailHead from './components/DetailHead.vue'
+import DetailBody from './components/DetailBody.vue'
 import { getJobDetailsService } from '@/api/jobInfo'
+import { getMercProfileService } from '@/api/merc'
 import { provide, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const jobId = ref(0)
+
 const jobDetail = ref({
   nature: 0,
   category: 0,
@@ -14,26 +16,50 @@ const jobDetail = ref({
   recruitNum: 0,
   maxWages: 0,
   minWages: 0,
-  address: '北京'
+  addjobRess: '北京'
 })
 const jobNote = ref('')
 
+const mercDetail = ref({
+  phoneNum: '',
+  userAvatar: '',
+  mercName: '',
+  mercNature: 0,
+  mercBusiness: 0,
+  mercScale: 0,
+  mercAddress: '',
+  mercEmail: ''
+})
+const mercNote = ref('')
+
 provide('jobDetail', jobDetail) // 向子层传递
 provide('jobNote', jobNote) // 向子层传递
+provide('mercDetail', mercDetail) // 向子层传递
+provide('mercNote', mercNote) // 向子层传递
 
 const getJobDetails = async () => {
   const loadingInstance = ElLoading.service()
   // 获取url请求参数
   const urlParams = new URLSearchParams(window.location.search)
-  jobId.value = parseInt(urlParams.get('id') || 0)
+  const jobId = parseInt(urlParams.get('job') || 0)
+  const mercId = parseInt(urlParams.get('merc') || 0)
   // ======================需增加id不存在的逻辑
-  if (jobId.value === 0) {
-    ElMessage.error('错误请求，请求id不存在')
+  if (jobId === 0) {
+    ElMessage.error('错误请求，请求的职位id不存在')
     router.push('/')
   }
-  const res = await getJobDetailsService(jobId.value)
-  jobDetail.value = res.data.data
-  jobNote.value = res.data.data.note
+  if (mercId === 0) {
+    ElMessage.error('错误请求，请求的公司id不存在')
+    router.push('/')
+  }
+  const mercRes = await getMercProfileService(mercId)
+  mercDetail.value = mercRes.data.data
+  mercNote.value = mercRes.data.data.mercNote
+  console.log('mercDetail: ' + mercDetail.value + '===note: ' + mercNote.value)
+
+  const jobRes = await getJobDetailsService(jobId)
+  jobDetail.value = jobRes.data.data
+  jobNote.value = jobRes.data.data.note
   console.log('jobDetail: ' + jobDetail.value + '===note: ' + jobNote.value)
   loadingInstance.close()
 }
@@ -42,11 +68,7 @@ getJobDetails()
 
 <template>
   <DetailHead />
-  <div class="text001"></div>
+  <DetailBody />
 </template>
 
-<style lang="scss" scoped>
-.text001 {
-  height: 1500px;
-}
-</style>
+<style lang="scss" scoped></style>

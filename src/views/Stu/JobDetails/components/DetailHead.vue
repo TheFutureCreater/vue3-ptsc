@@ -1,7 +1,16 @@
 <script setup>
 import jobForm from '@/assets/json/jobForm.json'
 import { inject } from 'vue'
-import { Star, Message } from '@element-plus/icons-vue'
+import {
+  Star,
+  Message,
+  Location,
+  Suitcase,
+  Grid,
+  Coffee,
+  School,
+  UserFilled
+} from '@element-plus/icons-vue'
 
 const jobDetail = inject('jobDetail')
 
@@ -29,12 +38,30 @@ const subscribeJob = () => {
             </span>
           </span>
           <div class="job-detail-labels">
-            <span class="job-label">{{ jobDetail.address }}</span>
-            <span class="job-label">{{ jobForm[0].info[jobDetail.nature].label }}</span>
-            <span class="job-label">{{ jobForm[4].info[jobDetail.category].label }}</span>
-            <span class="job-label">{{ jobForm[2].info[jobDetail.workAge].label }}</span>
-            <span class="job-label">{{ jobForm[1].info[jobDetail.degree].label }}</span>
-            <span class="job-label">{{ '招聘' + jobDetail.recruitNum + '人' }}</span>
+            <span class="job-label">
+              <el-icon size="18px"><Location /></el-icon>
+              <span>{{ jobDetail.address }}</span>
+            </span>
+            <span class="job-label">
+              <el-icon size="18px"><Suitcase /></el-icon>
+              <span>{{ jobForm[0].info[jobDetail.nature].label }}</span>
+            </span>
+            <span class="job-label">
+              <el-icon size="18px"><Grid /></el-icon>
+              <span>{{ jobForm[4].info[jobDetail.category].label }}</span>
+            </span>
+            <span class="job-label">
+              <el-icon size="18px"><Coffee /></el-icon>
+              <span>{{ jobForm[2].info[jobDetail.workAge].label }}</span>
+            </span>
+            <span class="job-label">
+              <el-icon size="18px"><School /></el-icon>
+              <span>{{ jobForm[1].info[jobDetail.degree].label }}</span>
+            </span>
+            <span class="job-label">
+              <el-icon size="18px"><UserFilled /></el-icon>
+              <span>{{ '招聘' + jobDetail.recruitNum + '人' }}</span>
+            </span>
           </div>
         </div>
         <div class="job-info-button">
@@ -92,8 +119,11 @@ const subscribeJob = () => {
 
         .job-detail-labels {
           margin-top: 10px;
+          display: flex;
+
           .job-label {
-            display: inline-block;
+            display: flex;
+            align-items: center;
             height: 30px;
             line-height: 30px;
             padding: 0px 8px;
@@ -102,6 +132,10 @@ const subscribeJob = () => {
             color: #7c8087;
             font-size: 16px;
             margin-right: 10px;
+
+            span {
+              margin-left: 4px;
+            }
           }
         }
       }

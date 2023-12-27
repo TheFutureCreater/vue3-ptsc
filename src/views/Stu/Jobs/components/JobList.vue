@@ -65,8 +65,8 @@ const handleCurrentChange = () => {
 }
 
 //点击相应职位盒子事件
-const clickJobBox = (jobId) => {
-  window.open(window.location.origin + `/stu/jobdetails?id=${jobId}`)
+const clickJobBox = (jobId, mercId) => {
+  window.open(window.location.origin + `/stu/jobdetails?job=${jobId}&merc=${mercId}`)
 }
 
 // 点击收藏职位按钮事件
@@ -90,7 +90,7 @@ const subscribeJob = (jobId) => {
         :key="index"
         @mouseover="hoverJobBox = index"
         @mouseleave="hoverJobBox = -1"
-        @click="clickJobBox(item.jobId)"
+        @click="clickJobBox(item.jobId, item.mercId)"
       >
         <div class="info-for-job">
           <span class="job-title">{{ item.title }}</span>
