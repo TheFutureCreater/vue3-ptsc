@@ -18,6 +18,7 @@ const mercNote = inject('mercNote')
   border-radius: 10px;
   background-color: #fff;
   padding: 20px 24px;
+  margin-bottom: 20px;
 
   .merc-detail-title {
     font-weight: bold;
@@ -26,6 +27,7 @@ const mercNote = inject('mercNote')
   }
 
   .merc-detail-message {
+    line-height: 200%;
     white-space: pre-wrap;
   }
 }

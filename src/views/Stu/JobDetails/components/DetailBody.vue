@@ -2,6 +2,7 @@
 import JobNote from './JobNote.vue'
 import MercDetail from './MercDetail.vue'
 import MercNote from './MercNote.vue'
+import StuNotice from './StuNotice.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import MercNote from './MercNote.vue'
       <div style="width: 800px; margin-right: 20px">
         <JobNote />
         <MercNote />
+        <StuNotice />
       </div>
 
       <div style="width: 300px">

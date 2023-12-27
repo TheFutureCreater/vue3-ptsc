@@ -14,7 +14,6 @@ const jobNote = inject('jobNote')
 <style lang="scss" scoped>
 .job-note {
   width: 100%;
-  // min-height: 200px;
   border-radius: 10px;
   background-color: #fff;
   padding: 20px 24px;
@@ -27,7 +26,7 @@ const jobNote = inject('jobNote')
   }
 
   .job-note-message {
-    line-height: 180%;
+    line-height: 200%;
     white-space: pre-wrap;
   }
 }
