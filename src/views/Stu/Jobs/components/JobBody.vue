@@ -6,7 +6,7 @@ import JobRecommed from './JobRecommed.vue'
 <template>
   <div class="job-body">
     <div class="container">
-      <div style="width: 800px">
+      <div style="width: 800px; margin-right: 20px">
         <JobList />
       </div>
       <div style="width: 300px">

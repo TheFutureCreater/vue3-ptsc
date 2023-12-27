@@ -104,6 +104,7 @@ const subscribeJob = (jobId) => {
         <div class="info-bottom">
           <div class="info-bottom-left">
             <div class="label-for-job">
+              <span>{{ item.address }}</span>
               <span v-if="item.nature !== 1">
                 {{ jobForm[0].info[item.nature].label }}
               </span>
@@ -151,11 +152,6 @@ const subscribeJob = (jobId) => {
 <style lang="scss" scoped>
 .job-list {
   width: 100%;
-  span {
-    white-space: nowrap; /* 将文本处理为单行 */
-    overflow: hidden; /* 超出部分隐藏 */
-    text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
-  }
 
   .job-list-container {
     display: flex;
@@ -174,7 +170,7 @@ const subscribeJob = (jobId) => {
 
     .job-info-box {
       width: 100%;
-      height: 160px;
+      min-height: 160px;
       background-color: #fff;
       border-radius: 10px;
       margin-bottom: 20px;
@@ -192,6 +188,9 @@ const subscribeJob = (jobId) => {
           font-weight: bold;
           font-size: 20px;
           max-width: 600px;
+          white-space: nowrap; /* 将文本处理为单行 */
+          overflow: hidden; /* 超出部分隐藏 */
+          text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
         }
 
         .job-wage {

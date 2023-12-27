@@ -8,7 +8,6 @@
 .job-recommend {
   width: 100%;
   height: 600px;
-  margin-left: 20px;
   border-radius: 10px;
   background-color: #fcba42;
 }

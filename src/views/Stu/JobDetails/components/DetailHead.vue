@@ -1,39 +1,9 @@
 <script setup>
 import jobForm from '@/assets/json/jobForm.json'
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { getJobDetailsService } from '@/api/jobInfo'
+import { inject } from 'vue'
 import { Star, Message } from '@element-plus/icons-vue'
 
-const router = useRouter()
-const jobId = ref(0)
-const jobDetail = ref({
-  nature: 0,
-  category: 0,
-  workAge: 0,
-  degree: 0,
-  recruitNum: 0,
-  maxWages: 0,
-  minWages: 0,
-  address: '北京'
-})
-
-const getJobDetails = async () => {
-  const loadingInstance = ElLoading.service()
-  // 获取url请求参数
-  const urlParams = new URLSearchParams(window.location.search)
-  jobId.value = parseInt(urlParams.get('id') || 0)
-  // ======================需增加id不存在的逻辑
-  if (jobId.value === 0) {
-    ElMessage.error('错误请求，请求id不存在')
-    router.push('/')
-  }
-  const res = await getJobDetailsService(jobId.value)
-  jobDetail.value = res.data.data
-  console.log('jobDetail' + jobDetail.value)
-  loadingInstance.close()
-}
-getJobDetails()
+const jobDetail = inject('jobDetail')
 
 // 点击收藏职位按钮事件
 const subscribeJob = () => {
