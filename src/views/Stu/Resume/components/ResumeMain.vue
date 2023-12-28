@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss" scoped>
-.text001 {
+.resume-main {
   height: 1600px;
 }
 </style>

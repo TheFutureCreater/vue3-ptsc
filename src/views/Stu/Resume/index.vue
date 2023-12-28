@@ -1,12 +1,14 @@
 <script setup>
 import ResumeMain from './components/ResumeMain.vue'
 import ResumeNav from './components/ResumeNav.vue'
+import ResumeHead from './components/ResumeHead.vue'
 </script>
 
 <template>
   <div class="resume">
     <div class="container">
       <div class="resume-main">
+        <ResumeHead />
         <ResumeMain />
       </div>
       <div class="resume-nav">
