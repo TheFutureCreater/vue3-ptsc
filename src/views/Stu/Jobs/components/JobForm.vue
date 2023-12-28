@@ -90,31 +90,14 @@ watch(form.value, () => {
       </div>
       <div class="down-all-box">
         <div class="down-infos-box" v-if="mousePass === index1">
-          <div
-            class="down-info-item"
-            v-for="(info, index2) in item.info"
-            :key="index2"
-            @click="clickInfo(index1, info.value)"
-            :id="
-              (
-                info.value === 1
-                  ? Array.isArray(form[index1])
-                    ? form[index1].length === 0
-                    : form[index1] === 0
-                  : Array.isArray(form[index1])
-                    ? form[index1].includes(info.value)
-                    : form[index1] === info.value
-              )
-                ? 'info-have-been-selected'
-                : ''
-            "
-          >
-            <span>
-              {{ info.label }}
-            </span>
-            <el-icon size="20" color="#409eff" style="margin: 0 5px">
-              <Select
-                v-if="
+          <el-scrollbar height="288px">
+            <div
+              class="down-info-item"
+              v-for="(info, index2) in item.info"
+              :key="index2"
+              @click="clickInfo(index1, info.value)"
+              :id="
+                (
                   info.value === 1
                     ? Array.isArray(form[index1])
                       ? form[index1].length === 0
@@ -122,10 +105,29 @@ watch(form.value, () => {
                     : Array.isArray(form[index1])
                       ? form[index1].includes(info.value)
                       : form[index1] === info.value
-                "
-              />
-            </el-icon>
-          </div>
+                )
+                  ? 'info-have-been-selected'
+                  : ''
+              "
+            >
+              <span>
+                {{ info.label }}
+              </span>
+              <el-icon size="20" color="#409eff" style="margin: 0 5px">
+                <Select
+                  v-if="
+                    info.value === 1
+                      ? Array.isArray(form[index1])
+                        ? form[index1].length === 0
+                        : form[index1] === 0
+                      : Array.isArray(form[index1])
+                        ? form[index1].includes(info.value)
+                        : form[index1] === info.value
+                  "
+                />
+              </el-icon>
+            </div>
+          </el-scrollbar>
         </div>
       </div>
     </div>
@@ -191,7 +193,7 @@ watch(form.value, () => {
         border: 1px solid #ebebeb;
         border-radius: 10px;
         overflow: auto;
-        padding: 10px;
+        padding: 10px 0 10px 10px;
 
         .down-info-item {
           min-width: 160px;
@@ -201,6 +203,7 @@ watch(form.value, () => {
           align-items: center;
           justify-content: space-between;
           cursor: pointer;
+          margin-right: 10px;
           white-space: nowrap; /* 将文本处理为单行 */
           overflow: hidden; /* 超出部分隐藏 */
           text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
