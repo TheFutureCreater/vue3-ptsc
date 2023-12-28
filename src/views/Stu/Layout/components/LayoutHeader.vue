@@ -46,44 +46,34 @@ router.beforeEach((to, from, next) => {
         </h1>
 
         <ul class="app-header-nav">
-          <li>
+          <li :id="routerWord === '/' ? 'current-menu' : ''">
             <RouterLink to="/">
-              <span class="highlight-font" :id="routerWord === '/' ? 'current-menu' : ''"> 首 页 </span>
+              <span class="highlight-font"> 首 页 </span>
             </RouterLink>
           </li>
-          <li>
+          <li :id="routerWord === '/stu/jobs' ? 'current-menu' : ''">
             <RouterLink to="/stu/jobs">
-              <span class="highlight-font" :id="routerWord === '/stu/jobs' ? 'current-menu' : ''">
-                职位推荐
-              </span>
+              <span class="highlight-font"> 职位推荐 </span>
             </RouterLink>
           </li>
-          <li>
+          <li :id="routerWord === '/stu/mercs' ? 'current-menu' : ''">
             <RouterLink to="/stu/mercs">
-              <span class="highlight-font" :id="routerWord === '/stu/mercs' ? 'current-menu' : ''">
-                找公司
-              </span>
+              <span class="highlight-font"> 找公司 </span>
             </RouterLink>
           </li>
-          <li>
+          <li :id="routerWord === '/stu/search' ? 'current-menu' : ''">
             <RouterLink to="/stu/search">
-              <span class="highlight-font" :id="routerWord === '/stu/search' ? 'current-menu' : ''">
-                搜 索
-              </span>
+              <span class="highlight-font"> 搜 索 </span>
             </RouterLink>
           </li>
-          <li>
+          <li :id="routerWord === '/stu/news' ? 'current-menu' : ''">
             <RouterLink to="/stu/news">
-              <span class="highlight-font" :id="routerWord === '/stu/news' ? 'current-menu' : ''">
-                资 讯
-              </span>
+              <span class="highlight-font"> 资 讯 </span>
             </RouterLink>
           </li>
-          <li>
+          <li :id="routerWord === '/stu/circle' ? 'current-menu' : ''">
             <RouterLink to="/stu/circle">
-              <span class="highlight-font" :id="routerWord === '/stu/circle' ? 'current-menu' : ''">
-                聘 圈
-              </span>
+              <span class="highlight-font"> 聘 圈 </span>
             </RouterLink>
           </li>
           <li>
@@ -114,14 +104,12 @@ router.beforeEach((to, from, next) => {
         </div>
         <div class="have-login" v-else>
           <ul class="app-header-nav">
-            <li>
+            <li :id="routerWord === '/stu/resume' ? 'current-menu' : ''">
               <RouterLink to="/stu/resume">
-                <span class="highlight-font" :id="routerWord === '/stu/resume' ? 'current-menu' : ''">
-                  简历
-                </span>
+                <span class="highlight-font"> 我的简历 </span>
               </RouterLink>
             </li>
-            <li>
+            <!-- <li>
               <RouterLink to="/stu/personal/application">
                 <span
                   class="highlight-font"
@@ -150,11 +138,11 @@ router.beforeEach((to, from, next) => {
                   收藏
                 </span>
               </RouterLink>
-            </li>
+            </li> -->
           </ul>
 
           <RouterLink to="/stu/personal" class="user-personal">
-            <span class="highlight-font" style="font-weight: bold">
+            <span class="highlight-font" style="font-weight: bold; margin-left: 20px">
               {{ userStore.user.username || '用户名未知' }}
             </span>
             <el-dropdown placement="bottom-end" @command="handleCommand">
@@ -225,7 +213,7 @@ router.beforeEach((to, from, next) => {
 
         span {
           font-size: 16px;
-          margin-right: 8px;
+          margin: 0 8px;
         }
       }
     }
@@ -237,7 +225,15 @@ router.beforeEach((to, from, next) => {
 
       li {
         font-size: 16px;
-        margin-right: 26px;
+        height: 100%;
+
+        a {
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+        }
       }
     }
 
@@ -248,9 +244,11 @@ router.beforeEach((to, from, next) => {
 
     #current-menu {
       font-weight: bolder;
-      border-bottom: 3px solid #409eff;
-      border-radius: 0 0 3px 3px;
-      color: #409eff;
+      box-shadow: inset 0 -3px 0 0 #409eff;
+
+      span {
+        color: #409eff;
+      }
     }
   }
 }

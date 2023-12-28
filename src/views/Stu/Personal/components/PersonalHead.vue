@@ -94,7 +94,6 @@ const clickTonavigation = (index) => {
         font-size: 16px;
         padding: 0 30px;
         border-bottom: 3px solid #f5f6f7;
-        height: 100%;
         cursor: pointer;
 
         a {

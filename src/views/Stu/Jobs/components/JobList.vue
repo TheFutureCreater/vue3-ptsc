@@ -140,7 +140,7 @@ const subscribeJob = (jobId) => {
         v-model:current-page="pageData.pageNum"
         v-model:page-size="pageData.pageSize"
         :page-sizes="[10, 15, 30]"
-        layout="total, sizes, prev, pager, next, jumper"
+        layout="sizes, prev, pager, next, jumper"
         :total="jobTotal"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
