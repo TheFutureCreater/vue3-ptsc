@@ -50,10 +50,17 @@ const clickSearchButton = () => {
 const clearInput = () => {
   searchStore.setSearchWord('')
 }
+
+// 获取城市盒子的信息
+const getCityMessage = (msg) => {
+  searchStore.cityId = msg.cityId
+  searchStore.cityName = msg.cityName
+  searchStore.startQuery()
+}
 </script>
 
 <template>
-  <CityBox :selectShow="selectShow" />
+  <CityBox :selectShow="selectShow" :cityId="cityId" @getCityName="getCityMessage" />
   <div class="input-with-select">
     <div @click="selectShow = !selectShow">
       <div class="search-locate">

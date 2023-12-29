@@ -2,21 +2,33 @@
 import { Select, CaretRight } from '@element-plus/icons-vue'
 import cityBase from '@/assets/json/cityChar.json'
 import { ref, watch, computed } from 'vue'
-import { useSearchStore } from '@/stores'
-
-const searchStore = useSearchStore()
 
 // 组件显示
 const props = defineProps({
-  selectShow: Boolean
+  selectShow: Boolean,
+  cityId: Number
 })
-const isShow = computed(() => {
-  return props.selectShow
-})
+const emit = defineEmits(['getCityName'])
+
 const dialogVisible = ref(false)
-watch(isShow, () => {
-  dialogVisible.value = true
-})
+
+watch(
+  computed(() => {
+    return props.selectShow
+  }),
+  () => {
+    dialogVisible.value = true
+  }
+)
+
+watch(
+  computed(() => {
+    return props.cityId
+  }),
+  (newValue) => {
+    citySelectedID.value = newValue
+  }
+)
 
 const slicePiece = [
   [0, 2],
@@ -45,10 +57,7 @@ const characterSelect = [
 ]
 
 const citySelectedID = ref(0)
-const citySelectedName = ref('全国')
-
-citySelectedID.value = searchStore.cityId
-citySelectedName.value = searchStore.cityName
+const citySelectedName = ref('')
 
 // 点击相应地区逻辑
 const clickCity = (id, name) => {
@@ -59,9 +68,7 @@ const clickCity = (id, name) => {
 
 // 返回父级
 const backToParent = () => {
-  searchStore.cityId = citySelectedID
-  searchStore.cityName = citySelectedName
-  searchStore.startQuery()
+  emit('getCityName', { cityId: citySelectedID.value, cityName: citySelectedName.value })
   dialogVisible.value = false
 }
 </script>
