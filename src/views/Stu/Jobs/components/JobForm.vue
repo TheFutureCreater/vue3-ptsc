@@ -14,7 +14,7 @@ form.value = searchStore.jobForm
 // 点击筛选项事件
 const clickInfo = (index1, valueNum) => {
   if (Array.isArray(form.value[index1])) {
-    if (valueNum === 1) {
+    if (valueNum === 0) {
       form.value[index1] = []
       return
     }
@@ -32,7 +32,7 @@ const clickInfo = (index1, valueNum) => {
       form.value[index1] = form.value[index1].filter((item) => item !== valueNum)
     }
   } else {
-    if (valueNum === 1) {
+    if (valueNum === 0) {
       form.value[index1] = 0
     } else {
       form.value[index1] = valueNum
@@ -81,7 +81,7 @@ watch(form.value, () => {
               : item.title + '(' + form[index1].length + ')'
             : form[index1] === 0
               ? item.title
-              : jobForm[index1].info[form[index1] - 1].label
+              : jobForm[index1].info[form[index1] - 1]
         }}</span>
         <el-icon style="margin-left: 5px">
           <ArrowDown v-if="mousePass === index1" />
@@ -90,39 +90,40 @@ watch(form.value, () => {
       </div>
       <div class="down-all-box">
         <div class="down-infos-box" v-if="mousePass === index1">
-          <el-scrollbar height="288px">
+          <!-- <el-scrollbar height="288px"> -->
+          <el-scrollbar max-height="280px">
             <div
               class="down-info-item"
               v-for="(info, index2) in item.info"
               :key="index2"
-              @click="clickInfo(index1, info.value)"
+              @click="clickInfo(index1, index2)"
               :id="
                 (
-                  info.value === 1
+                  index2 === 0
                     ? Array.isArray(form[index1])
                       ? form[index1].length === 0
                       : form[index1] === 0
                     : Array.isArray(form[index1])
-                      ? form[index1].includes(info.value)
-                      : form[index1] === info.value
+                      ? form[index1].includes(index2)
+                      : form[index1] === index2
                 )
                   ? 'info-have-been-selected'
                   : ''
               "
             >
               <span>
-                {{ info.label }}
+                {{ info }}
               </span>
               <el-icon size="20" color="#409eff" style="margin: 0 5px">
                 <Select
                   v-if="
-                    info.value === 1
+                    index2 === 0
                       ? Array.isArray(form[index1])
                         ? form[index1].length === 0
                         : form[index1] === 0
                       : Array.isArray(form[index1])
-                        ? form[index1].includes(info.value)
-                        : form[index1] === info.value
+                        ? form[index1].includes(index2)
+                        : form[index1] === index2
                   "
                 />
               </el-icon>

@@ -106,21 +106,21 @@ const subscribeJob = (jobId) => {
             <div class="label-for-job">
               <span>{{ item.address }}</span>
               <span v-if="item.nature !== 1">
-                {{ jobForm[0].info[item.nature].label }}
+                {{ jobForm[0].info[item.nature] }}
               </span>
-              <span>{{ jobForm[4].info[item.category].label }}</span>
-              <span>{{ jobForm[2].info[item.workAge].label }}</span>
-              <span>{{ jobForm[1].info[item.degree].label }}</span>
+              <span>{{ jobForm[4].info[item.category] }}</span>
+              <span>{{ jobForm[2].info[item.workAge] }}</span>
+              <span>{{ jobForm[1].info[item.degree] }}</span>
               <span>{{ '招聘' + item.recruitNum + '人' }}</span>
             </div>
             <div class="merchant-title">
               <el-avatar shape="square" :size="32" :src="item.userAvatar" />
               <span class="merc-name">{{ item.mercName }}</span>
-              <span class="merc-label">{{ jobForm[6].info[item.mercNature].label }}</span>
+              <span class="merc-label">{{ jobForm[6].info[item.mercNature] }}</span>
               <span style="color: #d5d5d5">|</span>
-              <span class="merc-label">{{ jobForm[5].info[item.mercBusiness].label }}</span>
+              <span class="merc-label">{{ jobForm[5].info[item.mercBusiness] }}</span>
               <span style="color: #d5d5d5">|</span>
-              <span class="merc-label">{{ jobForm[7].info[item.mercScale].label }}</span>
+              <span class="merc-label">{{ jobForm[7].info[item.mercScale] }}</span>
             </div>
           </div>
           <div class="info-bottom-right-button" v-if="hoverJobBox === index">
