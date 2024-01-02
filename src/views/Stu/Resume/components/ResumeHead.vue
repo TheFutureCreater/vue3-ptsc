@@ -2,7 +2,10 @@
 
 <template>
   <div class="resume-head">
-    <span class="head-title">我的简历</span>
+    <span>
+      <span class="head-title">我的简历</span>
+      <span class="head-refresh">更新时间</span>
+    </span>
     <span class="head-function">
       <span>预览</span>
       <el-divider direction="vertical" />
@@ -27,6 +30,11 @@
   .head-title {
     font-weight: bold;
     font-size: 16px;
+  }
+
+  .head-refresh {
+    margin-left: 10px;
+    font-size: 12px;
   }
 
   .head-function {

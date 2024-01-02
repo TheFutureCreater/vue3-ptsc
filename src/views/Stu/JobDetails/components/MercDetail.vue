@@ -25,7 +25,9 @@ const clickToMercDetail = () => {
   <div class="merc-detail">
     <div class="merc-detail-title">公司信息</div>
     <div style="text-align: center">
-      <el-avatar shape="square" :size="80" :src="mercDetail.userAvatar" />
+      <el-avatar shape="square" :size="80" :src="mercDetail.userAvatar" @error="true">
+        <img />
+      </el-avatar>
     </div>
     <span class="merc-detail-message">
       <div>

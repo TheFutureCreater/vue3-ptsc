@@ -114,7 +114,9 @@ const subscribeJob = (jobId) => {
               <span>{{ '招聘' + item.recruitNum + '人' }}</span>
             </div>
             <div class="merchant-title">
-              <el-avatar shape="square" :size="32" :src="item.userAvatar" />
+              <el-avatar shape="square" :size="32" :src="item.userAvatar" @error="true">
+                <img />
+              </el-avatar>
               <span class="merc-name">{{ item.mercName }}</span>
               <span class="merc-label">{{ jobForm[6].info[item.mercNature] }}</span>
               <span style="color: #d5d5d5">|</span>
