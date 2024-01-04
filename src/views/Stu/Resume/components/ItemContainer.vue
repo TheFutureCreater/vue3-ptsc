@@ -35,7 +35,6 @@ const sendAddNum = (num) => {
           v-if="addItemNum != 0 && addButtonShow"
           type="primary"
           plain
-          round
         >
           <el-icon><Plus /></el-icon>
           <span> 添加 </span>
@@ -52,14 +51,14 @@ const sendAddNum = (num) => {
 <style lang="scss" scoped>
 .item-container {
   width: 100%;
-  margin-top: 24px;
-  padding: 0 30px;
+  margin-top: 18px;
+  padding: 0 24px;
 
   .item-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px;
+    padding: 0 12px;
     height: 44px;
 
     .head-left {

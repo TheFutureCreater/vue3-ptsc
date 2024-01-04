@@ -16,6 +16,8 @@ const handleCommand = async (key) => {
       type: 'warning',
       confirmButtonText: '确认',
       cancelButtonText: '取消'
+    }).catch(() => {
+      return
     })
 
     // 清除本地的数据 (token + user信息)
