@@ -1,17 +1,46 @@
 <script setup>
+import { Plus } from '@element-plus/icons-vue'
+import { ref } from 'vue'
+
+const addButtonShow = ref(false)
+
 defineProps({
   title: {
     required: true,
     type: String
+  },
+  addItemNum: {
+    required: true,
+    type: Number
   }
 })
+
+const emit = defineEmits(['getAddNum'])
+const sendAddNum = (num) => {
+  emit('getAddNum', num)
+}
 </script>
 
 <template>
-  <div class="item-container">
+  <div class="item-container" @mouseenter="addButtonShow = true" @mouseleave="addButtonShow = false">
     <div class="item-head">
-      <span class="head-point"></span>
-      <span class="head-title">{{ title }}</span>
+      <div class="head-left">
+        <span class="head-point"></span>
+        <span class="head-title">{{ title }}</span>
+      </div>
+
+      <div class="head-right">
+        <el-button
+          @click="sendAddNum(addItemNum)"
+          v-if="addItemNum != 0 && addButtonShow"
+          type="primary"
+          plain
+          round
+        >
+          <el-icon><Plus /></el-icon>
+          <span> 添加 </span>
+        </el-button>
+      </div>
     </div>
 
     <div class="item-con">
@@ -23,24 +52,32 @@ defineProps({
 <style lang="scss" scoped>
 .item-container {
   width: 100%;
-  margin-top: 36px;
+  margin-top: 24px;
+  padding: 0 30px;
 
   .item-head {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 18px;
+    padding-bottom: 10px;
+    height: 44px;
 
-    .head-point {
-      width: 5px;
-      height: 20px;
-      margin-right: 10px;
-      margin-top: 2px;
-      border-radius: 2px;
-      background-color: #409eff;
-    }
+    .head-left {
+      display: flex;
+      align-items: center;
 
-    .head-title {
-      font-size: 20px;
+      .head-point {
+        width: 5px;
+        height: 20px;
+        margin-right: 10px;
+        margin-top: 2px;
+        border-radius: 2px;
+        background-color: #409eff;
+      }
+
+      .head-title {
+        font-size: 20px;
+      }
     }
   }
 

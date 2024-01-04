@@ -132,7 +132,13 @@ watch(form.value, () => {
         </div>
       </div>
     </div>
-    <el-tooltip class="box-item" effect="light" content="清空选项" placement="bottom-end">
+    <el-tooltip
+      class="box-item"
+      effect="light"
+      content="<h3>清空筛选条件</h3>"
+      placement="bottom-end"
+      raw-content
+    >
       <div class="clear-all-form" @click="clearAllForm">
         <el-icon>
           <CloseBold />

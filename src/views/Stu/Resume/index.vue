@@ -31,7 +31,7 @@ import ResumeHead from './components/ResumeHead.vue'
       width: 800px;
       border-radius: 10px;
       margin-right: 20px;
-      height: 1200px;
+      min-height: 1200px;
     }
 
     .resume-nav {
