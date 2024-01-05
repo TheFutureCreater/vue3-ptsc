@@ -20,7 +20,7 @@ import ResumeHead from './components/ResumeHead.vue'
 
 <style lang="scss" scoped>
 .resume {
-  height: 1600px;
+  // min-height: 1600px;
 
   .container {
     margin-top: 20px;
@@ -30,7 +30,7 @@ import ResumeHead from './components/ResumeHead.vue'
       background-color: #fff;
       width: 800px;
       border-radius: 10px;
-      margin-right: 20px;
+      margin: 0 20px 20px 0;
       min-height: 1200px;
     }
 

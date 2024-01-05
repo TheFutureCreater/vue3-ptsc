@@ -1,0 +1,140 @@
+[
+  {
+    "value": "大数据类",
+    "items": [
+      [
+        "Access",
+        "数据分析",
+        "数据挖掘",
+        "数据建模",
+        "DB2",
+        "ERwin",
+        "Hadoop",
+        "Spark",
+        "Hive",
+        "MySQL",
+        "OLAP",
+        "Oracle",
+        "R语言",
+        "SAS",
+        "SPSS",
+        "SQL",
+        "SQL Server",
+        "Sybase",
+        "Cloud",
+        "DB2/database"
+      ]
+    ]
+  },
+  {
+    "value": "开发编程类",
+    "items": [
+      [
+        ".NET",
+        "ActiveX",
+        "ASP.NET",
+        "C#.NET",
+        "C/C++",
+        "Golang",
+        "ERP",
+        "SAP",
+        "HTML5",
+        "iOS",
+        "Java",
+        "J2EE",
+        "JavaScript",
+        "PERL",
+        "PHP",
+        "Python",
+        "SEO",
+        "VB.Net",
+        "UI",
+        "Web前端",
+        "移动前端",
+        "Android",
+        "Lua",
+        "Clojure",
+        "Ruby",
+        "Matlab",
+        "XML/XSLT",
+        "Linux",
+        "Unix/Linux development",
+        "TensorFlow",
+        "Scala",
+        "Shell",
+        "Visual Basic"
+      ]
+    ]
+  },
+  {
+    "value": "多媒体设计类",
+    "items": [
+      [
+        "3D Studio",
+        "3D Studio MAX",
+        "AUTOCAD",
+        "CATIA",
+        "Corel Draw",
+        "Director",
+        "Dreamweaver",
+        "Fireworks/Frontpage",
+        "Flash",
+        "FrontPage",
+        "GoLive",
+        "Illustrator",
+        "Lightwave",
+        "Maya",
+        "MS Publisher",
+        "PageMaker",
+        "Photoshop",
+        "Solid Works"
+      ]
+    ]
+  },
+  {
+    "value": "办公应用软件",
+    "items": [
+      [
+        "OutLook Express",
+        "MS Excel",
+        "MS OneNote",
+        "MS Powerpoint",
+        "MS Project",
+        "MS VISIO",
+        "MS WORD"
+      ]
+    ]
+  },
+  {
+    "value": "语言类",
+    "items": [
+      [
+        "英语",
+        "日语",
+        "俄语",
+        "阿拉伯语",
+        "法语",
+        "德语",
+        "西班牙语",
+        "葡萄牙语",
+        "意大利语",
+        "韩语/朝鲜语",
+        "普通话",
+        "粤语",
+        "闽南语",
+        "上海话",
+        "其它"
+      ]
+    ]
+  },
+  {
+    "value": "财务管理类",
+    "items": [
+      [
+        "金蝶",
+        "Sun",
+        "用友"
+      ]
+    ]
+  }
+]
