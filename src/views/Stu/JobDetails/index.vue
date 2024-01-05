@@ -55,12 +55,10 @@ const getJobDetails = async () => {
   const mercRes = await getMercProfileService(mercId)
   mercDetail.value = mercRes.data.data
   mercNote.value = mercRes.data.data.mercNote
-  console.log('mercDetail: ' + mercDetail.value + '===note: ' + mercNote.value)
 
   const jobRes = await getJobDetailsService(jobId)
   jobDetail.value = jobRes.data.data
   jobNote.value = jobRes.data.data.note
-  console.log('jobDetail: ' + jobDetail.value + '===note: ' + jobNote.value)
   loadingInstance.close()
 }
 getJobDetails()

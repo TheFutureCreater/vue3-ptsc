@@ -44,19 +44,19 @@ const subscribeJob = () => {
             </span>
             <span class="job-label">
               <el-icon size="18px"><Suitcase /></el-icon>
-              <span>{{ jobForm[0].info[jobDetail.nature].label }}</span>
+              <span>{{ jobForm[0].info[jobDetail.nature] }}</span>
             </span>
             <span class="job-label">
               <el-icon size="18px"><Grid /></el-icon>
-              <span>{{ jobForm[4].info[jobDetail.category].label }}</span>
+              <span>{{ jobForm[4].info[jobDetail.category] }}</span>
             </span>
             <span class="job-label">
               <el-icon size="18px"><Coffee /></el-icon>
-              <span>{{ jobForm[2].info[jobDetail.workAge].label }}</span>
+              <span>{{ jobForm[2].info[jobDetail.workAge] }}</span>
             </span>
             <span class="job-label">
               <el-icon size="18px"><School /></el-icon>
-              <span>{{ jobForm[1].info[jobDetail.degree].label }}</span>
+              <span>{{ jobForm[1].info[jobDetail.degree] }}</span>
             </span>
             <span class="job-label">
               <el-icon size="18px"><UserFilled /></el-icon>
