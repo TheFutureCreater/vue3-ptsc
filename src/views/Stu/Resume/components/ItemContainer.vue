@@ -16,8 +16,8 @@ defineProps({
 })
 
 const emit = defineEmits(['getAddNum'])
-const sendAddNum = (num) => {
-  emit('getAddNum', num)
+const sendAddNum = () => {
+  emit('getAddNum')
 }
 </script>
 
@@ -30,12 +30,7 @@ const sendAddNum = (num) => {
       </div>
 
       <div class="head-right">
-        <el-button
-          @click="sendAddNum(addItemNum)"
-          v-if="addItemNum != 0 && addButtonShow"
-          type="primary"
-          plain
-        >
+        <el-button @click="sendAddNum" v-if="addItemNum != -1 && addButtonShow" type="primary" plain>
           <el-icon><Plus /></el-icon>
           <span> 添加 </span>
         </el-button>
