@@ -28,14 +28,19 @@ const modDelButton = ref(false)
 const modFromData = ref({}) // 表单绑定变量
 
 const startModify = (data) => {
+  console.log(data)
   modFromNum.value = true
-  modFromData.value = data
+  // modFromData.value = data
+  modFromData.value = JSON.parse(JSON.stringify(data))
+  console.log(JSON.parse(JSON.stringify(data)))
+  console.log(data)
 }
 
 // 取消添加或修改操作
 const cancelEdit = () => {
   modFromNum.value = false
   modDelButton.value = false
+  modFromData.value = {}
   console.log('cancelEdit')
 }
 

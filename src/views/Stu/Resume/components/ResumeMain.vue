@@ -43,6 +43,7 @@ const getStuResume = async (resumeId) => {
   const loadingInstance = ElLoading.service()
   const res = await getStuResumeService(resumeId)
   resumeInfo.value = res.data.data
+  console.log(res.data)
   loadingInstance.close()
 }
 getStuResume()
