@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useUserStore } from '@/stores'
 import { ElMessage } from 'element-plus'
 import router from '@/router'
-const baseURL = 'http://127.0.0.1:4523/m1/3164764-0-default'
+const baseURL = 'https://mock.apifox.com/m1/3164764-0-default'
 
 const request = axios.create({
   // TODO 1. 基础地址，超时时间
@@ -34,7 +34,7 @@ request.interceptors.response.use(
     }
     // TODO 3. 处理业务失败
     // 处理业务失败, 给错误提示，抛出错误
-    ElMessage.error(res.data.message || '服务异常')
+    ElMessage.error(res.data.msg || '服务异常')
   },
   (err) => {
     // TODO 5. 处理401错误
@@ -44,8 +44,9 @@ request.interceptors.response.use(
     }
 
     // 错误的默认情况 => 只要给提示
-    ElMessage.error(err.response.data.message || '服务异常')
-    return Promise.reject(err)
+    ElMessage.error(err.response.data.msg || '服务异常')
+    console.log(Promise.reject(err))
+    return
   }
 )
 

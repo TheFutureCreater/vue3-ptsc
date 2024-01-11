@@ -3,12 +3,14 @@ import { Edit } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 import ItemContainer from '../ItemContainer.vue'
 import FromContainer from '../FromContainer.vue'
+import { setRsumeNoteService } from '@/api/resume'
 defineProps({
   resumeData: {
     required: true,
-    type: String
+    type: Object
   }
 })
+const emit = defineEmits(['refresh-info'])
 
 const modFromNum = ref(false)
 const modDelButton = ref(false)
@@ -27,10 +29,13 @@ const cancelEdit = () => {
 }
 
 // 完成添加或修改操作
-const overEdit = () => {
+const overEdit = async () => {
   modFromNum.value = false
   modDelButton.value = false
   console.log('overEdit')
+  const rs = await setRsumeNoteService(modFromData.value)
+  if (rs.data.code === 1) ElMessage.success('修改成功')
+  emit('refresh-info')
 }
 </script>
 
@@ -43,13 +48,13 @@ const overEdit = () => {
   >
     <el-form :model="modFromData">
       <el-form-item>
-        <el-input size="large" v-model="modFromData" type="textarea" :rows="6" />
+        <el-input size="large" v-model="modFromData.note" type="textarea" :rows="6" />
       </el-form-item>
     </el-form>
   </FromContainer>
   <ItemContainer title="个人优势" :addItemNum="-1" v-else>
     <div class="show-box" @mouseenter="modDelButton = true" @mouseleave="modDelButton = false">
-      <span>{{ resumeData }}</span>
+      <span>{{ resumeData.note }}</span>
 
       <el-button
         v-if="modDelButton === true"

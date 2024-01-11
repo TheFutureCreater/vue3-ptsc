@@ -40,9 +40,10 @@ const resumeInfo = ref({
 })
 
 const getStuResume = async (resumeId) => {
+  const loadingInstance = ElLoading.service()
   const res = await getStuResumeService(resumeId)
   resumeInfo.value = res.data.data
-  console.log(resumeInfo.value)
+  loadingInstance.close()
 }
 getStuResume()
 
@@ -50,9 +51,6 @@ const addItemNum = ref(-1)
 const startAdd = (num) => {
   isModify.value = false
   addItemNum.value = num
-}
-const overAdd = () => {
-  addItemNum.value = 0
 }
 
 watch(addItemNum, (newValue) => {
@@ -107,9 +105,9 @@ const modDelButton = ref([
 
 <template>
   <div class="resume-main">
-    <MainHead :resumeData="resumeInfo.resume" />
-    <MainNote :resumeData="resumeInfo.resume.note" />
-    <ResumeDesire :resumeData="resumeInfo.desire" />
+    <MainHead :resumeData="resumeInfo.resume" @refresh-info="getStuResume" />
+    <MainNote :resumeData="{ note: resumeInfo.resume.note }" @refresh-info="getStuResume" />
+    <ResumeDesire :resumeData="resumeInfo.desire" @refresh-info="getStuResume" />
 
     <!-- <FromContainer
       :title="(1 ? '添加' : '编辑') + '个人优势'"

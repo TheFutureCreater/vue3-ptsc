@@ -11,16 +11,17 @@ import {
   Edit
 } from '@element-plus/icons-vue'
 import { ref } from 'vue'
-// import ItemContainer from '../ItemContainer.vue'
 import FromContainer from '../FromContainer.vue'
 import { calculateAge } from '@/utils/calculateAge'
 import resumeStatic from '@/assets/json/resumeStatic.json'
+import { setStuResumeService } from '@/api/resume'
 defineProps({
   resumeData: {
     required: true,
     type: Object
   }
 })
+const emit = defineEmits(['refresh-info'])
 
 const modFromNum = ref(false)
 const modDelButton = ref(false)
@@ -39,10 +40,13 @@ const cancelEdit = () => {
 }
 
 // 完成添加或修改操作
-const overEdit = () => {
+const overEdit = async () => {
   modFromNum.value = false
   modDelButton.value = false
   console.log('overEdit')
+  const rs = await setStuResumeService(modFromData.value)
+  if (rs.data.code === 1) ElMessage.success('修改成功')
+  emit('refresh-info')
 }
 </script>
 

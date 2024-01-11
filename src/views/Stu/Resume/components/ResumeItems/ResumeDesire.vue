@@ -3,12 +3,14 @@ import { Edit, Delete } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 import ItemContainer from '../ItemContainer.vue'
 import FromContainer from '../FromContainer.vue'
+import { setResumeDesireService, addResumeDesireService } from '@/api/resume'
 defineProps({
   resumeData: {
     required: true,
     type: Array
   }
 })
+const emit = defineEmits(['refresh-info'])
 
 const modFromNum = ref(false)
 const modDelButton = ref([false, false, false])
@@ -29,10 +31,19 @@ const cancelEdit = () => {
 }
 
 // 完成添加或修改操作
-const overEdit = () => {
+const overEdit = async () => {
   modFromNum.value = false
   modDelButton.value = [false, false, false]
   console.log('overEdit is' + (isModify.value ? '修改' : '添加'))
+  if (isModify.value) {
+    const rs = await setResumeDesireService(modFromData.value)
+    if (rs.data.code === 1) ElMessage.success('修改成功')
+  } else {
+    const rs = await addResumeDesireService(modFromData.value)
+    if (rs.data.code === 1) ElMessage.success('添加成功')
+  }
+
+  emit('refresh-info')
 }
 
 // 点击删除按钮
@@ -51,6 +62,7 @@ const startDelete = async (id) => {
 const startAdd = () => {
   isModify.value = false
   modFromNum.value = true
+  modFromData.value = {}
   console.log('startAdd')
 }
 </script>
@@ -66,7 +78,7 @@ const startAdd = () => {
       <div class="from-input">
         <div class="from-left">
           <el-form-item label="期望职位">
-            <el-input size="large" v-model="modFromData.realName" clearable />
+            <el-input size="large" v-model="modFromData.desireJob" clearable />
           </el-form-item>
           <el-form-item label="最低薪资（单位：千）">
             <el-input-number v-model="modFromData.minWages" />
@@ -74,7 +86,7 @@ const startAdd = () => {
         </div>
         <div class="from-right">
           <el-form-item label="期望城市">
-            <el-input size="large" v-model="modFromData.email" />
+            <el-input size="large" v-model="modFromData.address" />
           </el-form-item>
           <el-form-item label="最高薪资（单位：千）">
             <el-input-number v-model="modFromData.maxWages" />
