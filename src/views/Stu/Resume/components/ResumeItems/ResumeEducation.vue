@@ -9,14 +9,17 @@ defineProps({
     type: Array
   }
 })
+const emit = defineEmits(['refresh-info'])
 
 const modFromNum = ref(false)
 const modDelButton = ref([false, false, false])
 const modFromData = ref([]) // 表单绑定变量
+const isModify = ref(true) // 判断当前编辑是否为修改信息，否则为添加信息
 
 const startModify = (data) => {
+  isModify.value = true
   modFromNum.value = true
-  modFromData.value = data
+  modFromData.value = JSON.parse(JSON.stringify(data))
 }
 
 // 取消添加或修改操作
@@ -27,10 +30,19 @@ const cancelEdit = () => {
 }
 
 // 完成添加或修改操作
-const overEdit = () => {
+const overEdit = async () => {
   modFromNum.value = false
   modDelButton.value = [false, false, false]
-  console.log('overEdit')
+  console.log('overEdit is' + (isModify.value ? '修改' : '添加'))
+  // if (isModify.value) {
+  //   const rs = await setResumeDesireService(modFromData.value)
+  //   if (rs.data.code === 1) ElMessage.success('修改成功')
+  // } else {
+  //   const rs = await addResumeDesireService(modFromData.value)
+  //   if (rs.data.code === 1) ElMessage.success('添加成功')
+  // }
+
+  emit('refresh-info')
 }
 
 // 点击删除按钮
@@ -44,6 +56,14 @@ const startDelete = async (id) => {
     return
   })
 }
+
+// 添加项目逻辑
+const startAdd = () => {
+  isModify.value = false
+  modFromNum.value = true
+  modFromData.value = {}
+  console.log('startAdd')
+}
 </script>
 
 <template>
@@ -56,28 +76,35 @@ const startDelete = async (id) => {
     <el-form :model="modFromData" label-position="top">
       <div class="from-input">
         <div class="from-left">
-          <el-form-item label="期望职位">
-            <el-input size="large" v-model="modFromData.realName" clearable />
+          <el-form-item label="学校名称">
+            <el-input size="large" v-model="modFromData.schoolName" clearable />
+          </el-form-item>
+          <el-form-item label="入学年月">
+            <el-date-picker
+              size="large"
+              v-model="modFromData.enrollTime"
+              type="month"
+              placeholder="选择毕业年月"
+            />
           </el-form-item>
         </div>
         <div class="from-right">
-          <el-form-item label="期望城市">
-            <el-input size="large" v-model="modFromData.email" />
+          <el-form-item label="专业名称">
+            <el-input size="large" v-model="modFromData.majorName" clearable />
+          </el-form-item>
+          <el-form-item label="毕业年月">
+            <el-date-picker
+              size="large"
+              v-model="modFromData.graduateTime"
+              type="month"
+              placeholder="选择毕业年月"
+            />
           </el-form-item>
         </div>
       </div>
-      <div class="from-input">
-        <el-form-item label="薪资范围">
-          <el-col :span="13">
-            <el-input-number v-model="modFromData.minWages" />
-            <span>k-</span>
-          </el-col>
-          <el-col :span="13">
-            <span>
-              <el-input-number v-model="modFromData.maxWages" />
-            </span>
-            <span>k</span>
-          </el-col>
+      <div style="padding: 0 12px">
+        <el-form-item label="经历描述">
+          <el-input size="large" v-model="modFromData.note" type="textarea" :rows="6" />
         </el-form-item>
       </div>
     </el-form>
@@ -85,10 +112,10 @@ const startDelete = async (id) => {
   <ItemContainer title="教育经历" :addItemNum="3" @getAddNum="startAdd">
     <div
       class="show-box"
-      v-for="(item, index) in resumeInfo.education"
+      v-for="(item, index) in resumeData"
       :key="index"
-      @mouseenter="modDelButton[3][index] = true"
-      @mouseleave="modDelButton[3][index] = false"
+      @mouseenter="modDelButton[index] = true"
+      @mouseleave="modDelButton[index] = false"
     >
       <span class="title-word">{{ item.schoolName }}</span>
       <el-divider direction="vertical" />
@@ -105,9 +132,9 @@ const startDelete = async (id) => {
       </div>
 
       <el-button
-        v-if="modDelButton[3][index] === true"
+        v-if="modDelButton[index] === true"
         class="modify-button"
-        @click="startModify(3, index, item)"
+        @click="startModify(item)"
         type="primary"
         text
         bg
@@ -116,7 +143,7 @@ const startDelete = async (id) => {
         <span>修改</span>
       </el-button>
       <el-button
-        v-if="modDelButton[3][index] === true"
+        v-if="modDelButton[index] === true"
         class="delete-button"
         @click="startDelete(item.educationId)"
         type="primary"
@@ -155,7 +182,26 @@ const startDelete = async (id) => {
   }
 }
 
+.title-word {
+  font-weight: bold;
+}
+
 .show-box:hover {
   background-color: #f8f8f8;
+}
+
+.from-input {
+  display: flex;
+  padding: 0 12px;
+
+  .from-left {
+    width: 50%;
+    margin-right: 12px;
+  }
+
+  .from-right {
+    width: 50%;
+    margin-left: 12px;
+  }
 }
 </style>

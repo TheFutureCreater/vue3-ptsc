@@ -65,7 +65,7 @@ const overEdit = async () => {
     <el-form :model="modFromData" label-position="top" class="from-input">
       <div class="from-left">
         <el-form-item label="姓名">
-          <el-input size="large" v-model="modFromData.realName" clearable />
+          <el-input size="large" placeholder="请输入姓名" v-model="modFromData.realName" clearable />
         </el-form-item>
         <el-form-item label="性别">
           <el-radio-group v-model="modFromData.sex">
@@ -82,12 +82,12 @@ const overEdit = async () => {
           />
         </el-form-item>
         <el-form-item label="出生地">
-          <el-input size="large" v-model="modFromData.address" />
+          <el-input size="large" placeholder="请输入出生地" v-model="modFromData.address" clearable />
         </el-form-item>
       </div>
       <div class="from-right">
         <el-form-item label="当前求职状态">
-          <el-select v-model="modFromData.jobSeek" placeholder="Select" size="large">
+          <el-select v-model="modFromData.jobSeek" placeholder="请选择当前求职状态" size="large">
             <el-option
               v-for="(item, index) in resumeStatic.jobSeek"
               :key="index"
@@ -110,7 +110,7 @@ const overEdit = async () => {
           <el-input size="large" v-model="modFromData.phoneNum" disabled />
         </el-form-item>
         <el-form-item label="邮箱">
-          <el-input size="large" v-model="modFromData.email" clearable />
+          <el-input size="large" placeholder="请输入邮箱地址" v-model="modFromData.email" clearable />
         </el-form-item>
       </div>
     </el-form>

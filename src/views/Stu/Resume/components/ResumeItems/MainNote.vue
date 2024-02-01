@@ -18,7 +18,7 @@ const modFromData = ref('') // 表单绑定变量
 
 const startModify = (data) => {
   modFromNum.value = true
-  modFromData.value = data
+  modFromData.value = JSON.parse(JSON.stringify(data))
 }
 
 // 取消添加或修改操作

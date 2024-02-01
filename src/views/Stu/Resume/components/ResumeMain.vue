@@ -7,6 +7,7 @@ import { getStuResumeService } from '@/api/resume'
 import MainHead from './ResumeItems/MainHead.vue'
 import MainNote from './ResumeItems/MainNote.vue'
 import ResumeDesire from './ResumeItems/ResumeDesire.vue'
+import ResumeEducation from './ResumeItems/ResumeEducation.vue'
 
 const businessStatic = [
   '不限',
@@ -109,6 +110,7 @@ const modDelButton = ref([
     <MainHead :resumeData="resumeInfo.resume" @refresh-info="getStuResume" />
     <MainNote :resumeData="{ note: resumeInfo.resume.note }" @refresh-info="getStuResume" />
     <ResumeDesire :resumeData="resumeInfo.desire" @refresh-info="getStuResume" />
+    <ResumeEducation :resumeData="resumeInfo.education" @refresh-info="getStuResume" />
 
     <!-- <FromContainer
       :title="(1 ? '添加' : '编辑') + '个人优势'"

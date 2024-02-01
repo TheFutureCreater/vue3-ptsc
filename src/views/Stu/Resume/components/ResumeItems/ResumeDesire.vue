@@ -20,7 +20,7 @@ const isModify = ref(true) // 判断当前编辑是否为修改信息，否则�
 const startModify = (data) => {
   isModify.value = true
   modFromNum.value = true
-  modFromData.value = data
+  modFromData.value = JSON.parse(JSON.stringify(data))
 }
 
 // 取消添加或修改操作
@@ -78,18 +78,28 @@ const startAdd = () => {
       <div class="from-input">
         <div class="from-left">
           <el-form-item label="期望职位">
-            <el-input size="large" v-model="modFromData.desireJob" clearable />
+            <el-input
+              size="large"
+              v-model="modFromData.desireJob"
+              placeholder="请输入期望职位"
+              clearable
+            />
           </el-form-item>
           <el-form-item label="最低薪资（单位：千）">
-            <el-input-number v-model="modFromData.minWages" />
+            <el-input-number :min="0" v-model="modFromData.minWages" />
           </el-form-item>
         </div>
         <div class="from-right">
           <el-form-item label="期望城市">
-            <el-input size="large" v-model="modFromData.address" />
+            <el-input
+              size="large"
+              placeholder="请输入期望城市"
+              v-model="modFromData.address"
+              clearable
+            />
           </el-form-item>
           <el-form-item label="最高薪资（单位：千）">
-            <el-input-number v-model="modFromData.maxWages" />
+            <el-input-number :min="0" v-model="modFromData.maxWages" />
           </el-form-item>
         </div>
       </div>
@@ -177,6 +187,10 @@ const startAdd = () => {
     top: 5px;
     right: 12px;
   }
+}
+
+.title-word {
+  font-weight: bold;
 }
 
 .show-box:hover {
