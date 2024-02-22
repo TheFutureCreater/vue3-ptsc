@@ -47,7 +47,7 @@ const overEdit = () => {
 
 <style lang="scss" scoped>
 .from-container {
-  margin: 18px 24px 0 24px;
+  margin: 28px 24px 10px 24px;
   padding: 0 12px;
   border-radius: 10px;
   background-color: #f8f8f8;
