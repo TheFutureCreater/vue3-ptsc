@@ -25,8 +25,6 @@ const businessStatic = [
   '政府/非盈利机构/其他'
 ]
 
-const skillMasterStatic = ['一般', '良好', '熟练', '精通']
-
 // 简历信息
 const resumeInfo = ref({
   resume: {},
@@ -246,119 +244,6 @@ const modDelButton = ref([
         </el-button>
       </div>
     </ItemContainer>
-
-    <ItemContainer title="技能/语言能力" :addItemNum="7" @getAddNum="startAdd">
-      <div
-        class="show-box"
-        v-for="(item, index) in resumeInfo.skill"
-        :key="index"
-        @mouseenter="modDelButton[7][index] = true"
-        @mouseleave="modDelButton[7][index] = false"
-      >
-        <span class="title-word">{{ item.skill }}</span>
-        <el-divider direction="vertical" />
-        <span>{{ skillMasterStatic[item.mastery] }}</span>
-
-        <el-button
-          v-if="modDelButton[7][index] === true"
-          class="modify-button"
-          @click="startModify(7, index, item)"
-          type="primary"
-          text
-          bg
-        >
-          <el-icon><Edit /></el-icon>
-          <span>修改</span>
-        </el-button>
-        <el-button
-          v-if="modDelButton[7][index] === true"
-          class="delete-button"
-          @click="startDelete(item.organizationId)"
-          type="primary"
-          text
-          bg
-        >
-          <el-icon><Delete /></el-icon>
-          <span>删除</span>
-        </el-button>
-      </div>
-    </ItemContainer>
-
-    <ItemContainer title="个人作品" :addItemNum="8" @getAddNum="startAdd">
-      <div
-        class="show-box"
-        v-for="(item, index) in resumeInfo.work"
-        :key="index"
-        @mouseenter="modDelButton[8][index] = true"
-        @mouseleave="modDelButton[8][index] = false"
-      >
-        <span class="title-word">{{ item.workName }}</span>
-        <el-divider direction="vertical" />
-        <span>{{ item.url }}</span>
-        <div class="note-title-box">
-          <span>作品描述：</span>
-          <span>{{ item.note }}</span>
-        </div>
-
-        <el-button
-          v-if="modDelButton[8][index] === true"
-          class="modify-button"
-          @click="startModify(8, index, item)"
-          type="primary"
-          text
-          bg
-        >
-          <el-icon><Edit /></el-icon>
-          <span>修改</span>
-        </el-button>
-        <el-button
-          v-if="modDelButton[8][index] === true"
-          class="delete-button"
-          @click="startDelete(item.organizationId)"
-          type="primary"
-          text
-          bg
-        >
-          <el-icon><Delete /></el-icon>
-          <span>删除</span>
-        </el-button>
-      </div>
-    </ItemContainer>
-
-    <ItemContainer title="资格证书" :addItemNum="9" @getAddNum="startAdd">
-      <div
-        class="show-box"
-        v-for="(item, index) in resumeInfo.credential"
-        :key="index"
-        @mouseenter="modDelButton[9][index] = true"
-        @mouseleave="modDelButton[9][index] = false"
-      >
-        <span class="title-word">{{ item.creName }}</span>
-
-        <el-button
-          v-if="modDelButton[9][index] === true"
-          class="modify-button"
-          @click="startModify(9, index, item)"
-          type="primary"
-          text
-          bg
-        >
-          <el-icon><Edit /></el-icon>
-          <span>修改</span>
-        </el-button>
-        <el-button
-          v-if="modDelButton[9][index] === true"
-          class="delete-button"
-          @click="startDelete(item.credentialId)"
-          type="primary"
-          text
-          bg
-        >
-          <el-icon><Delete /></el-icon>
-          <span>删除</span>
-        </el-button>
-      </div>
-    </ItemContainer>
   </div>
 </template>
 
@@ -366,6 +251,7 @@ const modDelButton = ref([
 .resume-main {
   display: flex;
   flex-direction: column;
+  padding: 10px 0;
 
   // .from-input {
   // }
