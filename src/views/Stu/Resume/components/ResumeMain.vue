@@ -1,9 +1,6 @@
 <script setup>
-// import { Edit, Delete } from '@element-plus/icons-vue'
-// import ItemContainer from './ItemContainer.vue'
 import { ref, watch } from 'vue'
 import { getStuResumeService } from '@/api/resume'
-// import resumeStatic from '@/assets/json/resumeStatic.json'
 import MainHead from './ResumeItems/MainHead.vue'
 import MainNote from './ResumeItems/MainNote.vue'
 import ResumeDesire from './ResumeItems/ResumeDesire.vue'
@@ -35,27 +32,10 @@ const getStuResume = async (resumeId) => {
 getStuResume()
 
 const addItemNum = ref(-1)
-// const startAdd = (num) => {
-//   isModify.value = false
-//   addItemNum.value = num
-// }
 
 watch(addItemNum, (newValue) => {
   console.log(newValue)
 })
-
-// const modFromNum = ref([
-//   [false],
-//   [false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false]
-// ])
 
 // const isModify = ref(true) // 判断当前编辑是否为修改信息，否则为添加信息
 // const modFromData = ref({}) // 表单绑定变量
@@ -74,20 +54,6 @@ watch(addItemNum, (newValue) => {
 //     return
 //   })
 // }
-
-// 每个子盒子中修改和删除按钮显示与否
-// const modDelButton = ref([
-//   [false],
-//   [false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false],
-//   [false, false, false]
-// ])
 </script>
 
 <template>
@@ -99,12 +65,6 @@ watch(addItemNum, (newValue) => {
     <ResumeOccupation :resumeData="resumeInfo.occupation" @refresh-info="getStuResume" />
     <ResumeOrganization :resumeData="resumeInfo.organization" @refresh-info="getStuResume" />
     <ResumeProject :resumeData="resumeInfo.project" @refresh-info="getStuResume" />
-
-    <!-- <FromContainer
-      :title="(1 ? '添加' : '编辑') + '个人优势'"
-      v-if="modFromNum[0][0] === true"
-      @cancelEdit="cancelEdit"
-    ></FromContainer> -->
   </div>
 </template>
 

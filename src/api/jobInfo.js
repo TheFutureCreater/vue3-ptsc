@@ -5,14 +5,8 @@ import request from '@/utils/request'
 export const getJobListService = (pageData) => {
   return request({
     url: '/job/list',
-    params: {
-      pageNum: pageData.pageNum,
-      pageSize: pageData.pageSize,
-      mercId: pageData.mercId,
-      searchWord: pageData.searchWord,
-      cityId: pageData.cityId,
-      jobForm: pageData.jobForm
-    }
+    method: 'POST',
+    data: pageData
   })
 }
 
