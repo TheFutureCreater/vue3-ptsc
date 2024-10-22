@@ -66,7 +66,9 @@ const handleCurrentChange = () => {
 
 //点击相应职位盒子事件
 const clickJobBox = (jobId, mercId) => {
-  window.open(window.location.origin + `/stu/jobdetails?job=${jobId}&merc=${mercId}`)
+  window.open(
+    window.location.origin + import.meta.env.BASE_URL + `stu/jobdetails?job=${jobId}&merc=${mercId}`
+  )
 }
 
 // 点击收藏职位按钮事件
@@ -130,7 +132,11 @@ const subscribeJob = (jobId) => {
               <el-icon size="12"><Star /></el-icon>
               <span style="margin-left: 5px; font-size: 15px">收藏职位</span>
             </el-button>
-            <el-button style="margin-top: 8px" type="primary" @click.stop="subscribeJob(item.jobId)">
+            <el-button
+              style="margin-top: 8px"
+              type="primary"
+              @click.stop="subscribeJob(item.jobId)"
+            >
               <el-icon size="12"><Message /></el-icon>
               <span style="margin-left: 5px; font-size: 15px">投递简历</span>
             </el-button>
