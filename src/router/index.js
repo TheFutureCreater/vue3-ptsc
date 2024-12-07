@@ -15,6 +15,7 @@ import StuApplication from '@/views/Stu/Application/index.vue'
 import StuFavorite from '@/views/Stu/Favorite/index.vue'
 import StuNotification from '@/views/Stu/Notification/index.vue'
 import StuResume from '@/views/Stu/Resume/index.vue'
+import TestVue from '@/views/Test/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -84,7 +85,7 @@ const router = createRouter({
         }
       ]
     },
-    {}
+    { path: '/test', component: TestVue }
   ],
   // 路由滚动行为定制
   scrollBehavior() {
